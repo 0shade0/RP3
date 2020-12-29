@@ -13,22 +13,43 @@ namespace Pacman
     public partial class Form1 : Form
     {
         Pacman pacman;
+        Grid grid;
+        Point squareSize = new Point(16, 16);
         public Form1()
         {
             InitializeComponent();
-            pacman = new Pacman(this);
+            formSetup();
+        }
+
+        public void formSetup()
+        {
+            this.Size = new Size(29 * squareSize.X, 37 * squareSize.Y);
+            grid = new Grid(this, squareSize);
+            pacman = new Pacman(this, squareSize, new Point(13, 25), grid);
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
-                pacman.Dir = Pacman.Direction.Left;
-            else if (e.KeyCode == Keys.Up || e.KeyCode == Keys.W)
-                pacman.Dir = Pacman.Direction.Up;
-            else if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D)
-                pacman.Dir = Pacman.Direction.Right;
-            else if (e.KeyCode == Keys.Down || e.KeyCode == Keys.S)
-                pacman.Dir = Pacman.Direction.Down;
+            var key = e.KeyCode;
+            switch(key)
+            {
+                case Keys.Left:
+                case Keys.A:
+                    pacman.changeDirection(Pacman.Direction.Left);
+                    break;
+                case Keys.Up:
+                case Keys.W:
+                    pacman.changeDirection(Pacman.Direction.Up);
+                    break;
+                case Keys.Right:
+                case Keys.D:
+                    pacman.changeDirection(Pacman.Direction.Right);
+                    break;
+                case Keys.Down:
+                case Keys.S:
+                    pacman.changeDirection(Pacman.Direction.Down);
+                    break;
+            }
         }
     }
 }

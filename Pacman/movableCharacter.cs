@@ -19,64 +19,97 @@ namespace Pacman
             None
         }
         
-        protected int x, y; // Koordinate u polju.
-        protected int speed = 10;
-        protected Direction dir = Direction.None;
+        protected int i, j; // Koordinate u polju.
+        protected Direction currentDirection = Direction.None;
         protected PictureBox characterPictureBox = new PictureBox();
+        protected Grid grid;
+        protected Point squareSize;
         Timer characterTimer = new Timer();
 
         // Konstruktor.
-        public movableCharacter(Form form)
+        public movableCharacter(Form form, Point _squareSize, Point startingPoint, Grid _grid)
         {
             // Postavljanje timera. Event handler characterTimerTick
-            // se izvodi svakih 100ms.
-            characterTimer.Interval = 100;
+            // se izvodi svakih 150ms. Zamišljeno je da se, kad treba promijeniti brzinu, 
+            // smanjuje ili povećava characterTimer.Interval.
+            characterTimer.Interval = 150;
             characterTimer.Enabled = true;
             characterTimer.Tick += new EventHandler(characterTimerTick);
             characterTimer.Start();
             characterPictureBox.BackColor = Color.Yellow;
 
+            i = startingPoint.Y;
+            j = startingPoint.X;
+
+            grid = _grid;
+            squareSize = _squareSize;
+
+            characterPictureBox.Size = new Size(squareSize.X, squareSize.Y);
             form.Controls.Add(characterPictureBox);
+            characterPictureBox.BringToFront();
         }
 
         private void characterTimerTick (object sender, EventArgs e)
         {
-            moveCharacter();
             drawCharacter();
+            moveCharacter();
         }
 
-        // Svojstva.
-        public Direction Dir
+        public void changeDirection(Direction dir)
         {
-            get { return dir; }
-            set { dir = value; }
-        }
-        public int X
-        {
-            get { return x; }
-            set { x = value; }
-        }
-        public int Y
-        {
-            get { return y; }
-            set { y = value; }
+            if (movePossible(dir))
+                currentDirection = dir;
         }
 
         public void moveCharacter()
         {
-            if (dir == Direction.Left)
-                x -= speed;
-            else if (dir == Direction.Right)
-                x += speed;
-            else if (dir == Direction.Up)
-                y -= speed;
-            else if (dir == Direction.Down)
-                y += speed;
+            // Lijevi portal se nalazi na indeksu [16, 0], a desni na [16, 27]
+            if (i == 16 && j == 0 && currentDirection == Direction.Left)
+                j = 27;
+            else if (i == 16 && j == 27 && currentDirection == Direction.Right)
+                j = 0;
+            else if (movePossible(currentDirection))
+            {
+                switch (currentDirection)
+                {
+                    /* Zamišljeno je da se koordinata uvijek povećava za 1, a
+                    kad treba povećati brzinu, smanjuje se characterTimer.Interval. */ 
+                    case Direction.Left:
+                        j -= 1;
+                        break;
+                    case Direction.Right:
+                        j += 1;
+                        break;
+                    case Direction.Up:
+                        i -= 1;
+                        break;
+                    case Direction.Down:
+                        i += 1;
+                        break;
+                }
+            }
+        }
+        public bool movePossible(Direction dir)
+        {
+            Console.WriteLine(i.ToString() + ", " + j.ToString());
+            switch (dir)
+            {
+                case Direction.Left:
+                    return j > 0 && grid.getSquareValue(i, j - 1) == '-';
+                case Direction.Right:
+                    return j < 27 && grid.getSquareValue(i, j + 1) == '-';
+                case Direction.Up:
+                    return i > 0 && grid.getSquareValue(i - 1, j) == '-';
+                case Direction.Down:
+                    return i < 35 && grid.getSquareValue(i + 1, j) == '-';
+                default:
+                    return true;
+            }
         }
 
         public void drawCharacter()
         {
-            characterPictureBox.Location = new Point(x, y);
+            characterPictureBox.Location = new Point(j*squareSize.X, i*squareSize.Y);
         }
 
     }
