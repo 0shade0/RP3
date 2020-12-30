@@ -8,3 +8,4 @@ F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj
 F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj\Debug\Pacman.exe
 F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj\Debug\Pacman.pdb
 F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj\Debug\Pacman.Form1.resources
+F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj\Debug\Pacman.Resource1.resources

@@ -12,9 +12,12 @@ namespace Pacman
 {
     public partial class Form1 : Form
     {
-        Pacman pacman;
-        Grid grid;
-        Point squareSize = new Point(16, 16);
+        // Javno tako da možemo pristupati drugim elementima
+        // iz svih klasa.
+        public static Pacman pacman;
+        public static Grid grid;
+        public static Point squareSize = new Point(16, 16);
+        public static Point startPoint = new Point(13, 25);
         public Form1()
         {
             InitializeComponent();
@@ -23,9 +26,12 @@ namespace Pacman
 
         public void formSetup()
         {
+            SuspendLayout();
             this.Size = new Size(29 * squareSize.X, 37 * squareSize.Y);
-            grid = new Grid(this, squareSize);
-            pacman = new Pacman(this, squareSize, new Point(13, 25), grid);
+            grid = new Grid(this, startPoint);
+            pacman = new Pacman(this);
+            pacman.startTimer();
+            ResumeLayout();
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)

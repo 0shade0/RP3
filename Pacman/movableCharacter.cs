@@ -21,38 +21,47 @@ namespace Pacman
         
         protected int i, j; // Koordinate u polju.
         protected Direction currentDirection = Direction.None;
+        // Ovdje se može spremiti i više slika, za gledanje u raznim smjerovima
+        // pa mijenjati u changeDirection.
         protected PictureBox characterPictureBox = new PictureBox();
-        protected Grid grid;
-        protected Point squareSize;
+        // Timer za movableCharacter objekte.
         Timer characterTimer = new Timer();
+        protected int timerInterval = 150;
 
         // Konstruktor.
-        public movableCharacter(Form form, Point _squareSize, Point startingPoint, Grid _grid)
+        public movableCharacter(Form form)
         {
             // Postavljanje timera. Event handler characterTimerTick
             // se izvodi svakih 150ms. Zamišljeno je da se, kad treba promijeniti brzinu, 
             // smanjuje ili povećava characterTimer.Interval.
-            characterTimer.Interval = 150;
-            characterTimer.Enabled = true;
+            characterTimer.Interval = timerInterval;
             characterTimer.Tick += new EventHandler(characterTimerTick);
-            characterTimer.Start();
             characterPictureBox.BackColor = Color.Yellow;
 
-            i = startingPoint.Y;
-            j = startingPoint.X;
+            i = Form1.startPoint.Y;
+            j = Form1.startPoint.X;
 
-            grid = _grid;
-            squareSize = _squareSize;
-
-            characterPictureBox.Size = new Size(squareSize.X, squareSize.Y);
+            characterPictureBox.Size = new Size(Form1.squareSize.X, Form1.squareSize.Y);
             form.Controls.Add(characterPictureBox);
             characterPictureBox.BringToFront();
         }
 
-        private void characterTimerTick (object sender, EventArgs e)
+        public void startTimer()
+        {
+            characterTimer.Start();
+        }
+
+        protected virtual void characterTimerTick (object sender, EventArgs e)
         {
             drawCharacter();
             moveCharacter();
+        }
+
+        public void increaseSpeed(int x)
+        {
+            timerInterval -= x;
+            if (timerInterval > 50)
+                characterTimer.Interval = timerInterval;
         }
 
         public void changeDirection(Direction dir)
@@ -91,17 +100,16 @@ namespace Pacman
         }
         public bool movePossible(Direction dir)
         {
-            Console.WriteLine(i.ToString() + ", " + j.ToString());
             switch (dir)
             {
                 case Direction.Left:
-                    return j > 0 && grid.getSquareValue(i, j - 1) == '-';
+                    return j > 0 && Form1.grid.getSquareValue(i, j - 1) != '#';
                 case Direction.Right:
-                    return j < 27 && grid.getSquareValue(i, j + 1) == '-';
+                    return j < 27 && Form1.grid.getSquareValue(i, j + 1) != '#';
                 case Direction.Up:
-                    return i > 0 && grid.getSquareValue(i - 1, j) == '-';
+                    return i > 0 && Form1.grid.getSquareValue(i - 1, j) != '#';
                 case Direction.Down:
-                    return i < 35 && grid.getSquareValue(i + 1, j) == '-';
+                    return i < 35 && Form1.grid.getSquareValue(i + 1, j) != '#';
                 default:
                     return true;
             }
@@ -109,7 +117,7 @@ namespace Pacman
 
         public void drawCharacter()
         {
-            characterPictureBox.Location = new Point(j*squareSize.X, i*squareSize.Y);
+            characterPictureBox.Location = new Point(j* Form1.squareSize.X, i* Form1.squareSize.Y);
         }
 
     }
