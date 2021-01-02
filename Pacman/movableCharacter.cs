@@ -25,7 +25,7 @@ namespace Pacman
         // pa mijenjati u changeDirection.
         protected PictureBox characterPictureBox = new PictureBox();
         // Timer za movableCharacter objekte.
-        Timer characterTimer = new Timer();
+        protected Timer characterTimer = new Timer();
         protected int timerInterval = 150;
 
         // Konstruktor.
@@ -36,12 +36,19 @@ namespace Pacman
             // smanjuje ili povećava characterTimer.Interval.
             characterTimer.Interval = timerInterval;
             characterTimer.Tick += new EventHandler(characterTimerTick);
-            characterPictureBox.BackColor = Color.Yellow;
+            
+            // Ovu linija je prebačena u pacmanov konstruktor.
+            // characterPictureBox.BackColor = Color.Yellow;
 
-            i = Form1.startPoint.Y;
-            j = Form1.startPoint.X;
+            // i = Form1.startPoint.Y;
+            // j = Form1.startPoint.X;
+            // Pacman, duhovi i voće overridaju ovu metodu sa svojim startnim kordinatama. 
+            i = startI;
+            j = startJ;
 
             characterPictureBox.Size = new Size(Form1.squareSize.X, Form1.squareSize.Y);
+            // Likovi su crtani na svojim početnim pozicijama (inače ih slika u gornjem lijevom kutu).
+            characterPictureBox.Location = new Point(j* Form1.squareSize.X, i* Form1.squareSize.Y);
             form.Controls.Add(characterPictureBox);
             characterPictureBox.BringToFront();
         }
@@ -70,7 +77,7 @@ namespace Pacman
                 currentDirection = dir;
         }
 
-        public void moveCharacter()
+        public virtual void moveCharacter()
         {
             // Lijevi portal se nalazi na indeksu [16, 0], a desni na [16, 27]
             if (i == 16 && j == 0 && currentDirection == Direction.Left)
@@ -120,5 +127,51 @@ namespace Pacman
             characterPictureBox.Location = new Point(j* Form1.squareSize.X, i* Form1.squareSize.Y);
         }
 
+        ///
+        /// Dio potreban/vezan za implementaciju duhova.
+        ///
+
+        // Služi duhovima za pristup pacmanovoj lokaciji.
+        public int I
+		{
+            get { return i; }
+		}
+        public int J
+		{
+            get { return j; }
+		}
+
+        // Služi duhovima za pristup pacmanovom smjeru kretanja,
+        public Direction CurrentDirection 
+        {
+            get { return currentDirection; }
+        }
+
+        public Direction oppositeDirection(Direction dir)
+		{
+            switch(dir)
+            {
+                case Direction.Left:
+                    return Direction.Right;
+                case Direction.Right:
+                    return Direction.Left;
+                case Direction.Up:
+                    return Direction.Down;
+                case Direction.Down:
+                    return Direction.Up;
+                default:
+                    return Direction.None;
+            }
+        }
+
+        // Početne koordinate, podklase ovu metodu overridaju sa svojim početnim koordinatama.
+        public virtual int startI 
+        {
+            get { return 0; }
+        }
+        public virtual int startJ 
+        {
+            get { return 0; }
+        }
     }
 }

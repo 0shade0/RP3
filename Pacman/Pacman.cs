@@ -16,6 +16,7 @@ namespace Pacman
 
         protected Label scoreLabel = new Label();
         protected Label levelLabel = new Label();
+
         public Pacman (Form form) : base(form) 
         {
 
@@ -38,6 +39,9 @@ namespace Pacman
             levelLabel.AutoSize = true;
             levelLabel.Location = new Point(form.Width - levelLabel.Width - 12, 9);
             form.Controls.Add(levelLabel);
+
+            // Ovdje sam premjestio bojanje pacmana.
+            characterPictureBox.BackColor = Color.Yellow;
         }
 
         protected override void characterTimerTick(object sender, EventArgs e)
@@ -70,6 +74,12 @@ namespace Pacman
             currentDirection = Direction.None;
 
             // TODO: Resetirati duhove i ostalo što treba.
+
+            // Duhovi.
+            Form1.redGhost.reset();
+            Form1.pinkGhost.reset();
+            Form1.blueGhost.reset();
+            Form1.orangeGhost.reset();
         }
 
         public void checkSquare()
@@ -81,5 +91,36 @@ namespace Pacman
             else if (square == 'o')
                 Food.eatSuperCookie(i, j);
         }
+
+        public override int startI 
+        {
+            get { return Form1.startPoint.Y; }
+        }
+        public override int startJ 
+        {
+            get { return Form1.startPoint.X; }
+        }
+
+        ///
+        /// Dio potreban/vezan za implementaciju duhova.
+        ///
+
+        // Ovu metodu poziva duh nakon što pojede pacmana.
+        public void lifeLost()
+		{
+            // TODO: Obradati event u kojem pacman izgubi život.
+
+            /// Za lakše testiranje.
+            nextLevel();
+            /// Za lakše testiranje.
+
+		}
+
+        // Ovu metodu poziva duh nakon što ga pacman pojede.
+        // Duh se prije poziva ove metode vraća u kuću.
+        public void ateGhost()
+		{
+            // TODO: Dodati bodove.
+		}
     }
 }
