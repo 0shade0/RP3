@@ -24,6 +24,9 @@ namespace Pacman
         public static BlueGhost blueGhost;
         public static OrangeGhost orangeGhost;
 
+        // Povećanje brzine po levelu.
+        public static int SpeedIncPerLevel = 4;
+
         public Form1()
         {
             InitializeComponent();
@@ -77,6 +80,21 @@ namespace Pacman
         public static int manhattanDistance(int i1, int j1, int i2, int j2)
         {
             return Math.Abs(i1 - i2) + Math.Abs(j1 - j2);
+        }
+
+        // Trajanje superKolaća, 6 sekundi na levelu 1, 0 sekundi na levelu 21 i dalje.
+        public static int SuperCookieDuration
+        {
+            get 
+            {
+                return Math.Max(6000 - 300 * (Form1.pacman.Level - 1), 0);
+            }
+        }
+
+        public static int PacmanDefaultSpeed
+        {
+            // Place holder, treba napraviti da ovisi i o tipu igre.
+            get { return Math.Max(48, 160 - SpeedIncPerLevel * (Form1.pacman.Level - 1)); }
         }
     }
 }

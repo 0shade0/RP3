@@ -68,7 +68,7 @@ namespace Pacman
         {
             level += 1;
             Form1.grid.resetGrid();
-            increaseSpeed(5);
+            increaseSpeed(Form1.SpeedIncPerLevel); // Dijeljivo s 4.
             i = Form1.startPoint.Y;
             j = Form1.startPoint.X;
             currentDirection = Direction.None;
@@ -122,5 +122,10 @@ namespace Pacman
 		{
             // TODO: Dodati bodove.
 		}
+
+        public int Level
+        {
+            get { return level; }
+        }
     }
 }

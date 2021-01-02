@@ -27,7 +27,10 @@ namespace Pacman
             if (Form1.grid.noMoreCookies())
                 Form1.pacman.nextLevel();
 
-            // TODO: Duhovi mijenjaju stanje.
+            Form1.redGhost.flee(Form1.SuperCookieDuration);
+            Form1.pinkGhost.flee(Form1.SuperCookieDuration);
+            Form1.blueGhost.flee(Form1.SuperCookieDuration);
+            Form1.orangeGhost.flee(Form1.SuperCookieDuration);
         }
     }
 }

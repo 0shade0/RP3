@@ -43,7 +43,7 @@ namespace Pacman
         public Ghost(Form form) : base(form) 
         {
             // Na početku su duhovi sporiji od pacmana.
-            timerInterval = 160;
+            timerInterval = 172;
             rand = new Random();
         }
 
@@ -56,9 +56,12 @@ namespace Pacman
 
             // Ako je duh bježao.
             if (s == State.Flee) {
-                remainingFleeDuration -= characterTimer.Interval;
+                remainingFleeDuration -= timerInterval;
 
-                if (remainingFleeDuration <= 0) s = State.Chase;
+                if (remainingFleeDuration <= 0) {
+                    s = State.Chase;
+                    doubleSpeed();
+                }
             }
         }
 
@@ -178,6 +181,9 @@ namespace Pacman
             s = State.Chase;
             exitingBox = 0;
             waitElapsed = 0;
+            remainingFleeDuration = 0;
+            timerInterval = Form1.PacmanDefaultSpeed + 12; // Duhovi su sporiji od pacmana.
+            characterTimer.Interval = timerInterval;
 		}
 
         // Poziva se kada pacman pojede super kolačić. Duh prelazi u stanje bježanja na duration milisekundi.
@@ -188,6 +194,7 @@ namespace Pacman
 
             remainingFleeDuration = duration;
             s = State.Flee;
+            halveSpeed();
         }
 
         // Računaju kordinate do kojih duh pokušava doći.

@@ -26,7 +26,7 @@ namespace Pacman
         protected PictureBox characterPictureBox = new PictureBox();
         // Timer za movableCharacter objekte.
         protected Timer characterTimer = new Timer();
-        protected int timerInterval = 150;
+        protected int timerInterval = 160; // Dijeljivo sa 4!
 
         // Konstruktor.
         public movableCharacter(Form form)
@@ -67,8 +67,20 @@ namespace Pacman
         public void increaseSpeed(int x)
         {
             timerInterval -= x;
-            if (timerInterval > 50)
+            if (timerInterval >= 48)
                 characterTimer.Interval = timerInterval;
+        }
+
+        public void halveSpeed()
+        {
+            timerInterval *= 2;
+            characterTimer.Interval *= 2;
+        }
+
+        public void doubleSpeed()
+        {
+            timerInterval /= 2;
+            characterTimer.Interval /= 2;
         }
 
         public void changeDirection(Direction dir)
