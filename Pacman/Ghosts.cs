@@ -76,6 +76,9 @@ namespace Pacman
                     j = startJ;
                     s = State.Chase;
                     exitingBox = 0;
+                    remainingFleeDuration = 0;
+                    timerInterval = Form1.PacmanDefaultSpeed + 12; // Duhovi su sporiji od pacmana.
+                    characterTimer.Interval = timerInterval;
                     Form1.pacman.ateGhost();
 				}
 			}
