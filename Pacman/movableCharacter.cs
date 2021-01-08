@@ -24,6 +24,9 @@ namespace Pacman
         // Ovdje se može spremiti i više slika, za gledanje u raznim smjerovima
         // pa mijenjati u changeDirection.
         protected PictureBox characterPictureBox = new PictureBox();
+        // Nova lista u koje spremamo slike, za sad korišteno samo za Pacmana.
+        protected List<Bitmap> characterImages = new List<Bitmap>();
+        protected int currentImage; // Indeks trenutne slike u listi.
         // Timer za movableCharacter objekte.
         protected Timer characterTimer = new Timer();
         protected int timerInterval = 160; // Dijeljivo sa 4!
@@ -36,19 +39,21 @@ namespace Pacman
             // smanjuje ili povećava characterTimer.Interval.
             characterTimer.Interval = timerInterval;
             characterTimer.Tick += new EventHandler(characterTimerTick);
-            
-            // Ovu linija je prebačena u pacmanov konstruktor.
-            // characterPictureBox.BackColor = Color.Yellow;
 
-            // i = Form1.startPoint.Y;
-            // j = Form1.startPoint.X;
             // Pacman, duhovi i voće overridaju ovu metodu sa svojim startnim kordinatama. 
             i = startI;
             j = startJ;
-
+           
             characterPictureBox.Size = new Size(Form1.squareSize.X, Form1.squareSize.Y);
             // Likovi su crtani na svojim početnim pozicijama (inače ih slika u gornjem lijevom kutu).
-            characterPictureBox.Location = new Point(j* Form1.squareSize.X, i* Form1.squareSize.Y);
+            characterPictureBox.Location = new Point(j * Form1.squareSize.X, i * Form1.squareSize.Y);
+            characterPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            // Ovdje je bezveze dodan neki prvi element u characterImages, da ne bi došlo do grešaka.
+            // Treba obrisati kad se dodaju stvarne slike.
+            characterImages.Add(Properties.Resources.cookieImage);
+            currentImage = 0;
+
             form.Controls.Add(characterPictureBox);
             characterPictureBox.BringToFront();
         }
@@ -82,8 +87,7 @@ namespace Pacman
             timerInterval /= 2;
             characterTimer.Interval /= 2;
         }
-
-        public void changeDirection(Direction dir)
+        public virtual void changeDirection(Direction dir)
         {
             if (movePossible(dir))
                 currentDirection = dir;
@@ -136,7 +140,9 @@ namespace Pacman
 
         public void drawCharacter()
         {
+            // Ažuriranje pozicije i slike.
             characterPictureBox.Location = new Point(j* Form1.squareSize.X, i* Form1.squareSize.Y);
+            characterPictureBox.Image = characterImages[currentImage];
         }
 
         ///

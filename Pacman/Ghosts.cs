@@ -40,6 +40,9 @@ namespace Pacman
         // Koliko još duhovi trebaju bježati, u milisekundama.
         protected int remainingFleeDuration = 0;
 
+        // Broj bodova koje Pacman dobiva za jedenje prvog duha.
+        protected int pointsWorth = 200;
+
         public Ghost(Form form) : base(form) 
         {
             // Na početku su duhovi sporiji od pacmana.
@@ -61,6 +64,8 @@ namespace Pacman
                 if (remainingFleeDuration <= 0) {
                     s = State.Chase;
                     doubleSpeed();
+                    // Resetiraj broj pojedenih duhova u Flee stanju.
+                    Form1.pacman.resetGhostsEaten();
                 }
             }
         }
@@ -205,6 +210,12 @@ namespace Pacman
         public abstract int getTargetI();
         public abstract int getTargetJ();
 
+        // Svojstvo za dohvaćanje pointsWorth.
+        public int PointsWorth
+        {
+            get { return pointsWorth; }
+        }
+
     }
 
     public class RedGhost : Ghost 
@@ -212,7 +223,7 @@ namespace Pacman
         public RedGhost(Form form) : base(form) 
         {
             waitTreshold = 0;
-            
+
             // Placeholder.
             characterPictureBox.BackColor = Color.Red;
         }
@@ -242,7 +253,7 @@ namespace Pacman
         public PinkGhost(Form form) : base(form) 
         {
             waitTreshold = 10;
-            
+
             // Placeholder.
             characterPictureBox.BackColor = Color.LightPink;
         }
@@ -288,7 +299,7 @@ namespace Pacman
         public BlueGhost(Form form) : base(form) 
         {
             waitTreshold = 20;
-            
+
             // Placeholder.
             characterPictureBox.BackColor = Color.LightSkyBlue;
         }

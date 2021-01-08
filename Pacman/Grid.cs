@@ -135,7 +135,6 @@ namespace Pacman
 
         public void resetGrid()
         {
-            Console.WriteLine("resetting");
             for (int i = 0; i < 36; i++)
                 for (int j = 0; j < 28; j++)
                 {

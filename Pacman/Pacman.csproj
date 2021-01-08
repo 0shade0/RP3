@@ -53,6 +53,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ghosts.cs" />
     <Compile Include="Grid.cs" />
     <Compile Include="movableCharacter.cs" />
     <Compile Include="Pacman.cs" />
@@ -98,6 +99,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\superCookieImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PacmanDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PacmanDownEat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PacmanLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PacmanLeftEat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PacmanRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PacmanRightEat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PacmanUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PacmanUpEat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PacmanNone.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

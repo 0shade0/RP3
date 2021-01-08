@@ -23,6 +23,7 @@ namespace Pacman
             Form1.grid.decrementCntCookie();
             Form1.grid.clearSquare(i, j);
             Form1.pacman.incrementScore(50);
+            Form1.pacman.resetGhostsEaten();
 
             if (Form1.grid.noMoreCookies())
                 Form1.pacman.nextLevel();
