@@ -43,10 +43,23 @@ namespace Pacman
         // Broj bodova koje Pacman dobiva za jedenje prvog duha.
         protected int pointsWorth = 200;
 
+        // Nalazi li se duh u tunelu.
+        protected bool inTunnel = false;
+
+        // Koliko dugo je duh još zamrznut (jer je pacman pojeo jagodu).
+        protected int frozenDuration = 0;
+
+        // Koliko dugo je duh još ubrzan (jer je pacman pojeo trulu jagodu).
+        protected int strawberrieDuration = 0;
+
+        // Je li ubrzanje od jagode i dalje aktivno.
+        protected bool isStrawberrieActive = false;
+
         public Ghost(Form form) : base(form) 
         {
             // Na početku su duhovi sporiji od pacmana.
             timerInterval = 172;
+            characterTimer.Interval = timerInterval;
             rand = new Random();
         }
 
@@ -54,8 +67,19 @@ namespace Pacman
         {
             drawCharacter();
             checkSquare();
-            moveCharacter();
-            checkSquare();
+            
+            // Ako je zalđen duh se ne miče, no on i dalje može pojesti pacmana.
+            if (frozenDuration > 0) {
+                frozenDuration -= timerInterval;
+                return;
+            } else moveCharacter();
+
+            if (strawberrieDuration > 0) strawberrieDuration -= timerInterval;
+            else if (isStrawberrieActive) {
+                isStrawberrieActive = false;
+                undoIncreaseSpeedBy50Percent();
+            }
+            
 
             // Ako je duh bježao.
             if (s == State.Flee) {
@@ -64,6 +88,7 @@ namespace Pacman
                 if (remainingFleeDuration <= 0) {
                     s = State.Chase;
                     doubleSpeed();
+                    loadStandardImage();
                     // Resetiraj broj pojedenih duhova u Flee stanju.
                     Form1.pacman.resetGhostsEaten();
                 }
@@ -77,13 +102,8 @@ namespace Pacman
                 if (s == State.Chase) Form1.pacman.lifeLost();
                 else if (s == State.Flee)
 				{
-                    i = startI;
-                    j = startJ;
-                    s = State.Chase;
-                    exitingBox = 0;
-                    remainingFleeDuration = 0;
-                    timerInterval = Form1.PacmanDefaultSpeed + 12; // Duhovi su sporiji od pacmana.
-                    characterTimer.Interval = timerInterval;
+                    reset();
+                    waitElapsed = waitTreshold - 5;
                     Form1.pacman.ateGhost();
 				}
 			}
@@ -179,11 +199,35 @@ namespace Pacman
                 }
             }
 
+
+            // Ako je duh ušao, tj. izašao iz tunela od portala.
+            // Duhovi se miču duplo sporije u portalu.
+            if (i == 16 && (j == 5 || j == 22))
+                enterTunnel();
+            else if (i == 16 && (j == 6 || j == 21))
+                exitTunnel();
+        }
+
+        public void enterTunnel()
+        {
+            if (!inTunnel) {
+                inTunnel = true;
+                halveSpeed();
+            }
+        }
+
+        public void exitTunnel()
+        {
+            if (inTunnel) {
+                inTunnel = false;
+                doubleSpeed();
+            }
         }
 
         // Resetira duha na početak i duh čeka određeno vrijeme prije nego što se počne kretati.
         public void reset()
 		{
+            exitTunnel();
             i = startI;
             j = startJ;
             s = State.Chase;
@@ -192,17 +236,22 @@ namespace Pacman
             remainingFleeDuration = 0;
             timerInterval = Form1.PacmanDefaultSpeed + 12; // Duhovi su sporiji od pacmana.
             characterTimer.Interval = timerInterval;
+            frozenDuration = 0;
+            strawberrieDuration = 0;
+            isStrawberrieActive = false;
+            loadStandardImage();
 		}
 
         // Poziva se kada pacman pojede super kolačić. Duh prelazi u stanje bježanja na duration milisekundi.
-        public void flee(int duration) 
+        public void flee() 
         {
             // Duhovi mjenjaju smjer.
             currentDirection = oppositeDirection(currentDirection);
 
-            remainingFleeDuration = duration;
+            remainingFleeDuration = Form1.SuperCookieDuration;
             s = State.Flee;
             halveSpeed();
+            loadFleeImage();
         }
 
         // Računaju kordinate do kojih duh pokušava doći.
@@ -216,6 +265,30 @@ namespace Pacman
             get { return pointsWorth; }
         }
 
+        // Promjeni izgled duha u njegovu formu kada bježi od pacmana
+        // tj. pacman ga može pojesti.
+        public void loadFleeImage()
+        {
+            // Placeholder.
+            characterPictureBox.BackColor = Color.WhiteSmoke;
+        }
+
+        // Promjeni izgled duha u njegovu standardnu formu kada lovi pacmana.
+        abstract public void loadStandardImage();
+
+        // Ovako se duhu javlja da je pojedena jagoda.
+        public void ateStrawberrie()
+        {
+            frozenDuration = Form1.SuperCookieDuration;
+        }
+
+        // Ovom metodom se duhu javlja da je pojedana trula jagoda.
+        public void ateRottenStrawberrie()
+        {
+            strawberrieDuration = Form1.RottenFruitDuration;
+            increaseSpeedBy50Percent();
+            isStrawberrieActive = true;
+        }
     }
 
     public class RedGhost : Ghost 
@@ -224,8 +297,7 @@ namespace Pacman
         {
             waitTreshold = 0;
 
-            // Placeholder.
-            characterPictureBox.BackColor = Color.Red;
+            loadStandardImage();
         }
 
         // Ovaj duh pokušava doći do pacmanove trenutne pozicije.
@@ -246,6 +318,12 @@ namespace Pacman
         {
             get { return 12; }
         }
+
+		public override void loadStandardImage()
+		{
+			// Placeholder.
+            characterPictureBox.BackColor = Color.Red;
+		}
 	}
 
     public class PinkGhost : Ghost 
@@ -254,8 +332,7 @@ namespace Pacman
         {
             waitTreshold = 10;
 
-            // Placeholder.
-            characterPictureBox.BackColor = Color.LightPink;
+            loadStandardImage();
         }
 
         // Ovaj duh pokušava doći do pozicije 4 mjesta ispred pacmana.
@@ -292,6 +369,12 @@ namespace Pacman
         {
             get { return 13; }
         }
+
+        public override void loadStandardImage()
+		{
+			// Placeholder.
+            characterPictureBox.BackColor = Color.LightPink;
+		}
 	}
 
     public class BlueGhost : Ghost 
@@ -300,8 +383,7 @@ namespace Pacman
         {
             waitTreshold = 20;
 
-            // Placeholder.
-            characterPictureBox.BackColor = Color.LightSkyBlue;
+            loadStandardImage();
         }
 
         // Ovaj duh se pokušava pozicionirati tako da je
@@ -343,6 +425,12 @@ namespace Pacman
         {
             get { return 14; }
         }
+
+        public override void loadStandardImage()
+		{
+			// Placeholder.
+            characterPictureBox.BackColor = Color.LightSkyBlue;
+		}
 	}
 
     public class OrangeGhost : Ghost 
@@ -351,8 +439,7 @@ namespace Pacman
         {
             waitTreshold = 40;
             
-            // Placeholder.
-            characterPictureBox.BackColor = Color.DarkOrange;
+            loadStandardImage();
         }
 
         // Ovaj duh lovi pacmanovu trenutnu poziciju dok god je
@@ -383,6 +470,12 @@ namespace Pacman
         {
             get { return 15; }
         }
+
+        public override void loadStandardImage()
+		{
+			// Placeholder.
+            characterPictureBox.BackColor = Color.DarkOrange;
+		}
 	}
 }
 

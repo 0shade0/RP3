@@ -188,6 +188,13 @@ namespace Pacman
                 Food.eatCookie(i, j);
             else if (square == 'o')
                 Food.eatSuperCookie(i, j);
+
+            // Provjera je li se neki od duhova ovdje nalazi.
+            // Ako pacman ne radi ovu provjeru može proći kroz duha.
+            Form1.redGhost.checkSquare();
+            Form1.pinkGhost.checkSquare();
+            Form1.blueGhost.checkSquare();
+            Form1.orangeGhost.checkSquare();
         }
 
         public override int startI 

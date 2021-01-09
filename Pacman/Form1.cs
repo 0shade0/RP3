@@ -82,12 +82,12 @@ namespace Pacman
             return Math.Abs(i1 - i2) + Math.Abs(j1 - j2);
         }
 
-        // Trajanje superKolaća, 6 sekundi na levelu 1, 0 sekundi na levelu 21 i dalje.
+        // Trajanje superKolaća, 7 sekundi na levelu 1, 0 sekundi na levelu 21 i dalje.
         public static int SuperCookieDuration
         {
             get 
             {
-                return Math.Max(6000 - 300 * (Form1.pacman.Level - 1), 0);
+                return Math.Max(7000 - 350 * (Form1.pacman.Level - 1), 0);
             }
         }
 
@@ -95,6 +95,15 @@ namespace Pacman
         {
             // Place holder, treba napraviti da ovisi i o tipu igre.
             get { return Math.Max(48, 160 - SpeedIncPerLevel * (Form1.pacman.Level - 1)); }
+        }
+
+        // Trajanje voća koje odmaže pacmanu, 7 sekundi.
+        public static int RottenFruitDuration
+        {
+            get 
+            {
+                return 7000;
+            }
         }
     }
 }

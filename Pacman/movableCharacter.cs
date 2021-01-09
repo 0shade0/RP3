@@ -87,6 +87,20 @@ namespace Pacman
             timerInterval /= 2;
             characterTimer.Interval /= 2;
         }
+
+        public void increaseSpeedBy50Percent()
+        {
+            timerInterval += timerInterval / 2;
+            characterTimer.Interval = timerInterval;
+        }
+
+        // Vraća brzinu na stanje prije pozivanja increaseSpeedBy50Percent().
+        public void undoIncreaseSpeedBy50Percent()
+        {
+            timerInterval = 2 * (timerInterval / 3);
+            characterTimer.Interval = timerInterval;
+        }
+
         public virtual void changeDirection(Direction dir)
         {
             if (movePossible(dir))
