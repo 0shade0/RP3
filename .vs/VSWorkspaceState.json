@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Pacman"
   ],
-  "SelectedNode": "\\Pacman.sln",
+  "SelectedNode": "\\Pacman\\Ghosts.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -9,3 +9,14 @@ F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj
 F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj\Debug\Pacman.pdb
 F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj\Debug\Pacman.Form1.resources
 F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj\Debug\Pacman.Resource1.resources
+C:\Users\thund\Linux\rp3\RP3\Pacman\bin\Debug\Pacman.exe.config
+C:\Users\thund\Linux\rp3\RP3\Pacman\bin\Debug\Pacman.exe
+C:\Users\thund\Linux\rp3\RP3\Pacman\bin\Debug\Pacman.pdb
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.csprojAssemblyReference.cache
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.Form1.resources
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.Properties.Resources.resources
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.Resource1.resources
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.csproj.GenerateResource.cache
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.csproj.CoreCompileInputs.cache
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.exe
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.pdb
