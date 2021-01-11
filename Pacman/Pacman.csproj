@@ -88,8 +88,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -241,6 +241,60 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\GoldenApple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueGhostDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueGhostLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueGhostRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueGhostUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GhostFleeBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GhostFleeWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrangeGhostDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrangeGhostLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrangeGhostRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrangeGhostUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PinkGhostDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PinkGhostLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PinkGhostRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PinkGhostUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedGhostDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedGhostLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedGhostRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedGhostUp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

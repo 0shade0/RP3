@@ -127,6 +127,18 @@
   <data name="AppleRotten" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AppleRotten.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BlueGhostDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BlueGhostDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BlueGhostLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BlueGhostLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BlueGhostRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BlueGhostRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BlueGhostUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BlueGhostUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Cherries" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cherries.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,6 +175,12 @@
   <data name="cookieImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cookieImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GhostFleeBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GhostFleeBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GhostFleeWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GhostFleeWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MsPacmanDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MsPacmanDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -189,6 +207,18 @@
   </data>
   <data name="MsPacmanUpEat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MsPacmanUpEat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OrangeGhostDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OrangeGhostDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OrangeGhostLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OrangeGhostLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OrangeGhostRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OrangeGhostRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OrangeGhostUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OrangeGhostUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PacmanDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PacmanDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -222,6 +252,30 @@
   </data>
   <data name="PearRotten" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PearRotten.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PinkGhostDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PinkGhostDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PinkGhostLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PinkGhostLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PinkGhostRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PinkGhostRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PinkGhostUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PinkGhostUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RedGhostDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RedGhostDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RedGhostLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RedGhostLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RedGhostRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RedGhostRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RedGhostUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RedGhostUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="superCookieImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\superCookieImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

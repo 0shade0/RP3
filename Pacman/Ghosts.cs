@@ -55,11 +55,22 @@ namespace Pacman
         // Je li ubrzanje od jagode i dalje aktivno.
         protected bool isStrawberrieActive = false;
 
+        // Isto kao i u pacman klasi.
+        public enum Character
+        {
+            Default
+        }
+
+        // Isto kao i u pacman klasi.
+        // Odabrani lik za duhove (iz menija).
+        public Character chosenCharacter = Character.Default;
+
         public Ghost(Form form) : base(form) 
         {
             // Na početku su duhovi sporiji od pacmana.
             timerInterval = 172;
             characterTimer.Interval = timerInterval;
+            currentImage = 0;
             rand = new Random();
         }
 
@@ -125,6 +136,7 @@ namespace Pacman
                 currentDirection = Direction.Up;
                 exitingBox += 1;
                 i -= 1; // Svi duhovi se penju gore da bi izašli iz kuće.
+                loadStandardImage();
             }
 
             // Ako je duh na portalu.
@@ -198,6 +210,7 @@ namespace Pacman
                         i += 1;
                         break;
                 }
+                loadStandardImage();
             }
 
 
@@ -240,6 +253,8 @@ namespace Pacman
             frozenDuration = 0;
             strawberrieDuration = 0;
             isStrawberrieActive = false;
+            currentImage = 0;
+            currentDirection = Direction.Up;
             loadStandardImage();
 		}
 
@@ -270,12 +285,31 @@ namespace Pacman
         // tj. pacman ga može pojesti.
         public void loadFleeImage()
         {
-            // Placeholder.
-            characterPictureBox.BackColor = Color.WhiteSmoke;
+            currentImage = 4;
         }
 
         // Promjeni izgled duha u njegovu standardnu formu kada lovi pacmana.
-        abstract public void loadStandardImage();
+        // Ne radi ništa ako duh bježi.
+        public void loadStandardImage()
+		{
+            if (s == State.Flee) return;
+
+            switch (currentDirection)
+			{
+                case Direction.Up:
+                    currentImage = 0;
+                    break;
+                case Direction.Left:
+                    currentImage = 1;
+                    break;
+                case Direction.Down:
+                    currentImage = 2;
+                    break;
+                case Direction.Right:
+                    currentImage = 3;
+                    break;
+            }
+		}
 
         // Ovako se duhu javlja da je pojedena jagoda.
         public void ateStrawberrie()
@@ -298,7 +332,15 @@ namespace Pacman
         {
             waitTreshold = 0;
 
-            loadStandardImage();
+            if (chosenCharacter == Character.Default)
+			{
+                characterImages[0] = new Bitmap(Properties.Resources.RedGhostUp);
+                characterImages.Add(new Bitmap(Properties.Resources.RedGhostLeft));
+                characterImages.Add(new Bitmap(Properties.Resources.RedGhostDown));
+                characterImages.Add(new Bitmap(Properties.Resources.RedGhostRight));
+                characterImages.Add(new Bitmap(Properties.Resources.GhostFleeBlue));
+                characterImages.Add(new Bitmap(Properties.Resources.GhostFleeWhite));
+            }
         }
 
         // Ovaj duh pokušava doći do pacmanove trenutne pozicije.
@@ -319,12 +361,6 @@ namespace Pacman
         {
             get { return 12; }
         }
-
-		public override void loadStandardImage()
-		{
-			// Placeholder.
-            characterPictureBox.BackColor = Color.Red;
-		}
 	}
 
     public class PinkGhost : Ghost 
@@ -333,7 +369,15 @@ namespace Pacman
         {
             waitTreshold = 10;
 
-            loadStandardImage();
+            if (chosenCharacter == Character.Default)
+            {
+                characterImages[0] = new Bitmap(Properties.Resources.PinkGhostUp);
+                characterImages.Add(new Bitmap(Properties.Resources.PinkGhostLeft));
+                characterImages.Add(new Bitmap(Properties.Resources.PinkGhostDown));
+                characterImages.Add(new Bitmap(Properties.Resources.PinkGhostRight));
+                characterImages.Add(new Bitmap(Properties.Resources.GhostFleeBlue));
+                characterImages.Add(new Bitmap(Properties.Resources.GhostFleeWhite));
+            }
         }
 
         // Ovaj duh pokušava doći do pozicije 4 mjesta ispred pacmana.
@@ -370,12 +414,6 @@ namespace Pacman
         {
             get { return 13; }
         }
-
-        public override void loadStandardImage()
-		{
-			// Placeholder.
-            characterPictureBox.BackColor = Color.LightPink;
-		}
 	}
 
     public class BlueGhost : Ghost 
@@ -384,7 +422,15 @@ namespace Pacman
         {
             waitTreshold = 20;
 
-            loadStandardImage();
+            if (chosenCharacter == Character.Default)
+            {
+                characterImages[0] = new Bitmap(Properties.Resources.BlueGhostUp);
+                characterImages.Add(new Bitmap(Properties.Resources.BlueGhostLeft));
+                characterImages.Add(new Bitmap(Properties.Resources.BlueGhostDown));
+                characterImages.Add(new Bitmap(Properties.Resources.BlueGhostRight));
+                characterImages.Add(new Bitmap(Properties.Resources.GhostFleeBlue));
+                characterImages.Add(new Bitmap(Properties.Resources.GhostFleeWhite));
+            }
         }
 
         // Ovaj duh se pokušava pozicionirati tako da je
@@ -426,12 +472,6 @@ namespace Pacman
         {
             get { return 14; }
         }
-
-        public override void loadStandardImage()
-		{
-			// Placeholder.
-            characterPictureBox.BackColor = Color.LightSkyBlue;
-		}
 	}
 
     public class OrangeGhost : Ghost 
@@ -439,8 +479,16 @@ namespace Pacman
         public OrangeGhost(Form form) : base(form) 
         {
             waitTreshold = 40;
-            
-            loadStandardImage();
+
+            if (chosenCharacter == Character.Default)
+            {
+                characterImages[0] = new Bitmap(Properties.Resources.OrangeGhostUp);
+                characterImages.Add(new Bitmap(Properties.Resources.OrangeGhostLeft));
+                characterImages.Add(new Bitmap(Properties.Resources.OrangeGhostDown));
+                characterImages.Add(new Bitmap(Properties.Resources.OrangeGhostRight));
+                characterImages.Add(new Bitmap(Properties.Resources.GhostFleeBlue));
+                characterImages.Add(new Bitmap(Properties.Resources.GhostFleeWhite));
+            }
         }
 
         // Ovaj duh lovi pacmanovu trenutnu poziciju dok god je
@@ -471,12 +519,6 @@ namespace Pacman
         {
             get { return 15; }
         }
-
-        public override void loadStandardImage()
-		{
-			// Placeholder.
-            characterPictureBox.BackColor = Color.DarkOrange;
-		}
 	}
 }
 
