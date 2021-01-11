@@ -63,7 +63,7 @@ namespace Pacman
 
         // Isto kao i u pacman klasi.
         // Odabrani lik za duhove (iz menija).
-        public Character chosenCharacter = Character.Default;
+        protected Character chosenCharacter = Character.Default;
 
         public Ghost(Form form) : base(form) 
         {
@@ -323,6 +323,13 @@ namespace Pacman
             strawberrieDuration = Form1.RottenFruitDuration;
             increaseSpeedBy50Percent();
             isStrawberrieActive = true;
+        }
+
+        // Isto kao u pacman klasi.
+        public Character ChosenCharacter
+        {
+            set { chosenCharacter = value; }
+            get { return chosenCharacter; }
         }
     }
 
