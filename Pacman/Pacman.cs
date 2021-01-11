@@ -168,6 +168,7 @@ namespace Pacman
 
         public void nextLevel()
         {
+            Sounds.winSound.Play();
             level += 1;
             Form1.grid.resetGrid();
             increaseSpeed(Form1.SpeedIncPerLevel); // Dijeljivo s 4.
@@ -223,10 +224,12 @@ namespace Pacman
             // Oduzmi život.
             if (lives == 0)
             {
+                Sounds.gameOverSound.Play();
                 // TODO: Game Over.
             }
             else
             {
+                Sounds.loseSound.Play();
                 lives -= 1;
                 livesPictureBoxes[lives].Image = null;
             }

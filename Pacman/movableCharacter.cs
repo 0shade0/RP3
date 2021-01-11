@@ -63,6 +63,11 @@ namespace Pacman
             characterTimer.Start();
         }
 
+        public void stopTimer()
+        {
+            characterTimer.Stop();
+        }
+
         protected virtual void characterTimerTick (object sender, EventArgs e)
         {
             drawCharacter();

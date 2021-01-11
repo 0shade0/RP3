@@ -52,6 +52,15 @@ namespace Pacman
             ResumeLayout();
         }
 
+        public static void stopGame()
+        {
+            pacman.stopTimer();
+            redGhost.stopTimer();
+            pinkGhost.stopTimer();
+            blueGhost.stopTimer();
+            orangeGhost.stopTimer();
+        }
+
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             var key = e.KeyCode;

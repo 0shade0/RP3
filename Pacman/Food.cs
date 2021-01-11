@@ -10,6 +10,7 @@ namespace Pacman
     {
         public static void eatCookie(int i, int j)
         {
+            Sounds.eatSound.Play();
             Form1.grid.decrementCntCookie();
             Form1.grid.clearSquare(i, j);
             Form1.pacman.incrementScore(10);
@@ -20,6 +21,7 @@ namespace Pacman
 
         public static void eatSuperCookie(int i, int j)
         {
+            Sounds.eatSuperSound.Play();
             Form1.grid.decrementCntCookie();
             Form1.grid.clearSquare(i, j);
             Form1.pacman.incrementScore(50);

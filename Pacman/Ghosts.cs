@@ -102,6 +102,7 @@ namespace Pacman
                 if (s == State.Chase) Form1.pacman.lifeLost();
                 else if (s == State.Flee)
 				{
+                    Sounds.eatGhostSound.Play();
                     reset();
                     waitElapsed = waitTreshold - 5;
                     Form1.pacman.ateGhost();

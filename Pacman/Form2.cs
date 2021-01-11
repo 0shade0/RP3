@@ -15,6 +15,7 @@ namespace Pacman
         public Form2()
         {
             InitializeComponent();
+            Sounds.InitializeSounds();
 
             button1.Hide();
             button2.Hide();
@@ -22,6 +23,7 @@ namespace Pacman
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Sounds.menuSound.Play();
             menu.Hide();
             Form1 objForm = new Form1();
             objForm.TopLevel = false;
@@ -36,11 +38,13 @@ namespace Pacman
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Sounds.menuSound.Play();
             Application.Exit();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Sounds.menuSound.Play();
             menu.Hide();
             Form3 objForm = new Form3();
             objForm.TopLevel = false;
@@ -55,8 +59,16 @@ namespace Pacman
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            Sounds.menuSound.Play();
             foreach (Control obj in this.Controls)
-                if (obj.GetType() == typeof(Form3) || obj.GetType() == typeof(Form1)) obj.Dispose();
+                if (obj.GetType() == typeof(Form3)) obj.Dispose();
+                else
+                    if (obj.GetType() == typeof(Form1))
+                    {
+                        Form1.stopGame();
+                        obj.Dispose();
+                    }
+
             menu.Show();
             button1.Hide();
             button2.Hide();
