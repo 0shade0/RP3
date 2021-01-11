@@ -26,6 +26,7 @@ namespace Pacman
 
         // Povećanje brzine po levelu.
         public static int SpeedIncPerLevel = 4;
+        public static bool paused = false;
 
         public Form1()
         {
@@ -50,6 +51,9 @@ namespace Pacman
             blueGhost.startTimer();
             orangeGhost.startTimer();
             ResumeLayout();
+
+            label1.Hide();
+            panel1.Hide();
         }
 
         public static void stopGame()
@@ -59,11 +63,25 @@ namespace Pacman
             pinkGhost.stopTimer();
             blueGhost.stopTimer();
             orangeGhost.stopTimer();
+
+            paused = true;
+        }
+
+        public static void startGame()
+        {
+            pacman.startTimer();
+            redGhost.startTimer();
+            pinkGhost.startTimer();
+            blueGhost.startTimer();
+            orangeGhost.startTimer();
+
+            paused = false;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             var key = e.KeyCode;
+            if (paused && key != Keys.Escape) return;
             switch(key)
             {
                 case Keys.Left:
@@ -81,6 +99,21 @@ namespace Pacman
                 case Keys.Down:
                 case Keys.S:
                     pacman.changeDirection(Pacman.Direction.Down);
+                    break;
+                case Keys.Escape:
+                    if (paused)
+                    {
+                        startGame();
+                        panel1.Hide();
+                        label1.Hide();
+                    }
+                    else
+                    {
+                        stopGame();
+                        panel1.Show();
+                        label1.Show();
+                        panel1.BringToFront();
+                    }
                     break;
             }
         }

@@ -34,6 +34,7 @@ namespace Pacman
             objForm.Focus();
             objForm.KeyPreview = true;
             button1.Show();
+            Form1.startGame();
         }
 
         private void button3_Click(object sender, EventArgs e)
