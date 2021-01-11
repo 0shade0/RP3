@@ -167,5 +167,77 @@
   <ItemGroup>
     <None Include="Resources\Win.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChristmasPacmanDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChristmasPacmanDownEat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChristmasPacmanLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChristmasPacmanLeftEat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChristmasPacmanRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChristmasPacmanRightEat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChristmasPacmanUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChristmasPacmanUpEat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MsPacmanDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MsPacmanDownEat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MsPacmanLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MsPacmanLeftEat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MsPacmanRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MsPacmanRightEat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MsPacmanUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MsPacmanUpEat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AppleRotten.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cherries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CherriesRotten.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PearRotten.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChristmasPacmanNone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MsPacmanNone.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,6 +10,16 @@ namespace Pacman
 {
     public class Pacman : movableCharacter
     {
+        // Mogući likovi za Pacmana.
+        public enum Character
+        {
+            Pacman,
+            MsPacman,
+            ChristmasPacman
+        }
+        // Odabrani lik za Pacmana (iz menija).
+        Character chosenCharacter;
+
         // Pacmanovi bodovi.
         protected int score = 0;
         // Broj pojedenih duhova u trajanju Flee stanja.
@@ -52,11 +62,52 @@ namespace Pacman
             levelLabel.Location = new Point(form.Width - levelLabel.Width - 12, 9);
             form.Controls.Add(levelLabel);
 
+            // Ovo treba odabrati u meniju.
+            chosenCharacter = Character.ChristmasPacman;
+            // Učitavanje slika za Pacmana.
+            if (chosenCharacter == Character.MsPacman)
+            {
+                characterImages[0] = new Bitmap(Properties.Resources.MsPacmanLeft);// Ovo treba obrisati kad se obriše ono iz movableCharacter konstruktora.
+                characterImages.Add(new Bitmap(Properties.Resources.MsPacmanLeftEat));
+                characterImages.Add(new Bitmap(Properties.Resources.MsPacmanUp));
+                characterImages.Add(new Bitmap(Properties.Resources.MsPacmanUpEat));
+                characterImages.Add(new Bitmap(Properties.Resources.MsPacmanRight));
+                characterImages.Add(new Bitmap(Properties.Resources.MsPacmanRightEat));
+                characterImages.Add(new Bitmap(Properties.Resources.MsPacmanDown));
+                characterImages.Add(new Bitmap(Properties.Resources.MsPacmanDownEat));
+                characterImages.Add(new Bitmap(Properties.Resources.MsPacmanNone));
+            }
+            else if (chosenCharacter == Character.ChristmasPacman)
+            {
+                characterImages[0] = new Bitmap(Properties.Resources.ChristmasPacmanLeft);// Ovo treba obrisati kad se obriše ono iz movableCharacter konstruktora.
+                characterImages.Add(new Bitmap(Properties.Resources.ChristmasPacmanLeftEat));
+                characterImages.Add(new Bitmap(Properties.Resources.ChristmasPacmanUp));
+                characterImages.Add(new Bitmap(Properties.Resources.ChristmasPacmanUpEat));
+                characterImages.Add(new Bitmap(Properties.Resources.ChristmasPacmanRight));
+                characterImages.Add(new Bitmap(Properties.Resources.ChristmasPacmanRightEat));
+                characterImages.Add(new Bitmap(Properties.Resources.ChristmasPacmanDown));
+                characterImages.Add(new Bitmap(Properties.Resources.ChristmasPacmanDownEat));
+                characterImages.Add(new Bitmap(Properties.Resources.ChristmasPacmanNone));
+            }
+            else 
+            {
+                characterImages[0] = new Bitmap(Properties.Resources.PacmanLeft);// Ovo treba obrisati kad se obriše ono iz movableCharacter konstruktora.
+                characterImages.Add(new Bitmap(Properties.Resources.PacmanLeftEat));
+                characterImages.Add(new Bitmap(Properties.Resources.PacmanUp));
+                characterImages.Add(new Bitmap(Properties.Resources.PacmanUpEat));
+                characterImages.Add(new Bitmap(Properties.Resources.PacmanRight));
+                characterImages.Add(new Bitmap(Properties.Resources.PacmanRightEat));
+                characterImages.Add(new Bitmap(Properties.Resources.PacmanDown));
+                characterImages.Add(new Bitmap(Properties.Resources.PacmanDownEat));
+                characterImages.Add(new Bitmap(Properties.Resources.PacmanNone));
+            }
+            currentImage = characterImages.Count - 1;
+
             // PictureBoxevi za živote.
             for (int i = 0; i < lives; i++)
             {
                 PictureBox life = new PictureBox();
-                life.Image = Properties.Resources.PacmanLeft;
+                life.Image = characterImages[0];
                 life.SizeMode = PictureBoxSizeMode.StretchImage;
                 life.Location = new Point(Form1.squareSize.X * (i + 2), Form1.squareSize.Y * 33);
                 life.Size = new Size(Form1.squareSize.X, Form1.squareSize.Y);
@@ -65,20 +116,6 @@ namespace Pacman
                 form.Controls.Add(livesPictureBoxes[i]);
                 livesPictureBoxes[i].BringToFront();
             }
-
-
-            // Učitavanje slika za Pacmana.
-            // Ovo treba obrisati kad se obriše ono iz movableCharacter konstruktora.
-            characterImages[0] = new Bitmap(Properties.Resources.PacmanLeft);
-            characterImages.Add(new Bitmap(Properties.Resources.PacmanLeftEat));
-            characterImages.Add(new Bitmap(Properties.Resources.PacmanUp));
-            characterImages.Add(new Bitmap(Properties.Resources.PacmanUpEat));
-            characterImages.Add(new Bitmap(Properties.Resources.PacmanRight));
-            characterImages.Add(new Bitmap(Properties.Resources.PacmanRightEat));
-            characterImages.Add(new Bitmap(Properties.Resources.PacmanDown));
-            characterImages.Add(new Bitmap(Properties.Resources.PacmanDownEat));
-            characterImages.Add(new Bitmap(Properties.Resources.PacmanNone));
-            currentImage = characterImages.Count - 1;
         }
 
         protected override void characterTimerTick(object sender, EventArgs e)
@@ -253,6 +290,12 @@ namespace Pacman
         public int Level
         {
             get { return level; }
+        }
+
+        public Character ChosenCharacter
+        {
+            set { chosenCharacter = value; }
+            get { return chosenCharacter; }
         }
     }
 }

@@ -118,8 +118,74 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Apple" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Apple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AppleRotten" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AppleRotten.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cherries" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cherries.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CherriesRotten" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CherriesRotten.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChristmasPacmanDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChristmasPacmanDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChristmasPacmanDownEat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChristmasPacmanDownEat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChristmasPacmanLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChristmasPacmanLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChristmasPacmanLeftEat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChristmasPacmanLeftEat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChristmasPacmanNone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChristmasPacmanNone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChristmasPacmanRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChristmasPacmanRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChristmasPacmanRightEat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChristmasPacmanRightEat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChristmasPacmanUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChristmasPacmanUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChristmasPacmanUpEat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChristmasPacmanUpEat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cookieImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cookieImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MsPacmanDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MsPacmanDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MsPacmanDownEat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MsPacmanDownEat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MsPacmanLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MsPacmanLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MsPacmanLeftEat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MsPacmanLeftEat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MsPacmanNone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MsPacmanNone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MsPacmanRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MsPacmanRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MsPacmanRightEat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MsPacmanRightEat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MsPacmanUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MsPacmanUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MsPacmanUpEat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MsPacmanUpEat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PacmanDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PacmanDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -147,6 +213,12 @@
   </data>
   <data name="PacmanUpEat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PacmanUpEat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PearRotten" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PearRotten.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="superCookieImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\superCookieImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
