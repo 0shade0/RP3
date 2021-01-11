@@ -75,6 +75,16 @@ namespace Pacman
                     break;
             }
         }
+        // Dvije funkcije koje osiguravaju da glavna forma prepoznaje inpute strjelica
+        private void LayoutControl1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            e.IsInputKey = (e.KeyCode == Keys.Left || e.KeyCode == Keys.Right || e.KeyCode == Keys.Up || e.KeyCode == Keys.Down);
+        }
+        protected override void OnPreviewKeyDown(PreviewKeyDownEventArgs e)
+        {
+            e.IsInputKey = (e.KeyCode == Keys.Left || e.KeyCode == Keys.Right || e.KeyCode == Keys.Up || e.KeyCode == Keys.Down);
+            base.OnPreviewKeyDown(e);
+        }
 
         // Pomoćna funkcija.
         public static int manhattanDistance(int i1, int j1, int i2, int j2)
