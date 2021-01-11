@@ -35,3 +35,8 @@ C:\Users\Acer\source\repos\RP3\Pacman\obj\Debug\Pacman.Form2.resources
 C:\Users\Acer\source\repos\RP3\Pacman\obj\Debug\Pacman.Form3.resources
 F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj\Debug\Pacman.Form2.resources
 F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj\Debug\Pacman.Form3.resources
+C:\Users\Acer\source\repos\RP3\Pacman\bin\Debug\Interop.WMPLib.dll
+C:\Users\Acer\source\repos\RP3\Pacman\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Acer\source\repos\RP3\Pacman\obj\Debug\Interop.WMPLib.dll
+C:\Users\Acer\source\repos\RP3\Pacman\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Acer\source\repos\RP3\Pacman\obj\Debug\Pacman.csproj.ResolveComReference.cache

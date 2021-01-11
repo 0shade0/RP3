@@ -124,6 +124,9 @@
   <data name="Eaten" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Eaten.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Focus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Focus.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="GhostMlem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\GhostMlem.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -135,6 +138,9 @@
   </data>
   <data name="SuperMlem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\SuperMlem.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Valor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Valor.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Win" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Win.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

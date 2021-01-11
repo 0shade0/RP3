@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Pacman
 {
@@ -16,14 +17,26 @@ namespace Pacman
         {
             InitializeComponent();
             Sounds.InitializeSounds();
+            SetMusic("Focus");
 
             button1.Hide();
             button2.Hide();
+            Form1.paused = true;
+        }
+
+        private void SetMusic(string name)
+        {
+            axWindowsMediaPlayer1.settings.setMode("Loop", true);
+            axWindowsMediaPlayer1.settings.volume = 25;
+            string path = Path.GetFullPath(Path.Combine(System.Windows.Forms.Application.StartupPath, @"../../Resources/"));
+            axWindowsMediaPlayer1.URL = path + name + ".mp3";
+            axWindowsMediaPlayer1.Ctlcontrols.play();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Sounds.menuSound.Play();
+            SetMusic("Valor");
             menu.Hide();
             Form1 objForm = new Form1();
             objForm.TopLevel = false;
@@ -61,6 +74,7 @@ namespace Pacman
         private void button1_Click_1(object sender, EventArgs e)
         {
             Sounds.menuSound.Play();
+            if(!Form1.paused) SetMusic("Focus");
             foreach (Control obj in this.Controls)
                 if (obj.GetType() == typeof(Form3)) obj.Dispose();
                 else
@@ -73,11 +87,6 @@ namespace Pacman
             menu.Show();
             button1.Hide();
             button2.Hide();
-        }
-
-        private void Form2_KeyDown(object sender, KeyEventArgs e)
-        {
-
         }
     }
 }
