@@ -63,7 +63,7 @@ namespace Pacman
             form.Controls.Add(levelLabel);
 
             // Ovo treba odabrati u meniju.
-            chosenCharacter = Character.ChristmasPacman;
+            chosenCharacter = Character.Pacman;
             // Učitavanje slika za Pacmana.
             if (chosenCharacter == Character.MsPacman)
             {
