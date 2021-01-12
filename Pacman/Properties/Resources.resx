@@ -139,6 +139,9 @@
   <data name="BlueGhostUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BlueGhostUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BlueKanji" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BlueKanji.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Cherries" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cherries.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -181,6 +184,12 @@
   <data name="GhostFleeWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GhostFleeWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="KanjiFleeBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KanjiFleeBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KanjiFleeWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KanjiFleeWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MsPacmanDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MsPacmanDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -219,6 +228,9 @@
   </data>
   <data name="OrangeGhostUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OrangeGhostUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OrangeKanji" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OrangeKanji.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PacmanDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PacmanDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -265,6 +277,9 @@
   <data name="PinkGhostUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PinkGhostUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PinkKanji" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PinkKanji.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="RedGhostDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RedGhostDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -276,6 +291,9 @@
   </data>
   <data name="RedGhostUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RedGhostUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RedKanji" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RedKanji.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="superCookieImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\superCookieImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

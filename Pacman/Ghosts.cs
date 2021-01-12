@@ -58,12 +58,13 @@ namespace Pacman
         // Isto kao i u pacman klasi.
         public enum Character
         {
-            Default
+            Default,
+            Kanji
         }
 
         // Isto kao i u pacman klasi.
         // Odabrani lik za duhove (iz menija).
-        protected Character chosenCharacter = Character.Default;
+        protected Character chosenCharacter = Character.Kanji;
 
         public Ghost(Form form) : base(form) 
         {
@@ -347,6 +348,14 @@ namespace Pacman
                 characterImages.Add(new Bitmap(Properties.Resources.RedGhostRight));
                 characterImages.Add(new Bitmap(Properties.Resources.GhostFleeBlue));
                 characterImages.Add(new Bitmap(Properties.Resources.GhostFleeWhite));
+            } else if (chosenCharacter == Character.Kanji)
+			{
+                characterImages[0] = new Bitmap(Properties.Resources.RedKanji);
+                characterImages.Add(new Bitmap(Properties.Resources.RedKanji));
+                characterImages.Add(new Bitmap(Properties.Resources.RedKanji));
+                characterImages.Add(new Bitmap(Properties.Resources.RedKanji));
+                characterImages.Add(new Bitmap(Properties.Resources.KanjiFleeBlue));
+                characterImages.Add(new Bitmap(Properties.Resources.KanjiFleeWhite));
             }
         }
 
@@ -384,6 +393,14 @@ namespace Pacman
                 characterImages.Add(new Bitmap(Properties.Resources.PinkGhostRight));
                 characterImages.Add(new Bitmap(Properties.Resources.GhostFleeBlue));
                 characterImages.Add(new Bitmap(Properties.Resources.GhostFleeWhite));
+            } else if (chosenCharacter == Character.Kanji)
+            {
+                characterImages[0] = new Bitmap(Properties.Resources.PinkKanji);
+                characterImages.Add(new Bitmap(Properties.Resources.PinkKanji));
+                characterImages.Add(new Bitmap(Properties.Resources.PinkKanji));
+                characterImages.Add(new Bitmap(Properties.Resources.PinkKanji));
+                characterImages.Add(new Bitmap(Properties.Resources.KanjiFleeBlue));
+                characterImages.Add(new Bitmap(Properties.Resources.KanjiFleeWhite));
             }
         }
 
@@ -437,6 +454,14 @@ namespace Pacman
                 characterImages.Add(new Bitmap(Properties.Resources.BlueGhostRight));
                 characterImages.Add(new Bitmap(Properties.Resources.GhostFleeBlue));
                 characterImages.Add(new Bitmap(Properties.Resources.GhostFleeWhite));
+            } else if (chosenCharacter == Character.Kanji)
+            {
+                characterImages[0] = new Bitmap(Properties.Resources.BlueKanji);
+                characterImages.Add(new Bitmap(Properties.Resources.BlueKanji));
+                characterImages.Add(new Bitmap(Properties.Resources.BlueKanji));
+                characterImages.Add(new Bitmap(Properties.Resources.BlueKanji));
+                characterImages.Add(new Bitmap(Properties.Resources.KanjiFleeBlue));
+                characterImages.Add(new Bitmap(Properties.Resources.KanjiFleeWhite));
             }
         }
 
@@ -495,6 +520,14 @@ namespace Pacman
                 characterImages.Add(new Bitmap(Properties.Resources.OrangeGhostRight));
                 characterImages.Add(new Bitmap(Properties.Resources.GhostFleeBlue));
                 characterImages.Add(new Bitmap(Properties.Resources.GhostFleeWhite));
+            } else if (chosenCharacter == Character.Kanji)
+            {
+                characterImages[0] = new Bitmap(Properties.Resources.OrangeKanji);
+                characterImages.Add(new Bitmap(Properties.Resources.OrangeKanji));
+                characterImages.Add(new Bitmap(Properties.Resources.OrangeKanji));
+                characterImages.Add(new Bitmap(Properties.Resources.OrangeKanji));
+                characterImages.Add(new Bitmap(Properties.Resources.KanjiFleeBlue));
+                characterImages.Add(new Bitmap(Properties.Resources.KanjiFleeWhite));
             }
         }
 

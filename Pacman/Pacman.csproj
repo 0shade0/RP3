@@ -342,5 +342,23 @@
   <ItemGroup>
     <None Include="Resources\Null.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueKanji.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KanjiFleeBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KanjiFleeWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrangeKanji.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PinkKanji.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedKanji.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
