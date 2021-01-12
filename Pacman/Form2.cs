@@ -13,19 +13,53 @@ namespace Pacman
 {
     public partial class Form2 : Form
     {
+        private Form1 activeGame;
         private AxWMPLib.AxWindowsMediaPlayer mediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
         public Form2()
         {
             InitializeComponent();
             InitializeMusic();
             SetMusic("Focus");
+            InitializeButtons();
             Sounds.InitializeSounds();
-
-            button1.Hide();
-            button2.Hide();
         }
 
-        public void InitializeMusic()
+        public void focusButton()
+        {
+            button3.Focus();
+        }
+
+        public void showPauseMenu()
+        {
+            panel2.Show();
+            button1.Show();
+            button2.Show();
+            button3.Show();
+        }
+
+        public void hidePauseMenu()
+        {
+            button1.Hide();
+            button2.Hide();
+            button3.Hide();
+            panel2.Hide();
+        }
+
+
+        private void InitializeButtons()
+        {
+            hidePauseMenu();
+
+            newgame.GotFocus += buttonEnter;
+            options.GotFocus += buttonEnter;
+            exitgame.GotFocus += buttonEnter;
+
+            newgame.LostFocus += buttonLeave;
+            options.LostFocus += buttonLeave;
+            exitgame.LostFocus += buttonLeave;
+        }
+
+        private void InitializeMusic()
         {
             this.mediaPlayer.Enabled = true;
             this.mediaPlayer.Visible = false;
@@ -47,15 +81,15 @@ namespace Pacman
             Sounds.menuSound.Play();
             SetMusic("Valor");
             menu.Hide();
-            Form1 objForm = new Form1();
-            objForm.TopLevel = false;
-            this.Controls.Add(objForm);
-            objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            objForm.Left = (this.ClientSize.Width - objForm.Width) / 2;
-            objForm.Show();
-            objForm.Focus();
-            objForm.KeyPreview = true;
-            button1.Show();
+            activeGame = new Form1(this);
+            activeGame.TopLevel = false;
+            this.Controls.Add(activeGame);
+            activeGame.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            activeGame.Left = (this.ClientSize.Width - activeGame.Width) / 2;
+            activeGame.Show();
+            activeGame.Focus();
+            activeGame.KeyPreview = true;
+            panel1.Hide();
             Form1.startGame();
         }
 
@@ -67,20 +101,23 @@ namespace Pacman
 
         private void button2_Click(object sender, EventArgs e)
         {
+            SuspendLayout();
             Sounds.menuSound.Play();
             menu.Hide();
-            Form3 objForm = new Form3();
-            objForm.TopLevel = false;
-            this.Controls.Add(objForm);
-            objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            objForm.Left = (this.ClientSize.Width - objForm.Width) / 2;
-            objForm.Top = (this.ClientSize.Height - objForm.Height) / 2;
-            objForm.Show();
-            button1.Show();
-            button2.Show();
+            panel1.Hide();
+            Form3 activeGame = new Form3(this);
+            activeGame.TopLevel = false;
+            this.Controls.Add(activeGame);
+            activeGame.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            activeGame.Left = (this.ClientSize.Width - activeGame.Width) / 2;
+            activeGame.Top = (this.ClientSize.Height - activeGame.Height) / 2;
+            activeGame.Show();
+            ResumeLayout();
+
+            activeGame.focusButton();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        public void button1_Click_1(object sender, EventArgs e)
         {
             Sounds.menuSound.Play();
             foreach (Control obj in this.Controls)
@@ -94,13 +131,33 @@ namespace Pacman
                     }
 
             menu.Show();
-            button1.Hide();
-            button2.Hide();
+            hidePauseMenu();
+            panel1.Show();
+            newgame.Focus();
         }
 
-        private void Form2_KeyDown(object sender, KeyEventArgs e)
+        private void buttonEnter(object sender, EventArgs e)
         {
+            Button button = sender as Button;
+            button.BackColor = Color.GhostWhite;
+        }
 
+        private void buttonLeave(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.Yellow;
+        }
+
+        private void menu_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            e.IsInputKey = (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down);
+            Sounds.eatSound.Play();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Sounds.menuSound.Play();
+            if (activeGame != null) activeGame.Unpause();
         }
     }
 }

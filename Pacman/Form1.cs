@@ -12,6 +12,7 @@ namespace Pacman
 {
     public partial class Form1 : Form
     {
+        public Form2 main;
         // Javno tako da možemo pristupati drugim elementima
         // iz svih klasa.
         public static Pacman pacman;
@@ -28,8 +29,9 @@ namespace Pacman
         public static int SpeedIncPerLevel = 4;
         public static bool paused = false;
 
-        public Form1()
+        public Form1(Form2 parent)
         {
+            main = parent;
             InitializeComponent();
             formSetup();
         }
@@ -101,27 +103,32 @@ namespace Pacman
                     pacman.changeDirection(Pacman.Direction.Down);
                     break;
                 case Keys.Escape:
-                    if (paused)
-                    {
-                        startGame();
-                        panel1.Hide();
-                        label1.Hide();
-                    }
-                    else
-                    {
-                        stopGame();
-                        panel1.Show();
-                        label1.Show();
-                        panel1.BringToFront();
-                    }
+                    Pause();
                     break;
             }
         }
-        // Dvije funkcije koje osiguravaju da glavna forma prepoznaje inpute strjelica
-        private void LayoutControl1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        public void Pause()
         {
-            e.IsInputKey = (e.KeyCode == Keys.Left || e.KeyCode == Keys.Right || e.KeyCode == Keys.Up || e.KeyCode == Keys.Down);
+            SuspendLayout();
+            stopGame();
+            panel1.Show();
+            label1.Show();
+            panel1.BringToFront();
+            main.showPauseMenu();
+            main.focusButton();
+            ResumeLayout();
         }
+
+        public void Unpause()
+        {
+            SuspendLayout();
+            startGame();
+            panel1.Hide();
+            label1.Hide();
+            main.hidePauseMenu();
+            ResumeLayout();
+        }
+        // Funkcija koje osigurava da glavna forma prepoznaje inpute strjelica
         protected override void OnPreviewKeyDown(PreviewKeyDownEventArgs e)
         {
             e.IsInputKey = (e.KeyCode == Keys.Left || e.KeyCode == Keys.Right || e.KeyCode == Keys.Up || e.KeyCode == Keys.Down);

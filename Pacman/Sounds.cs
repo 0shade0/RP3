@@ -17,6 +17,7 @@ namespace Pacman
         public static SoundPlayer loseSound = new SoundPlayer();
         public static SoundPlayer gameOverSound = new SoundPlayer();
         public static SoundPlayer winSound = new SoundPlayer();
+        public static SoundPlayer optionSound = new SoundPlayer();
 
         public static void InitializePlayer(SoundPlayer player, string name)
         {
@@ -34,6 +35,7 @@ namespace Pacman
             InitializePlayer(loseSound, "Eaten");
             InitializePlayer(gameOverSound, "Dead");
             InitializePlayer(winSound, "Win");
+            InitializePlayer(optionSound, "Option");
         }
     }
 }

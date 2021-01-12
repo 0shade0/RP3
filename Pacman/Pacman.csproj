@@ -321,5 +321,23 @@
   <ItemGroup>
     <None Include="Resources\Valor.mp3" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pacman.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pacmanLogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pacmanLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\border.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\border_r.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Option.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
