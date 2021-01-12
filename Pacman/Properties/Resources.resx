@@ -118,14 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Apple" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Apple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="AppleGolden" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GoldenApple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AppleRotten" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AppleRotten.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BlueGhostDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BlueGhostDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -276,6 +270,12 @@
   </data>
   <data name="RedGhostUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RedGhostUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Strawberry" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Strawberry.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StrawberryRotten" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StrawberryRotten.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="superCookieImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\superCookieImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

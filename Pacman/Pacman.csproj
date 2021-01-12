@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Sounds.cs" />
     <Compile Include="Food.cs" />
     <Compile Include="Form1.cs">
@@ -341,6 +346,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Null.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Strawberry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StrawberryRotten.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
