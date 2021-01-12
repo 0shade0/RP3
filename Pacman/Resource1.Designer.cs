@@ -79,6 +79,16 @@ namespace Pacman {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Focus {
+            get {
+                object obj = ResourceManager.GetObject("Focus", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream GhostMlem {
@@ -111,6 +121,16 @@ namespace Pacman {
         internal static System.IO.UnmanagedMemoryStream SuperMlem {
             get {
                 return ResourceManager.GetStream("SuperMlem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Valor {
+            get {
+                object obj = ResourceManager.GetObject("Valor", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
