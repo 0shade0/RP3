@@ -366,5 +366,59 @@
   <ItemGroup>
     <None Include="Resources\RedKanji.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueCGhostDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueCGhostLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueCGhostRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueCGhostUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrangeCGhostDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrangeCGhostLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrangeCGhostRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrangeCGhostUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PinkCGhostDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PinkCGhostLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PinkCGhostRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PinkCGhostUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedCGhostDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedCGhostLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedCGhostRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedCGhostUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CGhostFleeBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CGhostFleeWhite.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
