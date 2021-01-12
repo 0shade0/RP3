@@ -31,18 +31,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menu = new System.Windows.Forms.Panel();
             this.exitgame = new System.Windows.Forms.Button();
             this.options = new System.Windows.Forms.Button();
             this.newgame = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 50);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Main Menu";
+            this.button1.Text = "MAIN MENU";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             this.button1.Enter += new System.EventHandler(this.buttonEnter);
@@ -70,7 +70,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(123, 50);
             this.button2.TabIndex = 5;
-            this.button2.Text = "Exit Game";
+            this.button2.Text = "EXIT GAME";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button3_Click);
             this.button2.Enter += new System.EventHandler(this.buttonEnter);
@@ -85,6 +85,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(784, 146);
             this.panel1.TabIndex = 6;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Pacman.Resource1.pacmanLogo;
+            this.pictureBox2.Location = new System.Drawing.Point(190, 30);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(412, 101);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Pacman.Resource1.pacman;
+            this.pictureBox1.Location = new System.Drawing.Point(-10, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(277, 138);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // menu
             // 
@@ -109,7 +130,7 @@
             this.exitgame.Name = "exitgame";
             this.exitgame.Size = new System.Drawing.Size(214, 80);
             this.exitgame.TabIndex = 2;
-            this.exitgame.Text = "Exit Game";
+            this.exitgame.Text = "EXIT GAME";
             this.exitgame.UseVisualStyleBackColor = false;
             this.exitgame.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -122,7 +143,7 @@
             this.options.Name = "options";
             this.options.Size = new System.Drawing.Size(214, 80);
             this.options.TabIndex = 1;
-            this.options.Text = "Options";
+            this.options.Text = "OPTIONS";
             this.options.UseVisualStyleBackColor = false;
             this.options.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -135,30 +156,9 @@
             this.newgame.Name = "newgame";
             this.newgame.Size = new System.Drawing.Size(214, 80);
             this.newgame.TabIndex = 0;
-            this.newgame.Text = "New Game";
+            this.newgame.Text = "NEW GAME";
             this.newgame.UseVisualStyleBackColor = false;
             this.newgame.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Pacman.Resource1.pacmanLogo;
-            this.pictureBox2.Location = new System.Drawing.Point(190, 30);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(412, 101);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Pacman.Resource1.pacman;
-            this.pictureBox1.Location = new System.Drawing.Point(-10, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(277, 138);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // button3
             // 
@@ -169,7 +169,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(123, 50);
             this.button3.TabIndex = 7;
-            this.button3.Text = "Play";
+            this.button3.Text = "PLAY";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
             this.button3.Enter += new System.EventHandler(this.buttonEnter);
@@ -200,9 +200,9 @@
             this.Name = "Form2";
             this.Text = "Form2";
             this.panel1.ResumeLayout(false);
-            this.menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 

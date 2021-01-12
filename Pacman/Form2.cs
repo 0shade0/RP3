@@ -49,13 +49,15 @@ namespace Pacman
         {
             activeGame.setGameover();
             button3.Text = "RESET";
+            button3.Click -= button3_Click_1;
             button3.Click += button3_Click_2;
         }
 
         public void setPause()
         {
             activeGame.setPause();
-            button3.Text = "Play";
+            button3.Text = "PLAY";
+            button3.Click -= button3_Click_2;
             button3.Click += button3_Click_1;
         }
 
