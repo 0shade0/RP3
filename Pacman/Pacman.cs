@@ -10,6 +10,7 @@ namespace Pacman
 {
     public class Pacman : movableCharacter
     {
+        public Form1 main;
         // Mogući likovi za Pacmana.
         public enum Character
         {
@@ -41,7 +42,7 @@ namespace Pacman
 
         public Pacman (Form form) : base(form) 
         {
-
+            main = form as Form1;
             // Score label.
             scoreLabel.ForeColor = Color.White;
             scoreLabel.Text = "Score: 0";
@@ -262,7 +263,8 @@ namespace Pacman
             if (lives == 0)
             {
                 Sounds.gameOverSound.Play();
-                // TODO: Game Over.
+                main.endGame();
+                
             }
             else
             {

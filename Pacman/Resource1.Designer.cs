@@ -138,6 +138,15 @@ namespace Pacman {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Null {
+            get {
+                return ResourceManager.GetStream("Null", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream Option {
             get {
                 return ResourceManager.GetStream("Option", resourceCulture);

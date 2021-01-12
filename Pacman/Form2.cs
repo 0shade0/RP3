@@ -45,6 +45,20 @@ namespace Pacman
             panel2.Hide();
         }
 
+        public void setGameover()
+        {
+            activeGame.setGameover();
+            button3.Text = "RESET";
+            button3.Click += button3_Click_2;
+        }
+
+        public void setPause()
+        {
+            activeGame.setPause();
+            button3.Text = "Play";
+            button3.Click += button3_Click_1;
+        }
+
 
         private void InitializeButtons()
         {
@@ -90,6 +104,7 @@ namespace Pacman
             activeGame.Focus();
             activeGame.KeyPreview = true;
             panel1.Hide();
+            setPause();
             Form1.startGame();
         }
 
@@ -158,6 +173,16 @@ namespace Pacman
         {
             Sounds.menuSound.Play();
             if (activeGame != null) activeGame.Unpause();
+        }
+
+        private void button3_Click_2(object sender, EventArgs e)
+        {
+            Sounds.menuSound.Play();
+            Sounds.disableMenuSounds();
+            Form1.stopGame();
+            activeGame.Dispose();
+            button1_Click(sender, e);
+            Sounds.enableMenuSounds();
         }
     }
 }

@@ -142,6 +142,9 @@
   <data name="Mlem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Mlem.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Null" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Null.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Option" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Option.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

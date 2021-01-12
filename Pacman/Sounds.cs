@@ -37,5 +37,15 @@ namespace Pacman
             InitializePlayer(winSound, "Win");
             InitializePlayer(optionSound, "Option");
         }
+
+        public static void disableMenuSounds()
+        {
+            InitializePlayer(menuSound, "Null");
+        }
+
+        public static void enableMenuSounds()
+        {
+            InitializePlayer(menuSound, "Menu");
+        }
     }
 }

@@ -58,6 +58,23 @@ namespace Pacman
             panel1.Hide();
         }
 
+        public void setGameover()
+        {
+            label1.Text = "GAMEOVER";
+        }
+
+        public void setPause()
+        {
+            label1.Text = "PAUSE";
+        }
+
+        public void endGame()
+        {
+            Pause();
+            main.setGameover();
+            main.showPauseMenu();
+        }
+
         public static void stopGame()
         {
             pacman.stopTimer();
