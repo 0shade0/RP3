@@ -113,6 +113,16 @@ namespace Pacman.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BlueKanji {
+            get {
+                object obj = ResourceManager.GetObject("BlueKanji", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cherries {
             get {
                 object obj = ResourceManager.GetObject("Cherries", resourceCulture);
@@ -253,6 +263,26 @@ namespace Pacman.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap KanjiFleeBlue {
+            get {
+                object obj = ResourceManager.GetObject("KanjiFleeBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KanjiFleeWhite {
+            get {
+                object obj = ResourceManager.GetObject("KanjiFleeWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MsPacmanDown {
             get {
                 object obj = ResourceManager.GetObject("MsPacmanDown", resourceCulture);
@@ -376,6 +406,16 @@ namespace Pacman.Properties {
         internal static System.Drawing.Bitmap OrangeGhostUp {
             get {
                 object obj = ResourceManager.GetObject("OrangeGhostUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OrangeKanji {
+            get {
+                object obj = ResourceManager.GetObject("OrangeKanji", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -533,6 +573,16 @@ namespace Pacman.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PinkKanji {
+            get {
+                object obj = ResourceManager.GetObject("PinkKanji", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RedGhostDown {
             get {
                 object obj = ResourceManager.GetObject("RedGhostDown", resourceCulture);
@@ -566,6 +616,16 @@ namespace Pacman.Properties {
         internal static System.Drawing.Bitmap RedGhostUp {
             get {
                 object obj = ResourceManager.GetObject("RedGhostUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RedKanji {
+            get {
+                object obj = ResourceManager.GetObject("RedKanji", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
