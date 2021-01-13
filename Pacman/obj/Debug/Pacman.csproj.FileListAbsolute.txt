@@ -47,3 +47,8 @@ C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.csproj.ResolveComReference.cache
 C:\Users\thund\Linux\rp3\RP3\Pacman\bin\Debug\Interop.WMPLib.dll
 C:\Users\thund\Linux\rp3\RP3\Pacman\bin\Debug\AxInterop.WMPLib.dll
+F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\bin\Debug\Interop.WMPLib.dll
+F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\bin\Debug\AxInterop.WMPLib.dll
+F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj\Debug\Interop.WMPLib.dll
+F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj\Debug\AxInterop.WMPLib.dll
+F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj\Debug\Pacman.csproj.ResolveComReference.cache

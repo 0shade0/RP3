@@ -27,6 +27,8 @@ namespace Pacman
         protected int ghostsEaten = 0;
         // Pacmanovi preostali životi (ne uključujući trenutni).
         protected int lives = 2;
+        // Pacman može imati najviše 10 dodatnih života.
+        protected int maxLives = 10;
         // Trenutni level.
         protected int level = 1;
         // Korisnikov željeni smjer kretanja. Postaje trenutni smjer
@@ -37,8 +39,28 @@ namespace Pacman
         protected Label scoreLabel = new Label();
         // Labela za trenutni level.
         protected Label levelLabel = new Label();
-        // Picture boxevi za sličice života koje se nalaze ispod ploče. 
-        protected List<PictureBox> livesPictureBoxes = new List<PictureBox>();
+        // Polje picture boxeva za sličice života koje se nalaze ispod ploče.
+        // Može imati najviše 10 slika, jer je to najveći mogući broj života.
+        protected PictureBox[] livesPictureBoxes = new PictureBox[10];
+
+        /// Varijable potrebne za efekte trešanja. Modifikacija
+        /// dodanog broja bodova se događa u incrementScore().
+        // Preostalo trajanje efekata trešnje.
+        protected int cherryDuration = 0;
+        protected int rottenCherryDuration = 0;
+
+        // Je li efekt trešanja i dalje aktivan.
+        protected bool isCherryActive = false;
+        protected bool isRottenCherryActive = false;
+
+        /// Varijable potrebne za efekte krušaka.
+        // Preostalo trajanje efekata trešnje.
+        protected int pearDuration = 0;
+        protected int rottenPearDuration = 0;
+
+        // Je li efekt trešanja i dalje aktivan.
+        protected bool isPearActive = false;
+        protected bool isRottenPearActive = false;
 
         public Pacman (Form form) : base(form) 
         {
@@ -68,7 +90,7 @@ namespace Pacman
             // Učitavanje slika za Pacmana.
             if (chosenCharacter == Character.MsPacman)
             {
-                characterImages[0] = new Bitmap(Properties.Resources.MsPacmanLeft);// Ovo treba obrisati kad se obriše ono iz movableCharacter konstruktora.
+                characterImages[0] = new Bitmap(Properties.Resources.MsPacmanLeft);
                 characterImages.Add(new Bitmap(Properties.Resources.MsPacmanLeftEat));
                 characterImages.Add(new Bitmap(Properties.Resources.MsPacmanUp));
                 characterImages.Add(new Bitmap(Properties.Resources.MsPacmanUpEat));
@@ -80,7 +102,7 @@ namespace Pacman
             }
             else if (chosenCharacter == Character.ChristmasPacman)
             {
-                characterImages[0] = new Bitmap(Properties.Resources.ChristmasPacmanLeft);// Ovo treba obrisati kad se obriše ono iz movableCharacter konstruktora.
+                characterImages[0] = new Bitmap(Properties.Resources.ChristmasPacmanLeft);
                 characterImages.Add(new Bitmap(Properties.Resources.ChristmasPacmanLeftEat));
                 characterImages.Add(new Bitmap(Properties.Resources.ChristmasPacmanUp));
                 characterImages.Add(new Bitmap(Properties.Resources.ChristmasPacmanUpEat));
@@ -92,7 +114,7 @@ namespace Pacman
             }
             else 
             {
-                characterImages[0] = new Bitmap(Properties.Resources.PacmanLeft);// Ovo treba obrisati kad se obriše ono iz movableCharacter konstruktora.
+                characterImages[0] = new Bitmap(Properties.Resources.PacmanLeft);
                 characterImages.Add(new Bitmap(Properties.Resources.PacmanLeftEat));
                 characterImages.Add(new Bitmap(Properties.Resources.PacmanUp));
                 characterImages.Add(new Bitmap(Properties.Resources.PacmanUpEat));
@@ -104,16 +126,18 @@ namespace Pacman
             }
             currentImage = characterImages.Count - 1;
 
-            // PictureBoxevi za živote.
-            for (int i = 0; i < lives; i++)
+            // Inicijaliziraj svih 10 PictureBoxeva, a slike postavi samo na
+            // prvih lives sličica.
+            for (int i = 0; i < 10; i++)
             {
                 PictureBox life = new PictureBox();
-                life.Image = characterImages[0];
+                if (i < lives)
+                    life.Image = characterImages[0];
                 life.SizeMode = PictureBoxSizeMode.StretchImage;
                 life.Location = new Point(Form1.squareSize.X * (i + 2), Form1.squareSize.Y * 33);
                 life.Size = new Size(Form1.squareSize.X, Form1.squareSize.Y);
                 life.BackColor = Color.DarkBlue;
-                livesPictureBoxes.Add(life);
+                livesPictureBoxes[i] = life;
                 form.Controls.Add(livesPictureBoxes[i]);
                 livesPictureBoxes[i].BringToFront();
             }
@@ -125,14 +149,56 @@ namespace Pacman
             drawGameText();
             checkSquare();
             moveCharacter();
+
+            // Provjeri preostalo trajanje voća i signaliziraj završetak.
+            if (rottenCherryDuration > 0) rottenCherryDuration -= timerInterval;
+            else if (isRottenCherryActive) isRottenCherryActive = false;
+
+            if (cherryDuration > 0) cherryDuration -= timerInterval;
+            else if (isCherryActive) isCherryActive = false;
+
+            if (rottenPearDuration > 0) rottenPearDuration -= timerInterval;
+            else if (isRottenPearActive)
+            {
+                isRottenPearActive = false;
+                doubleSpeed();
+            } 
+
+            if (pearDuration > 0) pearDuration -= timerInterval;
+            else if (isPearActive)
+            {
+                isPearActive = false;
+                undoIncreaseSpeedBy50Percent();
+            }
         }
 
+        // Resetiranje Pacmana.
         public void reset()
         {
             currentImage = characterImages.Count - 1;
             i = startI;
             j = startJ;
             currentDirection = newDirection = Direction.None;
+
+            // Resetiraj efekte svih voća.
+            rottenCherryDuration = 0;
+            isRottenCherryActive = false;
+            cherryDuration = 0;
+            isCherryActive = false;
+
+            if (rottenPearDuration > 0 || isRottenPearActive)
+            {
+                rottenPearDuration = 0;
+                isRottenPearActive = false;
+                doubleSpeed();
+            }
+
+            if (pearDuration > 0 || isPearActive)
+            {
+                pearDuration = 0;
+                isPearActive = false;
+                undoIncreaseSpeedBy50Percent();
+            }
         }
 
         public void drawGameText()
@@ -147,7 +213,14 @@ namespace Pacman
         }
         public void incrementScore(int x)
         {
-            score += x;
+            int pointsToAdd = x;
+            // Smanji/povećaj broj bodova ako je (trula) trešnja aktivna.
+            if (isCherryActive)
+                pointsToAdd *= 2;
+            else if (isRottenCherryActive)
+                pointsToAdd /= 2;
+                
+            score += pointsToAdd;
         }
 
         public void resetGhostsEaten()
@@ -234,15 +307,24 @@ namespace Pacman
             Form1.pinkGhost.checkSquare();
             Form1.blueGhost.checkSquare();
             Form1.orangeGhost.checkSquare();
+
+            // Provjera nalazi li se voće na kvadratu.
+            Form1.cherry.checkSquare();
+            Form1.rottenCherry.checkSquare();
+            Form1.pear.checkSquare();
+            Form1.rottenPear.checkSquare();
+            Form1.strawberry.checkSquare();
+            Form1.rottenStrawberry.checkSquare();
+            Form1.goldenApple.checkSquare();
         }
 
         public override int startI 
         {
-            get { return Form1.startPoint.Y; }
+            get { return Form1.pacmanStartPoint.Y; }
         }
         public override int startJ 
         {
-            get { return Form1.startPoint.X; }
+            get { return Form1.pacmanStartPoint.X; }
         }
 
         ///
@@ -271,23 +353,76 @@ namespace Pacman
                 Sounds.loseSound.Play();
                 lives -= 1;
                 livesPictureBoxes[lives].Image = null;
+            }     
+        }
+
+        // Dodavanje života.
+        public void addLife()
+        {
+            // Život se dodaje samo ako ima manje od maxLives života.
+            if (lives < maxLives)
+            {
+                // Dodajemo samo jedan život pa ažuriraj samo zadnju sličicu.
+                livesPictureBoxes[lives].Image = characterImages[0];
+
+                lives += 1;
             }
                 
+
         }
 
         public int Lives
         {
             get { return lives; }
+            set
+            {
+                // Pacman ne može imati više od maxLives života.
+                if (value <= maxLives)
+                    lives = value;
+            }
         }
 
         // Ovu metodu poziva duh nakon što ga pacman pojede.
         // Duh se prije poziva ove metode vraća u kuću.
         public void ateGhost()
 		{
-            Console.WriteLine("Adding to score: " + (Form1.blueGhost.PointsWorth * (int)Math.Pow(2, ghostsEaten)).ToString());
             incrementScore(Form1.blueGhost.PointsWorth * (int)Math.Pow(2, ghostsEaten));
             ++ghostsEaten;
 		}
+
+        //----------------------------------------------------------
+        // Efekti voća.
+        // Javljanje da je pojedena (trula) trešnja
+        public void ateCherry(bool rotten)
+        {
+            if (rotten)
+            {
+                isRottenCherryActive = true;
+                rottenCherryDuration = Form1.RottenFruitDuration;
+            }
+            else
+            {
+                isCherryActive = true;
+                cherryDuration = Form1.SuperCookieDuration;
+            }     
+        }
+
+        // Javljanje da je pojedena (trula) kruška.
+        public void atePear(bool rotten)
+        {
+            if (rotten)
+            {
+                rottenPearDuration = Form1.RottenFruitDuration;
+                halveSpeed();
+                isRottenPearActive = true;
+            }
+            else
+            {
+                pearDuration = Form1.SuperCookieDuration;
+                increaseSpeedBy50Percent();
+                isPearActive = true;
+            }
+        }
 
         public int Level
         {

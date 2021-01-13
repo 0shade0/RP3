@@ -49,8 +49,8 @@ namespace Pacman
             characterPictureBox.Location = new Point(j * Form1.squareSize.X, i * Form1.squareSize.Y);
             characterPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            // Ovdje je bezveze dodan neki prvi element u characterImages, da ne bi došlo do grešaka.
-            // Treba obrisati kad se dodaju stvarne slike.
+            // Postavljamo prvu sliku (za svaki slučaj).
+            // Ona se može prebrisati u konstruktorima pojedinih likova.
             characterImages.Add(Properties.Resources.cookieImage);
             currentImage = 0;
 
@@ -93,16 +93,23 @@ namespace Pacman
             characterTimer.Interval /= 2;
         }
 
+        // Povećavanje i smanjivanje brzine za 50%.
         public void increaseSpeedBy50Percent()
         {
-            timerInterval += timerInterval / 2;
+            //timerInterval += timerInterval / 2;
+            // Brzina se povećava pa se timerInterval smanjuje,
+            // možda treba biti?
+            timerInterval = 2 * (timerInterval / 3);
             characterTimer.Interval = timerInterval;
         }
 
         // Vraća brzinu na stanje prije pozivanja increaseSpeedBy50Percent().
         public void undoIncreaseSpeedBy50Percent()
         {
-            timerInterval = 2 * (timerInterval / 3);
+            //timerInterval = 2 * (timerInterval / 3);
+            // Brzina se smanjuje pa se timerInterval povećava,
+            // možda treba biti?
+            timerInterval += timerInterval / 2;
             characterTimer.Interval = timerInterval;
         }
 
@@ -160,7 +167,7 @@ namespace Pacman
         public void drawCharacter()
         {
             // Ažuriranje pozicije i slike.
-            characterPictureBox.Location = new Point(j* Form1.squareSize.X, i* Form1.squareSize.Y);
+            characterPictureBox.Location = new Point(j * Form1.squareSize.X, i * Form1.squareSize.Y);
             characterPictureBox.Image = characterImages[currentImage];
         }
 

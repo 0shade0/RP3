@@ -18,7 +18,7 @@ namespace Pacman
         public static Pacman pacman;
         public static Grid grid;
         public static Point squareSize = new Point(16, 16);
-        public static Point startPoint = new Point(13, 25);
+        public static Point pacmanStartPoint = new Point(13, 25);
 
         public static RedGhost redGhost;
         public static PinkGhost pinkGhost;
@@ -28,6 +28,16 @@ namespace Pacman
         // Povećanje brzine po levelu.
         public static int SpeedIncPerLevel = 4;
         public static bool paused = false;
+
+        // Držimo po jedno voće od svake vrste koji se
+        // povremeno pojavljuju u igri.
+        public static Strawberry strawberry, rottenStrawberry;
+        public static Cherry cherry, rottenCherry;
+        public static Pear pear, rottenPear;
+        public static GoldenApple goldenApple;
+        // Također ih sve držimo u listi zbog lakšeg
+        // ispitivanja uvjeta.
+        public static List<Fruit> fruits = new List<Fruit>();
 
         public Form1(Form2 parent)
         {
@@ -40,18 +50,39 @@ namespace Pacman
         {
             SuspendLayout();
             this.Size = new Size(29 * squareSize.X, 37 * squareSize.Y);
-            grid = new Grid(this, startPoint);
+            grid = new Grid(this, pacmanStartPoint);
             pacman = new Pacman(this);
             redGhost = new RedGhost(this);
             pinkGhost = new PinkGhost(this);
             blueGhost = new BlueGhost(this);
             orangeGhost = new OrangeGhost(this);
-            
+
+            // Konstruktor voća prima bool argument u ovisnosti
+            // je li voće trulo.
+            strawberry = new Strawberry(this, false);
+            fruits.Add(strawberry);
+            rottenStrawberry = new Strawberry(this, true);
+            fruits.Add(rottenStrawberry);
+            cherry = new Cherry(this, false);
+            fruits.Add(cherry);
+            rottenCherry = new Cherry(this, true);
+            fruits.Add(rottenCherry);
+            pear = new Pear(this, false);
+            fruits.Add(pear);
+            rottenPear = new Pear(this, true);
+            fruits.Add(rottenPear);
+            goldenApple = new GoldenApple(this, false);
+            fruits.Add(goldenApple);
+
             pacman.startTimer();
             redGhost.startTimer();
             pinkGhost.startTimer();
             blueGhost.startTimer();
             orangeGhost.startTimer();
+            // Treba staviti u if ovisno o trenutno odabranoj igri.
+            foreach (var fruit in fruits)
+                fruit.startTimer();
+
             ResumeLayout();
 
             label1.Hide();
@@ -93,6 +124,9 @@ namespace Pacman
             pinkGhost.startTimer();
             blueGhost.startTimer();
             orangeGhost.startTimer();
+            // Treba staviti u if ovisno o vrsti igre.
+            foreach (var fruit in fruits)
+                fruit.startTimer();
 
             paused = false;
         }
@@ -179,6 +213,15 @@ namespace Pacman
             get 
             {
                 return 7000;
+            }
+        }
+
+        // Trajanje pojave voća na ekranu (25 sekundi).
+        public static int FruitOnScreenDuration
+        {
+            get
+            {
+                return 25000;
             }
         }
     }
