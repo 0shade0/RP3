@@ -168,7 +168,7 @@ namespace Pacman
             else if (isPearActive)
             {
                 isPearActive = false;
-                undoIncreaseSpeedBy50Percent();
+                undoIncreaseSpeedBy33Percent();
             }
         }
 
@@ -197,7 +197,7 @@ namespace Pacman
             {
                 pearDuration = 0;
                 isPearActive = false;
-                undoIncreaseSpeedBy50Percent();
+                undoIncreaseSpeedBy33Percent();
             }
         }
 
@@ -419,7 +419,7 @@ namespace Pacman
             else
             {
                 pearDuration = Form1.SuperCookieDuration;
-                increaseSpeedBy50Percent();
+                increaseSpeedBy33Percent();
                 isPearActive = true;
             }
         }

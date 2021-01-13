@@ -90,7 +90,7 @@ namespace Pacman
             if (strawberrieDuration > 0) strawberrieDuration -= timerInterval;
             else if (isStrawberrieActive) {
                 isStrawberrieActive = false;
-                undoIncreaseSpeedBy50Percent();
+                undoIncreaseSpeedBy33Percent();
             }
             
 
@@ -323,7 +323,7 @@ namespace Pacman
         public void ateRottenStrawberrie()
         {
             strawberrieDuration = Form1.RottenFruitDuration;
-            increaseSpeedBy50Percent();
+            increaseSpeedBy33Percent();
             isStrawberrieActive = true;
         }
 

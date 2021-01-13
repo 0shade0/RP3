@@ -93,23 +93,19 @@ namespace Pacman
             characterTimer.Interval /= 2;
         }
 
-        // Povećavanje i smanjivanje brzine za 50%.
-        public void increaseSpeedBy50Percent()
+        // Povećavanje i smanjivanje brzine za 33%.
+        public void increaseSpeedBy33Percent()
         {
-            //timerInterval += timerInterval / 2;
-            // Brzina se povećava pa se timerInterval smanjuje,
-            // možda treba biti?
-            timerInterval = 2 * (timerInterval / 3);
+            // timerInterval nije nužno dijeljiv s 3 pa sam promjenio brojeve.
+            timerInterval = 3 * timerInterval / 4;
             characterTimer.Interval = timerInterval;
         }
 
-        // Vraća brzinu na stanje prije pozivanja increaseSpeedBy50Percent().
-        public void undoIncreaseSpeedBy50Percent()
+        // Vraća brzinu na stanje prije pozivanja increaseSpeedBy33Percent().
+        public void undoIncreaseSpeedBy33Percent()
         {
-            //timerInterval = 2 * (timerInterval / 3);
-            // Brzina se smanjuje pa se timerInterval povećava,
-            // možda treba biti?
-            timerInterval += timerInterval / 2;
+            // Ovdje je u redu jer se prvo uvjek poziva increaseSpeedBy33Percent().
+            timerInterval = 4 * timerInterval / 3;
             characterTimer.Interval = timerInterval;
         }
 
