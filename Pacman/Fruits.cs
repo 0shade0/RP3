@@ -16,6 +16,13 @@ namespace Pacman
         protected int remainingTimeOnScreen = Form1.FruitOnScreenDuration;
         // Voće se samo pojavljuje u nasumičnom trenutku.
         protected static Random rand;
+        // Enumeracija smjerova u polju, za nasumično biranje.
+        protected static Pacman.Direction[] directions = {
+            Pacman.Direction.Left,
+            Pacman.Direction.Up,
+            Pacman.Direction.Right,
+            Pacman.Direction.Down
+        };
 
         public Fruit(Form form, bool _rotten) : base(form)
         {
@@ -23,6 +30,15 @@ namespace Pacman
             // Sakrij voće.
             characterPictureBox.Visible = false;
             rand = new Random();
+
+            // Nasumično odaberi smjer kretanja.
+            int directionIndex = rand.Next(0, 4);
+            currentDirection = directions[directionIndex];
+
+            // Voće se miče sporije od ostalih likova.
+            // TODO: Možda treba prilagoditi brzinu.
+            timerInterval = 500;
+            characterTimer.Interval = timerInterval;
         }
 
         // Početne koordinate voća su (0, 0) (postavljaju se u
@@ -79,16 +95,33 @@ namespace Pacman
             }
         }
 
+        public override void moveCharacter()
+        {
+            // Ako je trenutno na ekranu i ne može se kretati, odaberi novi smjer kretanja.
+            if (this.OnScreen && !movePossible(currentDirection))
+            {
+                int directionIndex = rand.Next(0, 4);
+                while (!movePossible(directions[directionIndex]))
+                    directionIndex = rand.Next(0, 4);
+                currentDirection = directions[directionIndex];
+            }
+            base.moveCharacter();
+        }
+
         // Voće se pojavljuje se na koordinatama (i, j).
+        // BUG: Voće se ne pojavljuje kad je odabran ChristmasPacman.
         public void appear(int _i, int _j)
         {
+            //Console.WriteLine(this.GetType().ToString() + " appearing on " + _i.ToString() + " " + _j.ToString());
             i = _i;
             j = _j;
+            this.drawCharacter();// Inače se prvo pojavi na (0, 0).
             characterPictureBox.Visible = true;
             characterPictureBox.BringToFront();
             remainingTimeOnScreen = Form1.FruitOnScreenDuration;
         }
 
+        // Sva voća koja nasljeđuju prerađuju checkSquare().
         public abstract void checkSquare();
 
         // Voće se smije pojaviti na kvadratima na kojima nije

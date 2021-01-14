@@ -117,6 +117,8 @@ namespace Pacman
             pinkGhost.stopTimer();
             blueGhost.stopTimer();
             orangeGhost.stopTimer();
+            foreach (var fruit in fruits)
+                fruit.stopTimer();
 
             paused = true;
         }
