@@ -65,6 +65,15 @@ namespace Pacman
         private void selectOption(object sender, EventArgs e)
         {
             Sounds.optionSound.Play();
+            // button1, button2 i button3 služe za odabir lika Pacmana u Formi 3.
+            // Ako nijedan od ovih nije odabran, u konstruktoru Pacmana se defaultno
+            // postavlja defaultni lik.
+            if (sender == button1)
+                Form2.pacmanChosenCharacter = Pacman.Character.Pacman;
+            else if (sender == button2)
+                Form2.pacmanChosenCharacter = Pacman.Character.MsPacman;
+            else if (sender == button3)
+                Form2.pacmanChosenCharacter = Pacman.Character.ChristmasPacman;
         }
 
         private void button10_Click(object sender, EventArgs e)

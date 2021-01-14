@@ -15,6 +15,9 @@ namespace Pacman
     {
         private Form1 activeGame;
         private AxWMPLib.AxWindowsMediaPlayer mediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
+
+        // Za odabir lika Pacmana.
+        public static Pacman.Character pacmanChosenCharacter = Pacman.Character.Pacman;
         public Form2()
         {
             InitializeComponent();
@@ -97,7 +100,7 @@ namespace Pacman
             Sounds.menuSound.Play();
             SetMusic("Valor");
             menu.Hide();
-            activeGame = new Form1(this);
+            activeGame = new Form1(this, pacmanChosenCharacter);
             activeGame.TopLevel = false;
             this.Controls.Add(activeGame);
             activeGame.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

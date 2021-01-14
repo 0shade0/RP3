@@ -62,7 +62,7 @@ namespace Pacman
         protected bool isPearActive = false;
         protected bool isRottenPearActive = false;
 
-        public Pacman (Form form) : base(form) 
+        public Pacman (Form form, Pacman.Character chosen) : base(form) 
         {
             main = form as Form1;
             // Score label.
@@ -86,7 +86,7 @@ namespace Pacman
             form.Controls.Add(levelLabel);
 
             // Ovo treba odabrati u meniju.
-            chosenCharacter = Character.Pacman;
+            chosenCharacter = chosen;
             // Učitavanje slika za Pacmana.
             if (chosenCharacter == Character.MsPacman)
             {

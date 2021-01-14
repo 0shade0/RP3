@@ -39,9 +39,13 @@ namespace Pacman
         // ispitivanja uvjeta.
         public static List<Fruit> fruits = new List<Fruit>();
 
-        public Form1(Form2 parent)
+        // Odabrani lik za Pacmana.
+        public static Pacman.Character chosenPacmanCharacter;
+
+        public Form1(Form2 parent, Pacman.Character _chosenPacmanCharacter)
         {
             main = parent;
+            chosenPacmanCharacter = _chosenPacmanCharacter;
             InitializeComponent();
             formSetup();
         }
@@ -51,7 +55,7 @@ namespace Pacman
             SuspendLayout();
             this.Size = new Size(29 * squareSize.X, 37 * squareSize.Y);
             grid = new Grid(this, pacmanStartPoint);
-            pacman = new Pacman(this);
+            pacman = new Pacman(this, chosenPacmanCharacter);
             redGhost = new RedGhost(this);
             pinkGhost = new PinkGhost(this);
             blueGhost = new BlueGhost(this);

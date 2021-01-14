@@ -15,13 +15,14 @@ namespace Pacman
         // Preostalo vrijeme postojanja voća na ekranu.
         protected int remainingTimeOnScreen = Form1.FruitOnScreenDuration;
         // Voće se samo pojavljuje u nasumičnom trenutku.
-        protected Random rand;
+        protected static Random rand;
 
         public Fruit(Form form, bool _rotten) : base(form)
         {
             rotten = _rotten;
             // Sakrij voće.
             characterPictureBox.Visible = false;
+            rand = new Random();
         }
 
         // Početne koordinate voća su (0, 0) (postavljaju se u
@@ -38,8 +39,13 @@ namespace Pacman
         {
             get
             {
-                return (i == 0) && (j == 0);
+                return i != 0 || j != 0;
             }
+        }
+
+        public bool Rotten
+        {
+            get { return rotten; }
         }
 
         protected override void characterTimerTick(object sender, EventArgs e)
@@ -49,25 +55,60 @@ namespace Pacman
             moveCharacter();
             // Voće treba nestati za 25 sekundi.
             if (remainingTimeOnScreen > 0) remainingTimeOnScreen -= timerInterval;
-            else removeFromMap();
+            else if (this.OnScreen) removeFromMap();
 
             // Voće se samo brine za pojavu na ekranu. Ako već nije na ekranu,
-            // automatski se pojavljuje.
+            // automatski se pojavljuje. Ne može se pojaviti na poljima gdje
+            // je zid ili neko drugo voće.
             if (!OnScreen)
             {
-                // TO DO.
+                // TODO: Podesiti vjerojatnost.
+                // TODO: GoldenApple ima manju vjerojatnost. Ovo treba izdvojiti u virtual funkciju.
+                int randomNumber = rand.Next(0, 400);
+                if (randomNumber == 0)
+                {
+                    int newI = rand.Next(0, 35);
+                    int newJ = rand.Next(0, 27);
+                    while (!viableLocation(newI, newJ))
+                    {
+                        newI = rand.Next(0, 35);
+                        newJ = rand.Next(0, 27);
+                    }
+                    appear(newI, newJ);
+                } 
             }
         }
 
-        // Za testiranje, pojavljuje se na koordinatama (i, j).
+        // Voće se pojavljuje se na koordinatama (i, j).
         public void appear(int _i, int _j)
         {
             i = _i;
             j = _j;
             characterPictureBox.Visible = true;
+            characterPictureBox.BringToFront();
+            remainingTimeOnScreen = Form1.FruitOnScreenDuration;
         }
 
         public abstract void checkSquare();
+
+        // Voće se smije pojaviti na kvadratima na kojima nije
+        // zid i neko drugo voće.
+        public bool viableLocation(int i, int j)
+        {
+            bool noWall = Form1.grid.getSquareValue(i, j) != '#';
+            bool noStrawberry = Form1.strawberry.i != i || Form1.strawberry.j != j;
+            bool noRottenStrawberry = Form1.rottenStrawberry.i != i || Form1.rottenStrawberry.j != j;
+            bool noPear = Form1.pear.i != i || Form1.pear.j != j;
+            bool noRottenPear = Form1.rottenPear.i != i || Form1.rottenPear.j != j;
+            bool noCherry = Form1.cherry.i != i || Form1.cherry.j != j;
+            bool noRottenCherry = Form1.rottenCherry.i != i || Form1.rottenCherry.j != j;
+            bool noGoldenApple = Form1.goldenApple.i != i || Form1.goldenApple.j != j;
+
+            return noWall && noGoldenApple
+                && noStrawberry && noRottenStrawberry
+                && noPear && noRottenPear
+                && noCherry && noRottenCherry;
+        }
     }
 
     public class Strawberry : Fruit
