@@ -9,17 +9,6 @@ F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj
 F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj\Debug\Pacman.pdb
 F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj\Debug\Pacman.Form1.resources
 F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj\Debug\Pacman.Resource1.resources
-C:\Users\thund\Linux\rp3\RP3\Pacman\bin\Debug\Pacman.exe.config
-C:\Users\thund\Linux\rp3\RP3\Pacman\bin\Debug\Pacman.exe
-C:\Users\thund\Linux\rp3\RP3\Pacman\bin\Debug\Pacman.pdb
-C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.csprojAssemblyReference.cache
-C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.Form1.resources
-C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.Properties.Resources.resources
-C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.Resource1.resources
-C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.csproj.GenerateResource.cache
-C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.csproj.CoreCompileInputs.cache
-C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.exe
-C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.pdb
 C:\Users\Acer\source\repos\RP3\Pacman\bin\Debug\Pacman.exe.config
 C:\Users\Acer\source\repos\RP3\Pacman\bin\Debug\Pacman.exe
 C:\Users\Acer\source\repos\RP3\Pacman\bin\Debug\Pacman.pdb
@@ -35,20 +24,30 @@ C:\Users\Acer\source\repos\RP3\Pacman\obj\Debug\Pacman.Form2.resources
 C:\Users\Acer\source\repos\RP3\Pacman\obj\Debug\Pacman.Form3.resources
 F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj\Debug\Pacman.Form2.resources
 F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj\Debug\Pacman.Form3.resources
-C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.Form2.resources
-C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.Form3.resources
 C:\Users\Acer\source\repos\RP3\Pacman\bin\Debug\Interop.WMPLib.dll
 C:\Users\Acer\source\repos\RP3\Pacman\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\Acer\source\repos\RP3\Pacman\obj\Debug\Interop.WMPLib.dll
 C:\Users\Acer\source\repos\RP3\Pacman\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\Acer\source\repos\RP3\Pacman\obj\Debug\Pacman.csproj.ResolveComReference.cache
-C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Interop.WMPLib.dll
-C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\AxInterop.WMPLib.dll
-C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.csproj.ResolveComReference.cache
-C:\Users\thund\Linux\rp3\RP3\Pacman\bin\Debug\Interop.WMPLib.dll
-C:\Users\thund\Linux\rp3\RP3\Pacman\bin\Debug\AxInterop.WMPLib.dll
 F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\bin\Debug\Interop.WMPLib.dll
 F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\bin\Debug\AxInterop.WMPLib.dll
 F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj\Debug\Interop.WMPLib.dll
 F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj\Debug\AxInterop.WMPLib.dll
 F:\Faks\2020-2021\Zimski semestar\Računarski praktikum 3\Projekt\RP3\Pacman\obj\Debug\Pacman.csproj.ResolveComReference.cache
+C:\Users\thund\Linux\rp3\RP3\Pacman\bin\Debug\Pacman.exe.config
+C:\Users\thund\Linux\rp3\RP3\Pacman\bin\Debug\Pacman.exe
+C:\Users\thund\Linux\rp3\RP3\Pacman\bin\Debug\Pacman.pdb
+C:\Users\thund\Linux\rp3\RP3\Pacman\bin\Debug\Interop.WMPLib.dll
+C:\Users\thund\Linux\rp3\RP3\Pacman\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Interop.WMPLib.dll
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.csproj.ResolveComReference.cache
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.Form1.resources
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.Form2.resources
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.Form3.resources
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.Properties.Resources.resources
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.Resource1.resources
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.csproj.GenerateResource.cache
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.csproj.CoreCompileInputs.cache
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.exe
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.pdb

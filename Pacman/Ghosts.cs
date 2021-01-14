@@ -67,6 +67,9 @@ namespace Pacman
         // Odabrani lik za duhove (iz menija).
         protected Character chosenCharacter = Character.Default;
 
+        // 0 = plavi sprite za bježanje, 1 = white.
+        protected int fleeSprite = 0;
+
         public Ghost(Form form) : base(form) 
         {
             // Na početku su duhovi sporiji od pacmana.
@@ -78,14 +81,11 @@ namespace Pacman
 
         protected override void characterTimerTick(object sender, EventArgs e)
         {
-            drawCharacter();
-            checkSquare();
-            
             // Ako je zalđen duh se ne miče, no on i dalje može pojesti pacmana.
             if (frozenDuration > 0) {
                 frozenDuration -= timerInterval;
                 return;
-            } else moveCharacter();
+            }
 
             if (strawberrieDuration > 0) strawberrieDuration -= timerInterval;
             else if (isStrawberrieActive) {
@@ -96,7 +96,14 @@ namespace Pacman
 
             // Ako je duh bježao.
             if (s == State.Flee) {
-                remainingFleeDuration -= timerInterval;
+                // Ako je zadnja sekunda bježanja, promjeni flee sprite.
+                // Ovo služi da bi duh "svjetlucao" kada ostane malo vremena.
+                if (remainingFleeDuration < 2000)
+				{
+                    if (fleeSprite == 1) fleeSprite = 0;
+                    else fleeSprite = 1;
+                    loadFleeImage();
+				}
 
                 if (remainingFleeDuration <= 0) {
                     s = State.Chase;
@@ -105,7 +112,13 @@ namespace Pacman
                     // Resetiraj broj pojedenih duhova u Flee stanju.
                     Form1.pacman.resetGhostsEaten();
                 }
+
+                remainingFleeDuration -= timerInterval;
             }
+
+            drawCharacter();
+            checkSquare();
+            moveCharacter();
         }
 
         public void checkSquare()
@@ -129,7 +142,10 @@ namespace Pacman
             if (waitElapsed < waitTreshold)
             {
                 // Timer se ne povećava ako traje super kolačić.
-                if (s == State.Chase) waitElapsed += 1;
+                // if (s == State.Chase) waitElapsed += 1;
+                
+                // Duh uvjek pokušava izaći.
+                waitElapsed += 1;
             }
 
             // Ako je duh u procesu izlaženja iz kuće.
@@ -257,6 +273,7 @@ namespace Pacman
             isStrawberrieActive = false;
             currentImage = 0;
             currentDirection = Direction.Up;
+            fleeSprite = 0;
             loadStandardImage();
 		}
 
@@ -267,8 +284,10 @@ namespace Pacman
             currentDirection = oppositeDirection(currentDirection);
 
             remainingFleeDuration = Form1.SuperCookieDuration;
+            // Da se ne stacka debuff.
+            if (s != State.Flee) halveSpeed();
             s = State.Flee;
-            halveSpeed();
+            fleeSprite = 0;
             loadFleeImage();
         }
 
@@ -287,7 +306,7 @@ namespace Pacman
         // tj. pacman ga može pojesti.
         public void loadFleeImage()
         {
-            currentImage = 4;
+            currentImage = 4 + fleeSprite;
         }
 
         // Promjeni izgled duha u njegovu standardnu formu kada lovi pacmana.
@@ -298,6 +317,7 @@ namespace Pacman
 
             switch (currentDirection)
 			{
+                case Direction.None:
                 case Direction.Up:
                     currentImage = 0;
                     break;
