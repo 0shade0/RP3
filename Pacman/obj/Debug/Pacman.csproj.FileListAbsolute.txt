@@ -51,3 +51,4 @@ C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.csproj.GenerateResource.cac
 C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.csproj.CoreCompileInputs.cache
 C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.exe
 C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.pdb
+C:\Users\thund\Linux\rp3\RP3\Pacman\obj\Debug\Pacman.csprojAssemblyReference.cache

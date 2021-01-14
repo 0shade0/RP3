@@ -73,7 +73,7 @@ namespace Pacman
         public Ghost(Form form) : base(form) 
         {
             // Na početku su duhovi sporiji od pacmana.
-            timerInterval = 172;
+            timerInterval = 180;
             characterTimer.Interval = timerInterval;
             currentImage = 0;
             rand = new Random();
@@ -266,7 +266,7 @@ namespace Pacman
             exitingBox = 0;
             waitElapsed = 0;
             remainingFleeDuration = 0;
-            timerInterval = Form1.PacmanDefaultSpeed + 12; // Duhovi su sporiji od pacmana.
+            timerInterval = Form1.PacmanDefaultSpeed + 20; // Duhovi su sporiji od pacmana.
             characterTimer.Interval = timerInterval;
             frozenDuration = 0;
             strawberrieDuration = 0;
