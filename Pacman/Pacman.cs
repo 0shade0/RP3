@@ -154,7 +154,7 @@ namespace Pacman
 
             // Ako je odabrana igra Fruit mode,
             // provjeri preostalo trajanje voća i signaliziraj završetak.
-            if (Form1.gameType == Form1.GameType.Fruit)
+            if (Form1.chosenGameMode == Form1.GameMode.Fruit)
             {
                 if (rottenCherryDuration > 0) rottenCherryDuration -= timerInterval;
                 else if (isRottenCherryActive) isRottenCherryActive = false;
@@ -187,7 +187,7 @@ namespace Pacman
             currentDirection = newDirection = Direction.None;
 
             // Resetiraj efekte svih voća ako je način Fruit.
-            if (Form1.gameType == Form1.GameType.Fruit)
+            if (Form1.chosenGameMode == Form1.GameMode.Fruit)
             {
                 rottenCherryDuration = 0;
                 isRottenCherryActive = false;
@@ -324,7 +324,7 @@ namespace Pacman
             Form1.orangeGhost.checkSquare();
 
             // Provjera nalazi li se voće na kvadratu ako je način igre Fruit.
-            if (Form1.gameType == Form1.GameType.Fruit)
+            if (Form1.chosenGameMode == Form1.GameMode.Fruit)
             {
                 Form1.cherry.checkSquare();
                 Form1.rottenCherry.checkSquare();

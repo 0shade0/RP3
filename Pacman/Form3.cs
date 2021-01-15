@@ -166,5 +166,15 @@ namespace Pacman
                     break;
             }
         }
-    }
+
+        private void closeHelpButton_Click(object sender, EventArgs e)
+        {
+            helpPanel.Visible = false;
+        }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            helpPanel.Visible = true;
+        }
+    }  
 }
