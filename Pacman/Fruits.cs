@@ -134,11 +134,14 @@ namespace Pacman
             bool noCherry = Form1.cherry.i != i || Form1.cherry.j != j;
             bool noRottenCherry = Form1.rottenCherry.i != i || Form1.rottenCherry.j != j;
             bool noGoldenApple = Form1.goldenApple.i != i || Form1.goldenApple.j != j;
+            // Pacman mora biti udaljen od voća.
+            bool pacmanFarAway = Form1.manhattanDistance(Form1.pacman.I, Form1.pacman.J, i, j) > 8;
 
             return noWall && noGoldenApple
                 && noStrawberry && noRottenStrawberry
                 && noPear && noRottenPear
-                && noCherry && noRottenCherry;
+                && noCherry && noRottenCherry
+                && pacmanFarAway;
         }
     }
 
