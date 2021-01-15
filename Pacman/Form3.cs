@@ -80,6 +80,12 @@ namespace Pacman
                 Form2.ghostChosenCharacter = Ghost.Character.Kanji;
             else if (sender == button6)
                 Form2.ghostChosenCharacter = Ghost.Character.Christmas;
+            else if (sender == button7)
+                Form2.chosenGameType = Form1.GameType.Normal;
+            else if (sender == button8)
+                Form2.chosenGameType = Form1.GameType.Turbo;
+            else if (sender == button9)
+                Form2.chosenGameType = Form1.GameType.Fruit;
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -97,6 +103,16 @@ namespace Pacman
         {
             Button button = sender as Button;
             button.BackColor = Color.GhostWhite;
+        }
+
+        private void closeHelpButton_Click(object sender, EventArgs e)
+        {
+            helpPanel.Visible = false;
+        }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            helpPanel.Visible = true;
         }
     }
 }

@@ -45,11 +45,23 @@ namespace Pacman
         // Odabrani skin za duhove.
         public static Ghost.Character chosenGhostCharacter;
 
-        public Form1(Form2 parent, Pacman.Character _chosenPacmanCharacter, Ghost.Character _chosenGhostCharacter)
+        // Sve moguće vrste igre.
+        public enum GameType
+        {
+            Normal,
+            Turbo,
+            Fruit
+        }
+        // Odabrana vrsta igre.
+        public static GameType gameType;
+
+        public Form1(Form2 parent, Pacman.Character _chosenPacmanCharacter, Ghost.Character _chosenGhostCharacter, GameType _gameType)
         {
             main = parent;
             chosenPacmanCharacter = _chosenPacmanCharacter;
             chosenGhostCharacter = _chosenGhostCharacter;
+            gameType = GameType.Normal; // Za svaki slučaj.
+            gameType = _gameType;
             InitializeComponent();
             formSetup();
         }
@@ -87,9 +99,9 @@ namespace Pacman
             pinkGhost.startTimer();
             blueGhost.startTimer();
             orangeGhost.startTimer();
-            // Treba staviti u if ovisno o trenutno odabranoj igri.
-            foreach (var fruit in fruits)
-                fruit.startTimer();
+            if (gameType == GameType.Fruit)
+                foreach (var fruit in fruits)
+                    fruit.startTimer();
 
             ResumeLayout();
 
@@ -121,8 +133,9 @@ namespace Pacman
             pinkGhost.stopTimer();
             blueGhost.stopTimer();
             orangeGhost.stopTimer();
-            foreach (var fruit in fruits)
-                fruit.stopTimer();
+            if (gameType == GameType.Fruit)
+                foreach (var fruit in fruits)
+                    fruit.stopTimer();
 
             paused = true;
         }
@@ -134,9 +147,9 @@ namespace Pacman
             pinkGhost.startTimer();
             blueGhost.startTimer();
             orangeGhost.startTimer();
-            // Treba staviti u if ovisno o vrsti igre.
-            foreach (var fruit in fruits)
-                fruit.startTimer();
+            if (gameType == GameType.Fruit)
+                foreach (var fruit in fruits)
+                    fruit.startTimer();
 
             paused = false;
         }

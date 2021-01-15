@@ -67,22 +67,24 @@ namespace Pacman
             main = form as Form1;
             // Score label.
             scoreLabel.ForeColor = Color.White;
-            scoreLabel.Text = "Score: 0";
+            scoreLabel.Text = "SCORE: 0";
             scoreLabel.Location = new Point(12, 9);
             scoreLabel.BackColor = Color.DarkBlue;
-            scoreLabel.Font = new Font("Arial", 16);
-            scoreLabel.AutoSize = true;
+            scoreLabel.Font = new Font("Microsoft Sans Serif", 16);
+            //scoreLabel.AutoSize = true;
+            scoreLabel.Width = form.Width / 2;
             form.Controls.Add(scoreLabel);
 
             // Level label.
             levelLabel.Width = form.Width / 2;
             levelLabel.ForeColor = Color.White;
-            levelLabel.Text = "Level: 0";
+            levelLabel.Text = "LEVEL: 0";
             levelLabel.TextAlign = ContentAlignment.TopRight;
             levelLabel.BackColor = Color.DarkBlue;
-            levelLabel.Font = new Font("Arial", 16);
-            levelLabel.AutoSize = true;
-            levelLabel.Location = new Point(form.Width - levelLabel.Width - 12, 9);
+            levelLabel.Font = new Font("Microsoft Sans Serif", 16);
+            //levelLabel.AutoSize = true;
+            levelLabel.Width = form.Width / 2;
+            levelLabel.Location = new Point(form.Width - levelLabel.Width - 30, 9);
             form.Controls.Add(levelLabel);
 
             // Ovo treba odabrati u meniju.
@@ -150,26 +152,30 @@ namespace Pacman
             checkSquare();
             moveCharacter();
 
-            // Provjeri preostalo trajanje voća i signaliziraj završetak.
-            if (rottenCherryDuration > 0) rottenCherryDuration -= timerInterval;
-            else if (isRottenCherryActive) isRottenCherryActive = false;
-
-            if (cherryDuration > 0) cherryDuration -= timerInterval;
-            else if (isCherryActive) isCherryActive = false;
-
-            if (rottenPearDuration > 0) rottenPearDuration -= timerInterval;
-            else if (isRottenPearActive)
+            // Ako je odabrana igra Fruit mode,
+            // provjeri preostalo trajanje voća i signaliziraj završetak.
+            if (Form1.gameType == Form1.GameType.Fruit)
             {
-                isRottenPearActive = false;
-                doubleSpeed();
-            } 
+                if (rottenCherryDuration > 0) rottenCherryDuration -= timerInterval;
+                else if (isRottenCherryActive) isRottenCherryActive = false;
 
-            if (pearDuration > 0) pearDuration -= timerInterval;
-            else if (isPearActive)
-            {
-                isPearActive = false;
-                undoIncreaseSpeedBy33Percent();
-            }
+                if (cherryDuration > 0) cherryDuration -= timerInterval;
+                else if (isCherryActive) isCherryActive = false;
+
+                if (rottenPearDuration > 0) rottenPearDuration -= timerInterval;
+                else if (isRottenPearActive)
+                {
+                    isRottenPearActive = false;
+                    doubleSpeed();
+                }
+
+                if (pearDuration > 0) pearDuration -= timerInterval;
+                else if (isPearActive)
+                {
+                    isPearActive = false;
+                    undoIncreaseSpeedBy33Percent();
+                }
+            }         
         }
 
         // Resetiranje Pacmana.
@@ -180,40 +186,43 @@ namespace Pacman
             j = startJ;
             currentDirection = newDirection = Direction.None;
 
-            // Resetiraj efekte svih voća.
-            rottenCherryDuration = 0;
-            isRottenCherryActive = false;
-            Form1.rottenCherry.removeFromMap();
-            cherryDuration = 0;
-            isCherryActive = false;
-            Form1.cherry.removeFromMap();
-
-            Form1.goldenApple.removeFromMap();
-
-            if (rottenPearDuration > 0 || isRottenPearActive)
+            // Resetiraj efekte svih voća ako je način Fruit.
+            if (Form1.gameType == Form1.GameType.Fruit)
             {
-                rottenPearDuration = 0;
-                isRottenPearActive = false;
-                doubleSpeed();
-                Form1.rottenPear.removeFromMap();
-            }
+                rottenCherryDuration = 0;
+                isRottenCherryActive = false;
+                Form1.rottenCherry.removeFromMap();
+                cherryDuration = 0;
+                isCherryActive = false;
+                Form1.cherry.removeFromMap();
 
-            if (pearDuration > 0 || isPearActive)
-            {
-                pearDuration = 0;
-                isPearActive = false;
-                undoIncreaseSpeedBy33Percent();
-                Form1.pear.removeFromMap();
+                Form1.goldenApple.removeFromMap();
+
+                if (rottenPearDuration > 0 || isRottenPearActive)
+                {
+                    rottenPearDuration = 0;
+                    isRottenPearActive = false;
+                    doubleSpeed();
+                    Form1.rottenPear.removeFromMap();
+                }
+
+                if (pearDuration > 0 || isPearActive)
+                {
+                    pearDuration = 0;
+                    isPearActive = false;
+                    undoIncreaseSpeedBy33Percent();
+                    Form1.pear.removeFromMap();
+                }
             }
         }
 
         public void drawGameText()
         {
             // Pisanje bodova.
-            scoreLabel.Text = "Score: " + score;
+            scoreLabel.Text = "SCORE: " + score;
             scoreLabel.BringToFront();
             // Pisanje trenutnog levela.
-            levelLabel.Text = "Level: " + level;
+            levelLabel.Text = "LEVEL: " + level;
             levelLabel.BringToFront();
 
         }
@@ -314,14 +323,17 @@ namespace Pacman
             Form1.blueGhost.checkSquare();
             Form1.orangeGhost.checkSquare();
 
-            // Provjera nalazi li se voće na kvadratu.
-            Form1.cherry.checkSquare();
-            Form1.rottenCherry.checkSquare();
-            Form1.pear.checkSquare();
-            Form1.rottenPear.checkSquare();
-            Form1.strawberry.checkSquare();
-            Form1.rottenStrawberry.checkSquare();
-            Form1.goldenApple.checkSquare();
+            // Provjera nalazi li se voće na kvadratu ako je način igre Fruit.
+            if (Form1.gameType == Form1.GameType.Fruit)
+            {
+                Form1.cherry.checkSquare();
+                Form1.rottenCherry.checkSquare();
+                Form1.pear.checkSquare();
+                Form1.rottenPear.checkSquare();
+                Form1.strawberry.checkSquare();
+                Form1.rottenStrawberry.checkSquare();
+                Form1.goldenApple.checkSquare();
+            }   
         }
 
         public override int startI 
