@@ -18,6 +18,10 @@ namespace Pacman
 
         // Za odabir lika Pacmana.
         public static Pacman.Character pacmanChosenCharacter = Pacman.Character.Pacman;
+
+        // Za odabir skina za duhove.
+        public static Ghost.Character ghostChosenCharacter = Ghost.Character.Default;
+
         public Form2()
         {
             InitializeComponent();
@@ -100,7 +104,7 @@ namespace Pacman
             Sounds.menuSound.Play();
             SetMusic("Valor");
             menu.Hide();
-            activeGame = new Form1(this, pacmanChosenCharacter);
+            activeGame = new Form1(this, pacmanChosenCharacter, ghostChosenCharacter);
             activeGame.TopLevel = false;
             this.Controls.Add(activeGame);
             activeGame.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

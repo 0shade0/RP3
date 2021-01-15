@@ -42,10 +42,14 @@ namespace Pacman
         // Odabrani lik za Pacmana.
         public static Pacman.Character chosenPacmanCharacter;
 
-        public Form1(Form2 parent, Pacman.Character _chosenPacmanCharacter)
+        // Odabrani skin za duhove.
+        public static Ghost.Character chosenGhostCharacter;
+
+        public Form1(Form2 parent, Pacman.Character _chosenPacmanCharacter, Ghost.Character _chosenGhostCharacter)
         {
             main = parent;
             chosenPacmanCharacter = _chosenPacmanCharacter;
+            chosenGhostCharacter = _chosenGhostCharacter;
             InitializeComponent();
             formSetup();
         }
@@ -56,10 +60,10 @@ namespace Pacman
             this.Size = new Size(29 * squareSize.X, 37 * squareSize.Y);
             grid = new Grid(this, pacmanStartPoint);
             pacman = new Pacman(this, chosenPacmanCharacter);
-            redGhost = new RedGhost(this);
-            pinkGhost = new PinkGhost(this);
-            blueGhost = new BlueGhost(this);
-            orangeGhost = new OrangeGhost(this);
+            redGhost = new RedGhost(this, chosenGhostCharacter);
+            pinkGhost = new PinkGhost(this, chosenGhostCharacter);
+            blueGhost = new BlueGhost(this, chosenGhostCharacter);
+            orangeGhost = new OrangeGhost(this, chosenGhostCharacter);
 
             // Konstruktor voća prima bool argument u ovisnosti
             // je li voće trulo.

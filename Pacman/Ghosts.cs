@@ -70,12 +70,13 @@ namespace Pacman
         // 0 = plavi sprite za bježanje, 1 = white.
         protected int fleeSprite = 0;
 
-        public Ghost(Form form) : base(form) 
+        public Ghost(Form form, Ghost.Character chosenGhostCharacter) : base(form) 
         {
             // Na početku su duhovi sporiji od pacmana.
             timerInterval = 180;
             characterTimer.Interval = timerInterval;
             currentImage = 0;
+            chosenCharacter = chosenGhostCharacter;
             rand = new Random();
         }
 
@@ -343,7 +344,7 @@ namespace Pacman
         public void ateRottenStrawberrie()
         {
             strawberrieDuration = Form1.RottenFruitDuration;
-            increaseSpeedBy33Percent();
+            if (!isStrawberrieActive) increaseSpeedBy33Percent();
             isStrawberrieActive = true;
         }
 
@@ -357,7 +358,7 @@ namespace Pacman
 
     public class RedGhost : Ghost 
     {
-        public RedGhost(Form form) : base(form) 
+        public RedGhost(Form form, Ghost.Character chosenGhostCharacter) : base(form, chosenGhostCharacter) 
         {
             waitTreshold = 0;
 
@@ -410,7 +411,7 @@ namespace Pacman
 
     public class PinkGhost : Ghost 
     {
-        public PinkGhost(Form form) : base(form) 
+        public PinkGhost(Form form, Ghost.Character chosenGhostCharacter) : base(form, chosenGhostCharacter) 
         {
             waitTreshold = 10;
 
@@ -479,7 +480,7 @@ namespace Pacman
 
     public class BlueGhost : Ghost 
     {
-        public BlueGhost(Form form) : base(form) 
+        public BlueGhost(Form form, Ghost.Character chosenGhostCharacter) : base(form, chosenGhostCharacter) 
         {
             waitTreshold = 20;
 
@@ -553,7 +554,7 @@ namespace Pacman
 
     public class OrangeGhost : Ghost 
     {
-        public OrangeGhost(Form form) : base(form) 
+        public OrangeGhost(Form form, Ghost.Character chosenGhostCharacter) : base(form, chosenGhostCharacter) 
         {
             waitTreshold = 40;
 

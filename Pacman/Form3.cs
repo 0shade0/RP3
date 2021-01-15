@@ -74,6 +74,12 @@ namespace Pacman
                 Form2.pacmanChosenCharacter = Pacman.Character.MsPacman;
             else if (sender == button3)
                 Form2.pacmanChosenCharacter = Pacman.Character.ChristmasPacman;
+            else if (sender == button4)
+                Form2.ghostChosenCharacter = Ghost.Character.Default;
+            else if (sender == button5)
+                Form2.ghostChosenCharacter = Ghost.Character.Kanji;
+            else if (sender == button6)
+                Form2.ghostChosenCharacter = Ghost.Character.Christmas;
         }
 
         private void button10_Click(object sender, EventArgs e)
