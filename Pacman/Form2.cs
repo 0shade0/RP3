@@ -16,6 +16,12 @@ namespace Pacman
         private Form1 activeGame;
         private AxWMPLib.AxWindowsMediaPlayer mediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
 
+        // Za odabir lika Pacmana.
+        public static Pacman.Character pacmanChosenCharacter = Pacman.Character.Pacman;
+
+        // Za odabir skina za duhove.
+        public static Ghost.Character ghostChosenCharacter = Ghost.Character.Default;
+
         public Form2()
         {
             InitializeComponent();
@@ -96,26 +102,9 @@ namespace Pacman
         private void button1_Click(object sender, EventArgs e)
         {
             Sounds.menuSound.Play();
-            if (Form1.chosenPacmanCharacter == Pacman.Character.ChristmasPacman
-                && Form1.chosenGhostCharacter == Ghost.Character.Christmas)
-                SetMusic("Jingle");
-            else
-            switch(Form1.chosenGameMode)
-            {
-                case Form1.GameMode.Normal:
-                    SetMusic("Valor");
-                    break;
-                case Form1.GameMode.Turbo:
-                    SetMusic("Authority");
-                    break;
-                case Form1.GameMode.Fruit:
-                    SetMusic("Odds");
-                    break;
-            }
-            
+            SetMusic("Valor");
             menu.Hide();
-            panel1.Hide();
-            activeGame = new Form1(this);
+            activeGame = new Form1(this, pacmanChosenCharacter, ghostChosenCharacter);
             activeGame.TopLevel = false;
             this.Controls.Add(activeGame);
             activeGame.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -123,6 +112,7 @@ namespace Pacman
             activeGame.Show();
             activeGame.Focus();
             activeGame.KeyPreview = true;
+            panel1.Hide();
             setPause();
             Form1.startGame();
         }
