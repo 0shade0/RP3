@@ -238,7 +238,10 @@ namespace Pacman
         public static int PacmanDefaultSpeed
         {
             // Place holder, treba napraviti da ovisi i o tipu igre.
-            get { return Math.Max(48, 160 - SpeedIncPerLevel * (Form1.pacman.Level - 1)); }
+            get {
+                if (chosenGameMode == GameMode.Turbo) return Math.Max(48, 160 - SpeedIncPerLevel * (Form1.pacman.Level - 1)) / 2;
+                else return Math.Max(48, 160 - SpeedIncPerLevel * (Form1.pacman.Level - 1));
+            }
         }
 
         // Trajanje voća koje odmaže pacmanu, 7 sekundi.
