@@ -156,8 +156,6 @@ namespace Pacman
         {
             if (Form1.pacman.I == i && Form1.pacman.J == j)
             {
-                if (rotten) Sounds.eatRottenSound.Play();
-                else Sounds.eatFruitSound.Play();
                 // Javi duhovima da je jagoda pojedena.
                 if (rotten)
                 {
@@ -192,8 +190,6 @@ namespace Pacman
         {
             if (Form1.pacman.I == i && Form1.pacman.J == j)
             {
-                if (rotten) Sounds.eatRottenSound.Play();
-                else Sounds.eatFruitSound.Play();
                 // Javi Pacmanu da je trešnja pojedena.
                 Form1.pacman.ateCherry(rotten);
                 removeFromMap();
@@ -214,8 +210,6 @@ namespace Pacman
         {
             if (Form1.pacman.I == i && Form1.pacman.J == j)
             {
-                if (rotten) Sounds.eatRottenSound.Play();
-                else Sounds.eatFruitSound.Play();
                 // Javi Pacmanu da je kruška pojedena.
                 Form1.pacman.atePear(rotten);
                 removeFromMap();
@@ -236,7 +230,6 @@ namespace Pacman
         {
             if (Form1.pacman.I == i && Form1.pacman.J == j)
             {
-                Sounds.eatAppleSound.Play();
                 // Dodaj život Pacmanu.
                 Form1.pacman.addLife();
                 removeFromMap();

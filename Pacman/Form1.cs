@@ -45,19 +45,11 @@ namespace Pacman
         // Odabrani skin za duhove.
         public static Ghost.Character chosenGhostCharacter;
 
-        // Odabrani način igre.
-        public static GameMode chosenGameMode;
-
-        public enum GameMode
-        {
-            Normal,
-            Turbo,
-            Fruit
-        }
-
-        public Form1(Form2 parent)
+        public Form1(Form2 parent, Pacman.Character _chosenPacmanCharacter, Ghost.Character _chosenGhostCharacter)
         {
             main = parent;
+            chosenPacmanCharacter = _chosenPacmanCharacter;
+            chosenGhostCharacter = _chosenGhostCharacter;
             InitializeComponent();
             formSetup();
         }
@@ -105,15 +97,6 @@ namespace Pacman
             panel1.Hide();
         }
 
-        public static void setTurbo()
-        {
-            pacman.doubleSpeed();
-            redGhost.doubleSpeed();
-            pinkGhost.doubleSpeed();
-            blueGhost.doubleSpeed();
-            orangeGhost.doubleSpeed();
-        }
-
         public void setGameover()
         {
             label1.Text = "GAMEOVER";
@@ -138,27 +121,22 @@ namespace Pacman
             pinkGhost.stopTimer();
             blueGhost.stopTimer();
             orangeGhost.stopTimer();
-
-            if (chosenGameMode == GameMode.Fruit)
-                foreach (var fruit in fruits)
-                    fruit.stopTimer();
+            foreach (var fruit in fruits)
+                fruit.stopTimer();
 
             paused = true;
         }
 
         public static void startGame()
         {
-            if (chosenGameMode == GameMode.Turbo)
-                setTurbo();
             pacman.startTimer();
             redGhost.startTimer();
             pinkGhost.startTimer();
             blueGhost.startTimer();
             orangeGhost.startTimer();
-
-            if(chosenGameMode == GameMode.Fruit)
-                foreach (var fruit in fruits)
-                    fruit.startTimer();
+            // Treba staviti u if ovisno o vrsti igre.
+            foreach (var fruit in fruits)
+                fruit.startTimer();
 
             paused = false;
         }
@@ -229,9 +207,7 @@ namespace Pacman
         {
             get 
             {
-                int value = Math.Max(7000 - 350 * (Form1.pacman.Level - 1), 0);
-                if (chosenGameMode == GameMode.Turbo) return value/2;
-                else return value;
+                return Math.Max(7000 - 350 * (Form1.pacman.Level - 1), 0);
             }
         }
 
