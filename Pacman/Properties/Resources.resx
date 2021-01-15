@@ -118,8 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="apple" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\apple.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="AppleGolden" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GoldenApple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Authority" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Authority.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="BlueCGhostDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BlueCGhostDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,11 +196,17 @@
   <data name="cookieImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cookieImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fruit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fruit.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="GhostFleeBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GhostFleeBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GhostFleeWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GhostFleeWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Jingle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Jingle.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="KanjiFleeBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KanjiFleeBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -228,6 +240,9 @@
   </data>
   <data name="MsPacmanUpEat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MsPacmanUpEat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Odds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Odds.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="OrangeCGhostDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OrangeCGhostDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -342,6 +357,9 @@
   </data>
   <data name="RedKanji" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RedKanji.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rotten" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rotten.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Strawberry" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Strawberry.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

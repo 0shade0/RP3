@@ -61,12 +61,31 @@ namespace Pacman.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream apple {
+            get {
+                return ResourceManager.GetStream("apple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap AppleGolden {
             get {
                 object obj = ResourceManager.GetObject("AppleGolden", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Authority {
+            get {
+                object obj = ResourceManager.GetObject("Authority", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -301,6 +320,15 @@ namespace Pacman.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream fruit {
+            get {
+                return ResourceManager.GetStream("fruit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap GhostFleeBlue {
@@ -317,6 +345,16 @@ namespace Pacman.Properties {
             get {
                 object obj = ResourceManager.GetObject("GhostFleeWhite", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Jingle {
+            get {
+                object obj = ResourceManager.GetObject("Jingle", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -427,6 +465,16 @@ namespace Pacman.Properties {
             get {
                 object obj = ResourceManager.GetObject("MsPacmanUpEat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Odds {
+            get {
+                object obj = ResourceManager.GetObject("Odds", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -807,6 +855,15 @@ namespace Pacman.Properties {
             get {
                 object obj = ResourceManager.GetObject("RedKanji", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream rotten {
+            get {
+                return ResourceManager.GetStream("rotten", resourceCulture);
             }
         }
         
