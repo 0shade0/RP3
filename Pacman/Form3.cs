@@ -48,7 +48,7 @@ namespace Pacman
             button7.LostFocus += buttonLeave;
             button8.LostFocus += buttonLeave;
             button9.LostFocus += buttonLeave;
-        }
+      }
 
         private void buttonEnter(object sender, EventArgs e)
         {
@@ -58,8 +58,8 @@ namespace Pacman
 
         private void buttonLeave(object sender, EventArgs e)
         {
-            Button button = sender as Button;
-            button.BackColor = Color.Yellow;
+            if (sender == button10) button10.BackColor = Color.Yellow;
+            checkActiveButtons();
         }
 
         private void selectOption(object sender, EventArgs e)
@@ -69,17 +69,25 @@ namespace Pacman
             // Ako nijedan od ovih nije odabran, u konstruktoru Pacmana se defaultno
             // postavlja defaultni lik.
             if (sender == button1)
-                Form2.pacmanChosenCharacter = Pacman.Character.Pacman;
+                Form1.chosenPacmanCharacter = Pacman.Character.Pacman;
             else if (sender == button2)
-                Form2.pacmanChosenCharacter = Pacman.Character.MsPacman;
+                Form1.chosenPacmanCharacter = Pacman.Character.MsPacman;
             else if (sender == button3)
-                Form2.pacmanChosenCharacter = Pacman.Character.ChristmasPacman;
+                Form1.chosenPacmanCharacter = Pacman.Character.ChristmasPacman;
             else if (sender == button4)
-                Form2.ghostChosenCharacter = Ghost.Character.Default;
+                Form1.chosenGhostCharacter = Ghost.Character.Default;
             else if (sender == button5)
-                Form2.ghostChosenCharacter = Ghost.Character.Kanji;
+                Form1.chosenGhostCharacter = Ghost.Character.Kanji;
             else if (sender == button6)
-                Form2.ghostChosenCharacter = Ghost.Character.Christmas;
+                Form1.chosenGhostCharacter = Ghost.Character.Christmas;
+            else if (sender == button7)
+                Form1.chosenGameMode = Form1.GameMode.Normal;
+            else if (sender == button8)
+                Form1.chosenGameMode = Form1.GameMode.Turbo;
+            else if (sender == button9)
+                Form1.chosenGameMode = Form1.GameMode.Fruit;
+
+            checkActiveButtons();
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -89,14 +97,74 @@ namespace Pacman
 
         private void buttonImgLeave(object sender, EventArgs e)
         {
-            Button button = sender as Button;
-            button.BackColor = Color.Black;
+            checkActiveButtons();
         }
 
         private void buttonImgEnter(object sender, EventArgs e)
         {
+            checkActiveButtons();
             Button button = sender as Button;
             button.BackColor = Color.GhostWhite;
+        }
+
+        private void checkActiveButtons()
+        {
+            switch (Form1.chosenPacmanCharacter)
+            {
+                case Pacman.Character.Pacman:
+                    button1.BackColor = Color.Orange;
+                    button2.BackColor = Color.Black;
+                    button3.BackColor = Color.Black;
+                    break;
+                case Pacman.Character.MsPacman:
+                    button1.BackColor = Color.Black;
+                    button2.BackColor = Color.Orange;
+                    button3.BackColor = Color.Black;
+                    break;
+                case Pacman.Character.ChristmasPacman:
+                    button1.BackColor = Color.Black;
+                    button2.BackColor = Color.Black;
+                    button3.BackColor = Color.Orange;
+                    break;
+            }
+
+            switch (Form1.chosenGhostCharacter)
+            {
+                case Ghost.Character.Default:
+                    button4.BackColor = Color.Orange;
+                    button5.BackColor = Color.Black;
+                    button6.BackColor = Color.Black;
+                    break;
+                case Ghost.Character.Kanji:
+                    button4.BackColor = Color.Black;
+                    button5.BackColor = Color.Orange;
+                    button6.BackColor = Color.Black;
+                    break;
+                case Ghost.Character.Christmas:
+                    button4.BackColor = Color.Black;
+                    button5.BackColor = Color.Black;
+                    button6.BackColor = Color.Orange;
+                    break;
+            }
+
+            switch (Form1.chosenGameMode)
+            {
+                case Form1.GameMode.Normal:
+                    button7.BackColor = Color.Orange;
+                    button8.BackColor = Color.Gray;
+                    button9.BackColor = Color.Gray;
+                    break;
+                case Form1.GameMode.Turbo:
+                    button7.BackColor = Color.Gray;
+                    button8.BackColor = Color.Orange;
+                    button9.BackColor = Color.Gray;
+                    break;
+                case Form1.GameMode.Fruit:
+                    button7.BackColor = Color.Gray;
+                    button8.BackColor = Color.Gray;
+                    button9.BackColor = Color.Orange;
+                    break;
+            }
         }
     }
 }
