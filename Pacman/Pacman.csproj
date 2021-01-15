@@ -422,7 +422,22 @@
     <None Include="Resources\CGhostFleeWhite.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\HelpIcon.png" />
+    <None Include="Resources\apple.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Authority.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fruit.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jingle.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Odds.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rotten.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

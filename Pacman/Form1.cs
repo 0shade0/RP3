@@ -45,23 +45,19 @@ namespace Pacman
         // Odabrani skin za duhove.
         public static Ghost.Character chosenGhostCharacter;
 
-        // Sve moguće vrste igre.
-        public enum GameType
+        // Odabrani način igre.
+        public static GameMode chosenGameMode;
+
+        public enum GameMode
         {
             Normal,
             Turbo,
             Fruit
         }
-        // Odabrana vrsta igre.
-        public static GameType gameType;
 
-        public Form1(Form2 parent, Pacman.Character _chosenPacmanCharacter, Ghost.Character _chosenGhostCharacter, GameType _gameType)
+        public Form1(Form2 parent)
         {
             main = parent;
-            chosenPacmanCharacter = _chosenPacmanCharacter;
-            chosenGhostCharacter = _chosenGhostCharacter;
-            gameType = GameType.Normal; // Za svaki slučaj.
-            gameType = _gameType;
             InitializeComponent();
             formSetup();
         }
@@ -99,7 +95,7 @@ namespace Pacman
             pinkGhost.startTimer();
             blueGhost.startTimer();
             orangeGhost.startTimer();
-            if (gameType == GameType.Fruit)
+            if (chosenGameMode == GameMode.Fruit)
                 foreach (var fruit in fruits)
                     fruit.startTimer();
 
@@ -107,6 +103,15 @@ namespace Pacman
 
             label1.Hide();
             panel1.Hide();
+        }
+
+        public static void setTurbo()
+        {
+            pacman.doubleSpeed();
+            redGhost.doubleSpeed();
+            pinkGhost.doubleSpeed();
+            blueGhost.doubleSpeed();
+            orangeGhost.doubleSpeed();
         }
 
         public void setGameover()
@@ -133,7 +138,8 @@ namespace Pacman
             pinkGhost.stopTimer();
             blueGhost.stopTimer();
             orangeGhost.stopTimer();
-            if (gameType == GameType.Fruit)
+
+            if (chosenGameMode == GameMode.Fruit)
                 foreach (var fruit in fruits)
                     fruit.stopTimer();
 
@@ -142,12 +148,15 @@ namespace Pacman
 
         public static void startGame()
         {
+            if (chosenGameMode == GameMode.Turbo)
+                setTurbo();
             pacman.startTimer();
             redGhost.startTimer();
             pinkGhost.startTimer();
             blueGhost.startTimer();
             orangeGhost.startTimer();
-            if (gameType == GameType.Fruit)
+
+            if (chosenGameMode == GameMode.Fruit)
                 foreach (var fruit in fruits)
                     fruit.startTimer();
 
@@ -158,7 +167,7 @@ namespace Pacman
         {
             var key = e.KeyCode;
             if (paused && key != Keys.Escape) return;
-            switch(key)
+            switch (key)
             {
                 case Keys.Left:
                 case Keys.A:
@@ -218,9 +227,11 @@ namespace Pacman
         // Trajanje superKolaća, 7 sekundi na levelu 1, 0 sekundi na levelu 21 i dalje.
         public static int SuperCookieDuration
         {
-            get 
+            get
             {
-                return Math.Max(7000 - 350 * (Form1.pacman.Level - 1), 0);
+                int value = Math.Max(7000 - 350 * (Form1.pacman.Level - 1), 0);
+                if (chosenGameMode == GameMode.Turbo) return value / 2;
+                else return Math.Max(7000 - 350 * (Form1.pacman.Level - 1), 0);
             }
         }
 
@@ -233,7 +244,7 @@ namespace Pacman
         // Trajanje voća koje odmaže pacmanu, 7 sekundi.
         public static int RottenFruitDuration
         {
-            get 
+            get
             {
                 return 7000;
             }
