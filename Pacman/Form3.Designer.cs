@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -39,34 +40,34 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.helpPanel = new System.Windows.Forms.Panel();
+            this.helpGoldenAppleTextbox = new System.Windows.Forms.TextBox();
+            this.helpRottenStrawberryTextbox = new System.Windows.Forms.TextBox();
+            this.helpStrawberryTextbox = new System.Windows.Forms.TextBox();
+            this.helpRottenPearTextbox = new System.Windows.Forms.TextBox();
+            this.helpPearTextbox = new System.Windows.Forms.TextBox();
+            this.helpRottenCherryTextbox = new System.Windows.Forms.TextBox();
+            this.helpCherryTextbox = new System.Windows.Forms.TextBox();
+            this.helpGoldenApplePictureBox = new System.Windows.Forms.PictureBox();
+            this.helpRottenStrawberryPictureBox = new System.Windows.Forms.PictureBox();
+            this.helpStrawberryPictureBox = new System.Windows.Forms.PictureBox();
+            this.helpRottenPearPictureBox = new System.Windows.Forms.PictureBox();
+            this.helpPearPictureBox = new System.Windows.Forms.PictureBox();
+            this.helpRottenCherryPictureBox = new System.Windows.Forms.PictureBox();
+            this.helpCherryPictureBox = new System.Windows.Forms.PictureBox();
+            this.helpFruitTextBox = new System.Windows.Forms.TextBox();
+            this.helpFruitHeaderTextBox = new System.Windows.Forms.TextBox();
+            this.helpTurboTextBox = new System.Windows.Forms.TextBox();
             this.closeHelpButton = new System.Windows.Forms.Button();
             this.helpTurboHeaderTextBox = new System.Windows.Forms.TextBox();
             this.helpButton = new System.Windows.Forms.Button();
-            this.helpTurboTextBox = new System.Windows.Forms.TextBox();
-            this.helpFruitHeaderTextBox = new System.Windows.Forms.TextBox();
-            this.helpFruitTextBox = new System.Windows.Forms.TextBox();
-            this.helpCherryPictureBox = new System.Windows.Forms.PictureBox();
-            this.helpRottenCherryPictureBox = new System.Windows.Forms.PictureBox();
-            this.helpPearPictureBox = new System.Windows.Forms.PictureBox();
-            this.helpRottenPearPictureBox = new System.Windows.Forms.PictureBox();
-            this.helpStrawberryPictureBox = new System.Windows.Forms.PictureBox();
-            this.helpRottenStrawberryPictureBox = new System.Windows.Forms.PictureBox();
-            this.helpGoldenApplePictureBox = new System.Windows.Forms.PictureBox();
-            this.helpCherryTextbox = new System.Windows.Forms.TextBox();
-            this.helpRottenCherryTextbox = new System.Windows.Forms.TextBox();
-            this.helpPearTextbox = new System.Windows.Forms.TextBox();
-            this.helpRottenPearTextbox = new System.Windows.Forms.TextBox();
-            this.helpStrawberryTextbox = new System.Windows.Forms.TextBox();
-            this.helpRottenStrawberryTextbox = new System.Windows.Forms.TextBox();
-            this.helpGoldenAppleTextbox = new System.Windows.Forms.TextBox();
             this.helpPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.helpCherryPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.helpRottenCherryPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.helpPearPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.helpRottenPearPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.helpStrawberryPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.helpRottenStrawberryPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.helpGoldenApplePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.helpRottenStrawberryPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.helpStrawberryPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.helpRottenPearPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.helpPearPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.helpRottenCherryPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.helpCherryPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // button4
@@ -238,6 +239,220 @@
             this.helpPanel.TabIndex = 10;
             this.helpPanel.Visible = false;
             // 
+            // helpGoldenAppleTextbox
+            // 
+            this.helpGoldenAppleTextbox.AcceptsTab = true;
+            this.helpGoldenAppleTextbox.BackColor = System.Drawing.Color.Black;
+            this.helpGoldenAppleTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.helpGoldenAppleTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpGoldenAppleTextbox.ForeColor = System.Drawing.Color.White;
+            this.helpGoldenAppleTextbox.Location = new System.Drawing.Point(67, 337);
+            this.helpGoldenAppleTextbox.Multiline = true;
+            this.helpGoldenAppleTextbox.Name = "helpGoldenAppleTextbox";
+            this.helpGoldenAppleTextbox.ReadOnly = true;
+            this.helpGoldenAppleTextbox.Size = new System.Drawing.Size(283, 16);
+            this.helpGoldenAppleTextbox.TabIndex = 18;
+            this.helpGoldenAppleTextbox.Text = "Player recieves an extra life";
+            // 
+            // helpRottenStrawberryTextbox
+            // 
+            this.helpRottenStrawberryTextbox.AcceptsTab = true;
+            this.helpRottenStrawberryTextbox.BackColor = System.Drawing.Color.Black;
+            this.helpRottenStrawberryTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.helpRottenStrawberryTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpRottenStrawberryTextbox.ForeColor = System.Drawing.Color.White;
+            this.helpRottenStrawberryTextbox.Location = new System.Drawing.Point(67, 304);
+            this.helpRottenStrawberryTextbox.Multiline = true;
+            this.helpRottenStrawberryTextbox.Name = "helpRottenStrawberryTextbox";
+            this.helpRottenStrawberryTextbox.ReadOnly = true;
+            this.helpRottenStrawberryTextbox.Size = new System.Drawing.Size(283, 16);
+            this.helpRottenStrawberryTextbox.TabIndex = 17;
+            this.helpRottenStrawberryTextbox.Text = "Increases ghosts\' speed";
+            // 
+            // helpStrawberryTextbox
+            // 
+            this.helpStrawberryTextbox.AcceptsTab = true;
+            this.helpStrawberryTextbox.BackColor = System.Drawing.Color.Black;
+            this.helpStrawberryTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.helpStrawberryTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpStrawberryTextbox.ForeColor = System.Drawing.Color.White;
+            this.helpStrawberryTextbox.Location = new System.Drawing.Point(67, 273);
+            this.helpStrawberryTextbox.Multiline = true;
+            this.helpStrawberryTextbox.Name = "helpStrawberryTextbox";
+            this.helpStrawberryTextbox.ReadOnly = true;
+            this.helpStrawberryTextbox.Size = new System.Drawing.Size(283, 16);
+            this.helpStrawberryTextbox.TabIndex = 16;
+            this.helpStrawberryTextbox.Text = "Freezes the ghosts\r\n\r\n\r\n";
+            // 
+            // helpRottenPearTextbox
+            // 
+            this.helpRottenPearTextbox.AcceptsTab = true;
+            this.helpRottenPearTextbox.BackColor = System.Drawing.Color.Black;
+            this.helpRottenPearTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.helpRottenPearTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpRottenPearTextbox.ForeColor = System.Drawing.Color.White;
+            this.helpRottenPearTextbox.Location = new System.Drawing.Point(67, 244);
+            this.helpRottenPearTextbox.Multiline = true;
+            this.helpRottenPearTextbox.Name = "helpRottenPearTextbox";
+            this.helpRottenPearTextbox.ReadOnly = true;
+            this.helpRottenPearTextbox.Size = new System.Drawing.Size(283, 16);
+            this.helpRottenPearTextbox.TabIndex = 15;
+            this.helpRottenPearTextbox.Text = "Decreases player\'s speed\r\n\r\n\r\n";
+            // 
+            // helpPearTextbox
+            // 
+            this.helpPearTextbox.AcceptsTab = true;
+            this.helpPearTextbox.BackColor = System.Drawing.Color.Black;
+            this.helpPearTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.helpPearTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpPearTextbox.ForeColor = System.Drawing.Color.White;
+            this.helpPearTextbox.Location = new System.Drawing.Point(67, 212);
+            this.helpPearTextbox.Multiline = true;
+            this.helpPearTextbox.Name = "helpPearTextbox";
+            this.helpPearTextbox.ReadOnly = true;
+            this.helpPearTextbox.Size = new System.Drawing.Size(283, 16);
+            this.helpPearTextbox.TabIndex = 14;
+            this.helpPearTextbox.Text = "Increases player\'s speed\r\n\r\n\r\n";
+            // 
+            // helpRottenCherryTextbox
+            // 
+            this.helpRottenCherryTextbox.AcceptsTab = true;
+            this.helpRottenCherryTextbox.BackColor = System.Drawing.Color.Black;
+            this.helpRottenCherryTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.helpRottenCherryTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpRottenCherryTextbox.ForeColor = System.Drawing.Color.White;
+            this.helpRottenCherryTextbox.Location = new System.Drawing.Point(67, 181);
+            this.helpRottenCherryTextbox.Multiline = true;
+            this.helpRottenCherryTextbox.Name = "helpRottenCherryTextbox";
+            this.helpRottenCherryTextbox.ReadOnly = true;
+            this.helpRottenCherryTextbox.Size = new System.Drawing.Size(283, 16);
+            this.helpRottenCherryTextbox.TabIndex = 13;
+            this.helpRottenCherryTextbox.Text = "Halves points gained for eating edibles\r\n\r\n\r\n";
+            // 
+            // helpCherryTextbox
+            // 
+            this.helpCherryTextbox.AcceptsTab = true;
+            this.helpCherryTextbox.BackColor = System.Drawing.Color.Black;
+            this.helpCherryTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.helpCherryTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpCherryTextbox.ForeColor = System.Drawing.Color.White;
+            this.helpCherryTextbox.Location = new System.Drawing.Point(67, 151);
+            this.helpCherryTextbox.Multiline = true;
+            this.helpCherryTextbox.Name = "helpCherryTextbox";
+            this.helpCherryTextbox.ReadOnly = true;
+            this.helpCherryTextbox.Size = new System.Drawing.Size(285, 16);
+            this.helpCherryTextbox.TabIndex = 12;
+            this.helpCherryTextbox.Text = "Doubles points gained for eating edibles\r\n\r\n";
+            // 
+            // helpGoldenApplePictureBox
+            // 
+            this.helpGoldenApplePictureBox.Image = global::Pacman.Properties.Resources.AppleGolden;
+            this.helpGoldenApplePictureBox.Location = new System.Drawing.Point(36, 332);
+            this.helpGoldenApplePictureBox.Name = "helpGoldenApplePictureBox";
+            this.helpGoldenApplePictureBox.Size = new System.Drawing.Size(25, 25);
+            this.helpGoldenApplePictureBox.TabIndex = 11;
+            this.helpGoldenApplePictureBox.TabStop = false;
+            // 
+            // helpRottenStrawberryPictureBox
+            // 
+            this.helpRottenStrawberryPictureBox.Image = global::Pacman.Properties.Resources.StrawberryRotten;
+            this.helpRottenStrawberryPictureBox.Location = new System.Drawing.Point(36, 301);
+            this.helpRottenStrawberryPictureBox.Name = "helpRottenStrawberryPictureBox";
+            this.helpRottenStrawberryPictureBox.Size = new System.Drawing.Size(25, 25);
+            this.helpRottenStrawberryPictureBox.TabIndex = 10;
+            this.helpRottenStrawberryPictureBox.TabStop = false;
+            // 
+            // helpStrawberryPictureBox
+            // 
+            this.helpStrawberryPictureBox.Image = global::Pacman.Properties.Resources.Strawberry;
+            this.helpStrawberryPictureBox.Location = new System.Drawing.Point(36, 270);
+            this.helpStrawberryPictureBox.Name = "helpStrawberryPictureBox";
+            this.helpStrawberryPictureBox.Size = new System.Drawing.Size(25, 25);
+            this.helpStrawberryPictureBox.TabIndex = 9;
+            this.helpStrawberryPictureBox.TabStop = false;
+            // 
+            // helpRottenPearPictureBox
+            // 
+            this.helpRottenPearPictureBox.Image = global::Pacman.Properties.Resources.PearRotten;
+            this.helpRottenPearPictureBox.Location = new System.Drawing.Point(36, 239);
+            this.helpRottenPearPictureBox.Name = "helpRottenPearPictureBox";
+            this.helpRottenPearPictureBox.Size = new System.Drawing.Size(25, 25);
+            this.helpRottenPearPictureBox.TabIndex = 8;
+            this.helpRottenPearPictureBox.TabStop = false;
+            // 
+            // helpPearPictureBox
+            // 
+            this.helpPearPictureBox.Image = global::Pacman.Properties.Resources.Pear;
+            this.helpPearPictureBox.Location = new System.Drawing.Point(36, 208);
+            this.helpPearPictureBox.Name = "helpPearPictureBox";
+            this.helpPearPictureBox.Size = new System.Drawing.Size(25, 25);
+            this.helpPearPictureBox.TabIndex = 7;
+            this.helpPearPictureBox.TabStop = false;
+            // 
+            // helpRottenCherryPictureBox
+            // 
+            this.helpRottenCherryPictureBox.Image = global::Pacman.Properties.Resources.CherriesRotten;
+            this.helpRottenCherryPictureBox.Location = new System.Drawing.Point(36, 177);
+            this.helpRottenCherryPictureBox.Name = "helpRottenCherryPictureBox";
+            this.helpRottenCherryPictureBox.Size = new System.Drawing.Size(25, 25);
+            this.helpRottenCherryPictureBox.TabIndex = 6;
+            this.helpRottenCherryPictureBox.TabStop = false;
+            // 
+            // helpCherryPictureBox
+            // 
+            this.helpCherryPictureBox.Image = global::Pacman.Properties.Resources.Cherries;
+            this.helpCherryPictureBox.Location = new System.Drawing.Point(36, 146);
+            this.helpCherryPictureBox.Name = "helpCherryPictureBox";
+            this.helpCherryPictureBox.Size = new System.Drawing.Size(25, 25);
+            this.helpCherryPictureBox.TabIndex = 5;
+            this.helpCherryPictureBox.TabStop = false;
+            // 
+            // helpFruitTextBox
+            // 
+            this.helpFruitTextBox.AcceptsTab = true;
+            this.helpFruitTextBox.BackColor = System.Drawing.Color.Black;
+            this.helpFruitTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.helpFruitTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpFruitTextBox.ForeColor = System.Drawing.Color.White;
+            this.helpFruitTextBox.Location = new System.Drawing.Point(36, 105);
+            this.helpFruitTextBox.Multiline = true;
+            this.helpFruitTextBox.Name = "helpFruitTextBox";
+            this.helpFruitTextBox.ReadOnly = true;
+            this.helpFruitTextBox.Size = new System.Drawing.Size(426, 40);
+            this.helpFruitTextBox.TabIndex = 4;
+            this.helpFruitTextBox.Text = "In Fruit mode, various fruits appear on the map at random times. Different types " +
+    "of fruits have different effects:\r\n";
+            // 
+            // helpFruitHeaderTextBox
+            // 
+            this.helpFruitHeaderTextBox.AcceptsTab = true;
+            this.helpFruitHeaderTextBox.BackColor = System.Drawing.Color.Black;
+            this.helpFruitHeaderTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.helpFruitHeaderTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpFruitHeaderTextBox.ForeColor = System.Drawing.Color.White;
+            this.helpFruitHeaderTextBox.Location = new System.Drawing.Point(36, 80);
+            this.helpFruitHeaderTextBox.Multiline = true;
+            this.helpFruitHeaderTextBox.Name = "helpFruitHeaderTextBox";
+            this.helpFruitHeaderTextBox.ReadOnly = true;
+            this.helpFruitHeaderTextBox.Size = new System.Drawing.Size(127, 22);
+            this.helpFruitHeaderTextBox.TabIndex = 3;
+            this.helpFruitHeaderTextBox.Text = "FRUIT MODE";
+            // 
+            // helpTurboTextBox
+            // 
+            this.helpTurboTextBox.AcceptsTab = true;
+            this.helpTurboTextBox.BackColor = System.Drawing.Color.Black;
+            this.helpTurboTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.helpTurboTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpTurboTextBox.ForeColor = System.Drawing.Color.White;
+            this.helpTurboTextBox.Location = new System.Drawing.Point(36, 52);
+            this.helpTurboTextBox.Multiline = true;
+            this.helpTurboTextBox.Name = "helpTurboTextBox";
+            this.helpTurboTextBox.ReadOnly = true;
+            this.helpTurboTextBox.Size = new System.Drawing.Size(426, 22);
+            this.helpTurboTextBox.TabIndex = 2;
+            this.helpTurboTextBox.Text = "In Turbo mode, both the player and ghosts move faster.";
+            // 
             // closeHelpButton
             // 
             this.closeHelpButton.BackColor = System.Drawing.Color.Yellow;
@@ -282,220 +497,6 @@
             this.helpButton.UseVisualStyleBackColor = false;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
-            // helpTurboTextBox
-            // 
-            this.helpTurboTextBox.AcceptsTab = true;
-            this.helpTurboTextBox.BackColor = System.Drawing.Color.Black;
-            this.helpTurboTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.helpTurboTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helpTurboTextBox.ForeColor = System.Drawing.Color.White;
-            this.helpTurboTextBox.Location = new System.Drawing.Point(36, 52);
-            this.helpTurboTextBox.Multiline = true;
-            this.helpTurboTextBox.Name = "helpTurboTextBox";
-            this.helpTurboTextBox.ReadOnly = true;
-            this.helpTurboTextBox.Size = new System.Drawing.Size(426, 22);
-            this.helpTurboTextBox.TabIndex = 2;
-            this.helpTurboTextBox.Text = "In Turbo mode, both the player and ghosts move faster.";
-            // 
-            // helpFruitHeaderTextBox
-            // 
-            this.helpFruitHeaderTextBox.AcceptsTab = true;
-            this.helpFruitHeaderTextBox.BackColor = System.Drawing.Color.Black;
-            this.helpFruitHeaderTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.helpFruitHeaderTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helpFruitHeaderTextBox.ForeColor = System.Drawing.Color.White;
-            this.helpFruitHeaderTextBox.Location = new System.Drawing.Point(36, 80);
-            this.helpFruitHeaderTextBox.Multiline = true;
-            this.helpFruitHeaderTextBox.Name = "helpFruitHeaderTextBox";
-            this.helpFruitHeaderTextBox.ReadOnly = true;
-            this.helpFruitHeaderTextBox.Size = new System.Drawing.Size(127, 22);
-            this.helpFruitHeaderTextBox.TabIndex = 3;
-            this.helpFruitHeaderTextBox.Text = "FRUIT MODE";
-            // 
-            // helpFruitTextBox
-            // 
-            this.helpFruitTextBox.AcceptsTab = true;
-            this.helpFruitTextBox.BackColor = System.Drawing.Color.Black;
-            this.helpFruitTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.helpFruitTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helpFruitTextBox.ForeColor = System.Drawing.Color.White;
-            this.helpFruitTextBox.Location = new System.Drawing.Point(36, 105);
-            this.helpFruitTextBox.Multiline = true;
-            this.helpFruitTextBox.Name = "helpFruitTextBox";
-            this.helpFruitTextBox.ReadOnly = true;
-            this.helpFruitTextBox.Size = new System.Drawing.Size(426, 40);
-            this.helpFruitTextBox.TabIndex = 4;
-            this.helpFruitTextBox.Text = "In Fruit mode, various fruits appear on the map at random times. Different types " +
-    "of fruits have different effects:\r\n";
-            // 
-            // helpCherryPictureBox
-            // 
-            this.helpCherryPictureBox.Image = global::Pacman.Properties.Resources.Cherries;
-            this.helpCherryPictureBox.Location = new System.Drawing.Point(36, 146);
-            this.helpCherryPictureBox.Name = "helpCherryPictureBox";
-            this.helpCherryPictureBox.Size = new System.Drawing.Size(25, 25);
-            this.helpCherryPictureBox.TabIndex = 5;
-            this.helpCherryPictureBox.TabStop = false;
-            // 
-            // helpRottenCherryPictureBox
-            // 
-            this.helpRottenCherryPictureBox.Image = global::Pacman.Properties.Resources.CherriesRotten;
-            this.helpRottenCherryPictureBox.Location = new System.Drawing.Point(36, 177);
-            this.helpRottenCherryPictureBox.Name = "helpRottenCherryPictureBox";
-            this.helpRottenCherryPictureBox.Size = new System.Drawing.Size(25, 25);
-            this.helpRottenCherryPictureBox.TabIndex = 6;
-            this.helpRottenCherryPictureBox.TabStop = false;
-            // 
-            // helpPearPictureBox
-            // 
-            this.helpPearPictureBox.Image = global::Pacman.Properties.Resources.Pear;
-            this.helpPearPictureBox.Location = new System.Drawing.Point(36, 208);
-            this.helpPearPictureBox.Name = "helpPearPictureBox";
-            this.helpPearPictureBox.Size = new System.Drawing.Size(25, 25);
-            this.helpPearPictureBox.TabIndex = 7;
-            this.helpPearPictureBox.TabStop = false;
-            // 
-            // helpRottenPearPictureBox
-            // 
-            this.helpRottenPearPictureBox.Image = global::Pacman.Properties.Resources.PearRotten;
-            this.helpRottenPearPictureBox.Location = new System.Drawing.Point(36, 239);
-            this.helpRottenPearPictureBox.Name = "helpRottenPearPictureBox";
-            this.helpRottenPearPictureBox.Size = new System.Drawing.Size(25, 25);
-            this.helpRottenPearPictureBox.TabIndex = 8;
-            this.helpRottenPearPictureBox.TabStop = false;
-            // 
-            // helpStrawberryPictureBox
-            // 
-            this.helpStrawberryPictureBox.Image = global::Pacman.Properties.Resources.Strawberry;
-            this.helpStrawberryPictureBox.Location = new System.Drawing.Point(36, 270);
-            this.helpStrawberryPictureBox.Name = "helpStrawberryPictureBox";
-            this.helpStrawberryPictureBox.Size = new System.Drawing.Size(25, 25);
-            this.helpStrawberryPictureBox.TabIndex = 9;
-            this.helpStrawberryPictureBox.TabStop = false;
-            // 
-            // helpRottenStrawberryPictureBox
-            // 
-            this.helpRottenStrawberryPictureBox.Image = global::Pacman.Properties.Resources.StrawberryRotten;
-            this.helpRottenStrawberryPictureBox.Location = new System.Drawing.Point(36, 301);
-            this.helpRottenStrawberryPictureBox.Name = "helpRottenStrawberryPictureBox";
-            this.helpRottenStrawberryPictureBox.Size = new System.Drawing.Size(25, 25);
-            this.helpRottenStrawberryPictureBox.TabIndex = 10;
-            this.helpRottenStrawberryPictureBox.TabStop = false;
-            // 
-            // helpGoldenApplePictureBox
-            // 
-            this.helpGoldenApplePictureBox.Image = global::Pacman.Properties.Resources.AppleGolden;
-            this.helpGoldenApplePictureBox.Location = new System.Drawing.Point(36, 332);
-            this.helpGoldenApplePictureBox.Name = "helpGoldenApplePictureBox";
-            this.helpGoldenApplePictureBox.Size = new System.Drawing.Size(25, 25);
-            this.helpGoldenApplePictureBox.TabIndex = 11;
-            this.helpGoldenApplePictureBox.TabStop = false;
-            // 
-            // helpCherryTextbox
-            // 
-            this.helpCherryTextbox.AcceptsTab = true;
-            this.helpCherryTextbox.BackColor = System.Drawing.Color.Black;
-            this.helpCherryTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.helpCherryTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helpCherryTextbox.ForeColor = System.Drawing.Color.White;
-            this.helpCherryTextbox.Location = new System.Drawing.Point(67, 151);
-            this.helpCherryTextbox.Multiline = true;
-            this.helpCherryTextbox.Name = "helpCherryTextbox";
-            this.helpCherryTextbox.ReadOnly = true;
-            this.helpCherryTextbox.Size = new System.Drawing.Size(285, 16);
-            this.helpCherryTextbox.TabIndex = 12;
-            this.helpCherryTextbox.Text = "Doubles points gained for eating edibles\r\n\r\n";
-            // 
-            // helpRottenCherryTextbox
-            // 
-            this.helpRottenCherryTextbox.AcceptsTab = true;
-            this.helpRottenCherryTextbox.BackColor = System.Drawing.Color.Black;
-            this.helpRottenCherryTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.helpRottenCherryTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helpRottenCherryTextbox.ForeColor = System.Drawing.Color.White;
-            this.helpRottenCherryTextbox.Location = new System.Drawing.Point(67, 181);
-            this.helpRottenCherryTextbox.Multiline = true;
-            this.helpRottenCherryTextbox.Name = "helpRottenCherryTextbox";
-            this.helpRottenCherryTextbox.ReadOnly = true;
-            this.helpRottenCherryTextbox.Size = new System.Drawing.Size(283, 16);
-            this.helpRottenCherryTextbox.TabIndex = 13;
-            this.helpRottenCherryTextbox.Text = "Halves points gained for eating edibles\r\n\r\n\r\n";
-            // 
-            // helpPearTextbox
-            // 
-            this.helpPearTextbox.AcceptsTab = true;
-            this.helpPearTextbox.BackColor = System.Drawing.Color.Black;
-            this.helpPearTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.helpPearTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helpPearTextbox.ForeColor = System.Drawing.Color.White;
-            this.helpPearTextbox.Location = new System.Drawing.Point(67, 212);
-            this.helpPearTextbox.Multiline = true;
-            this.helpPearTextbox.Name = "helpPearTextbox";
-            this.helpPearTextbox.ReadOnly = true;
-            this.helpPearTextbox.Size = new System.Drawing.Size(283, 16);
-            this.helpPearTextbox.TabIndex = 14;
-            this.helpPearTextbox.Text = "Increases player\'s speed\r\n\r\n\r\n";
-            // 
-            // helpRottenPearTextbox
-            // 
-            this.helpRottenPearTextbox.AcceptsTab = true;
-            this.helpRottenPearTextbox.BackColor = System.Drawing.Color.Black;
-            this.helpRottenPearTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.helpRottenPearTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helpRottenPearTextbox.ForeColor = System.Drawing.Color.White;
-            this.helpRottenPearTextbox.Location = new System.Drawing.Point(67, 244);
-            this.helpRottenPearTextbox.Multiline = true;
-            this.helpRottenPearTextbox.Name = "helpRottenPearTextbox";
-            this.helpRottenPearTextbox.ReadOnly = true;
-            this.helpRottenPearTextbox.Size = new System.Drawing.Size(283, 16);
-            this.helpRottenPearTextbox.TabIndex = 15;
-            this.helpRottenPearTextbox.Text = "Decreases player\'s speed\r\n\r\n\r\n";
-            // 
-            // helpStrawberryTextbox
-            // 
-            this.helpStrawberryTextbox.AcceptsTab = true;
-            this.helpStrawberryTextbox.BackColor = System.Drawing.Color.Black;
-            this.helpStrawberryTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.helpStrawberryTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helpStrawberryTextbox.ForeColor = System.Drawing.Color.White;
-            this.helpStrawberryTextbox.Location = new System.Drawing.Point(67, 273);
-            this.helpStrawberryTextbox.Multiline = true;
-            this.helpStrawberryTextbox.Name = "helpStrawberryTextbox";
-            this.helpStrawberryTextbox.ReadOnly = true;
-            this.helpStrawberryTextbox.Size = new System.Drawing.Size(283, 16);
-            this.helpStrawberryTextbox.TabIndex = 16;
-            this.helpStrawberryTextbox.Text = "Freezes the ghosts\r\n\r\n\r\n";
-            // 
-            // helpRottenStrawberryTextbox
-            // 
-            this.helpRottenStrawberryTextbox.AcceptsTab = true;
-            this.helpRottenStrawberryTextbox.BackColor = System.Drawing.Color.Black;
-            this.helpRottenStrawberryTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.helpRottenStrawberryTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helpRottenStrawberryTextbox.ForeColor = System.Drawing.Color.White;
-            this.helpRottenStrawberryTextbox.Location = new System.Drawing.Point(67, 304);
-            this.helpRottenStrawberryTextbox.Multiline = true;
-            this.helpRottenStrawberryTextbox.Name = "helpRottenStrawberryTextbox";
-            this.helpRottenStrawberryTextbox.ReadOnly = true;
-            this.helpRottenStrawberryTextbox.Size = new System.Drawing.Size(283, 16);
-            this.helpRottenStrawberryTextbox.TabIndex = 17;
-            this.helpRottenStrawberryTextbox.Text = "Increases ghosts\' speed";
-            // 
-            // helpGoldenAppleTextbox
-            // 
-            this.helpGoldenAppleTextbox.AcceptsTab = true;
-            this.helpGoldenAppleTextbox.BackColor = System.Drawing.Color.Black;
-            this.helpGoldenAppleTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.helpGoldenAppleTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helpGoldenAppleTextbox.ForeColor = System.Drawing.Color.White;
-            this.helpGoldenAppleTextbox.Location = new System.Drawing.Point(67, 337);
-            this.helpGoldenAppleTextbox.Multiline = true;
-            this.helpGoldenAppleTextbox.Name = "helpGoldenAppleTextbox";
-            this.helpGoldenAppleTextbox.ReadOnly = true;
-            this.helpGoldenAppleTextbox.Size = new System.Drawing.Size(283, 16);
-            this.helpGoldenAppleTextbox.TabIndex = 18;
-            this.helpGoldenAppleTextbox.Text = "Player recieves an extra life";
-            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -517,17 +518,18 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button6);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form3";
             this.Text = "Form3";
             this.helpPanel.ResumeLayout(false);
             this.helpPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.helpCherryPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.helpRottenCherryPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.helpPearPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.helpRottenPearPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.helpStrawberryPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.helpRottenStrawberryPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.helpGoldenApplePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.helpRottenStrawberryPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.helpStrawberryPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.helpRottenPearPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.helpPearPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.helpRottenCherryPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.helpCherryPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
