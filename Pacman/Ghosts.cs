@@ -272,6 +272,8 @@ namespace Pacman
             frozenDuration = 0;
             strawberrieDuration = 0;
             isStrawberrieActive = false;
+            Form1.strawberry.removeFromMap();   // Miče jagode s mape.
+            Form1.rottenStrawberry.removeFromMap();
             currentImage = 0;
             currentDirection = Direction.Up;
             fleeSprite = 0;

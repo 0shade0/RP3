@@ -36,7 +36,6 @@ namespace Pacman
             currentDirection = directions[directionIndex];
 
             // Voće se miče sporije od ostalih likova.
-            // TODO: Možda treba prilagoditi brzinu.
             timerInterval = 500;
             characterTimer.Interval = timerInterval;
         }
@@ -46,8 +45,8 @@ namespace Pacman
         // također označava da voće trenutno nije na ekranu.
         public void removeFromMap()
         {
-            i = 0; j = 0;
             characterPictureBox.Visible = false;
+            i = 0; j = 0;
         }
 
         // Je li voće trenutno na ekranu.
@@ -77,22 +76,7 @@ namespace Pacman
             // automatski se pojavljuje. Ne može se pojaviti na poljima gdje
             // je zid ili neko drugo voće.
             if (!OnScreen)
-            {
-                // TODO: Podesiti vjerojatnost.
-                // TODO: GoldenApple ima manju vjerojatnost. Ovo treba izdvojiti u virtual funkciju.
-                int randomNumber = rand.Next(0, 400);
-                if (randomNumber == 0)
-                {
-                    int newI = rand.Next(0, 35);
-                    int newJ = rand.Next(0, 27);
-                    while (!viableLocation(newI, newJ))
-                    {
-                        newI = rand.Next(0, 35);
-                        newJ = rand.Next(0, 27);
-                    }
-                    appear(newI, newJ);
-                } 
-            }
+                randomFruitGenerator();
         }
 
         public override void moveCharacter()
@@ -108,11 +92,25 @@ namespace Pacman
             base.moveCharacter();
         }
 
+        public virtual void randomFruitGenerator()
+        {
+            int randomNumber = rand.Next(0, 2 * (60000 / timerInterval));
+            if (randomNumber == 0)
+            {
+                int newI = rand.Next(0, 35);
+                int newJ = rand.Next(0, 27);
+                while (!viableLocation(newI, newJ))
+                {
+                    newI = rand.Next(0, 35);
+                    newJ = rand.Next(0, 27);
+                }
+                appear(newI, newJ);
+            }
+        }
+
         // Voće se pojavljuje se na koordinatama (i, j).
-        // BUG: Voće se ne pojavljuje kad je odabran ChristmasPacman.
         public void appear(int _i, int _j)
         {
-            //Console.WriteLine(this.GetType().ToString() + " appearing on " + _i.ToString() + " " + _j.ToString());
             i = _i;
             j = _j;
             this.drawCharacter();// Inače se prvo pojavi na (0, 0).
@@ -235,6 +233,22 @@ namespace Pacman
                 // Dodaj život Pacmanu.
                 Form1.pacman.addLife();
                 removeFromMap();
+            }
+        }
+
+        public override void randomFruitGenerator()
+        {
+            int randomNumber = rand.Next(0, 5 * (60000 / timerInterval));
+            if (randomNumber == 0)
+            {
+                int newI = rand.Next(0, 35);
+                int newJ = rand.Next(0, 27);
+                while (!viableLocation(newI, newJ))
+                {
+                    newI = rand.Next(0, 35);
+                    newJ = rand.Next(0, 27);
+                }
+                appear(newI, newJ);
             }
         }
     }

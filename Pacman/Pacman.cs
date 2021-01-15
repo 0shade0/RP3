@@ -183,14 +183,19 @@ namespace Pacman
             // Resetiraj efekte svih voća.
             rottenCherryDuration = 0;
             isRottenCherryActive = false;
+            Form1.rottenCherry.removeFromMap();
             cherryDuration = 0;
             isCherryActive = false;
+            Form1.cherry.removeFromMap();
+
+            Form1.goldenApple.removeFromMap();
 
             if (rottenPearDuration > 0 || isRottenPearActive)
             {
                 rottenPearDuration = 0;
                 isRottenPearActive = false;
                 doubleSpeed();
+                Form1.rottenPear.removeFromMap();
             }
 
             if (pearDuration > 0 || isPearActive)
@@ -198,6 +203,7 @@ namespace Pacman
                 pearDuration = 0;
                 isPearActive = false;
                 undoIncreaseSpeedBy33Percent();
+                Form1.pear.removeFromMap();
             }
         }
 
@@ -283,7 +289,7 @@ namespace Pacman
             level += 1;
             Form1.grid.resetGrid();
             increaseSpeed(Form1.SpeedIncPerLevel); // Dijeljivo s 4.
-            reset(); // Resetira Pacmana.
+            this.reset(); // Resetira Pacmana.
 
             // Duhovi.
             Form1.redGhost.reset();
@@ -335,7 +341,7 @@ namespace Pacman
         public void lifeLost()
 		{
             // Resetiraj sve likove.
-            reset(); // Resetira Pacmana.
+            this.reset(); // Resetira Pacmana.
             Form1.redGhost.reset();
             Form1.pinkGhost.reset();
             Form1.blueGhost.reset();
