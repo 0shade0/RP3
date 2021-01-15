@@ -94,7 +94,7 @@ namespace Pacman
 
         public virtual void randomFruitGenerator()
         {
-            int randomNumber = rand.Next(0, 2 * (60000 / timerInterval));
+            int randomNumber = rand.Next(0, 60000 / timerInterval);
             if (randomNumber == 0)
             {
                 int newI = rand.Next(0, 35);
