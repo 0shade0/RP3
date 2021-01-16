@@ -445,13 +445,13 @@ namespace Pacman
             if (rotten)
             {
                 rottenPearDuration = Form1.RottenFruitDuration;
-                halveSpeed();
+                if (!isRottenPearActive) halveSpeed();
                 isRottenPearActive = true;
             }
             else
             {
                 pearDuration = Form1.SuperCookieDuration;
-                increaseSpeedBy33Percent();
+                if (!isPearActive) increaseSpeedBy33Percent();
                 isPearActive = true;
             }
         }
