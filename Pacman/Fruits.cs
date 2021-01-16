@@ -247,8 +247,12 @@ namespace Pacman
             if (Form1.pacman.I == i && Form1.pacman.J == j)
             {
                 Sounds.eatAppleSound.Play();
-                // Dodaj život Pacmanu.
-                Form1.pacman.addLife();
+                // Ako Pacman već ima maksimalan broj života, 
+                // dodaj mu 1000 bodova za zlatnu jabuku.
+                if (Form1.pacman.Lives < Form1.pacman.MaxLives)
+                    Form1.pacman.addLife();
+                else
+                    Form1.pacman.incrementScore(1000);
                 removeFromMap();
             }
         }

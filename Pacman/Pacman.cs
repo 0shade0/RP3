@@ -397,6 +397,11 @@ namespace Pacman
             }
         }
 
+        public int MaxLives
+        {
+            get { return maxLives; }
+        }
+
         // Ovu metodu poziva duh nakon što ga pacman pojede.
         // Duh se prije poziva ove metode vraća u kuću.
         public void ateGhost()
@@ -405,8 +410,20 @@ namespace Pacman
             ++ghostsEaten;
 		}
 
-        //----------------------------------------------------------
-        // Efekti voća.
+        public int Level
+        {
+            get { return level; }
+        }
+
+        public Character ChosenCharacter
+        {
+            set { chosenCharacter = value; }
+            get { return chosenCharacter; }
+        }
+
+        ///
+        /// Dio vezan za implementaciju voća.
+        ///
         // Javljanje da je pojedena (trula) trešnja
         public void ateCherry(bool rotten)
         {
@@ -437,17 +454,6 @@ namespace Pacman
                 increaseSpeedBy33Percent();
                 isPearActive = true;
             }
-        }
-
-        public int Level
-        {
-            get { return level; }
-        }
-
-        public Character ChosenCharacter
-        {
-            set { chosenCharacter = value; }
-            get { return chosenCharacter; }
         }
     }
 }
