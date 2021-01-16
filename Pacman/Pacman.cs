@@ -268,23 +268,26 @@ namespace Pacman
             // Ako je kretanje moguće, promijeni i trenutni smjer.
             if (movePossible(dir))
             {
+                bool directionChanged = currentDirection != dir;
                 currentDirection = dir;
-                // Promijeni sliku.
-                switch (currentDirection)
-                {
-                    case Direction.Left:
-                        currentImage = 0;
-                        break;
-                    case Direction.Up:
-                        currentImage = 2;
-                        break;
-                    case Direction.Right:
-                        currentImage = 4;
-                        break;
-                    case Direction.Down:
-                        currentImage = 6;
-                        break;
-                }
+
+                // Promijeni sliku, ako je stvarno promjenjen smjer.
+                if (directionChanged)
+                    switch (currentDirection)
+                    {
+                        case Direction.Left:
+                            currentImage = 0;
+                            break;
+                        case Direction.Up:
+                            currentImage = 2;
+                            break;
+                        case Direction.Right:
+                            currentImage = 4;
+                            break;
+                        case Direction.Down:
+                            currentImage = 6;
+                            break;
+                    }
             }
                        
         }
