@@ -87,7 +87,7 @@ namespace Pacman
         public void SetMusic(string name)
         {
             mediaPlayer.settings.setMode("Loop", true);
-            mediaPlayer.settings.volume = 25;
+            mediaPlayer.settings.volume = 35;
             string path = Path.GetFullPath(Path.Combine(System.Windows.Forms.Application.StartupPath, @"../../Resources/"));
             mediaPlayer.URL = path + name + ".mp3";
             mediaPlayer.Ctlcontrols.play();
