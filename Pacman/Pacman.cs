@@ -147,10 +147,10 @@ namespace Pacman
 
         protected override void characterTimerTick(object sender, EventArgs e)
         {
+            moveCharacter();
             drawCharacter();
             drawGameText();
             checkSquare();
-            moveCharacter();
 
             // Ako je odabrana igra Fruit mode,
             // provjeri preostalo trajanje voća i signaliziraj završetak.

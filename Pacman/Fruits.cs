@@ -71,9 +71,9 @@ namespace Pacman
 
         protected override void characterTimerTick(object sender, EventArgs e)
         {
+            moveCharacter();
             drawCharacter();
             checkSquare();
-            moveCharacter();
             // Voće treba nestati za 25 sekundi.
             if (remainingTimeOnScreen > 0) remainingTimeOnScreen -= timerInterval;
             else if (this.OnScreen) removeFromMap();

@@ -117,9 +117,9 @@ namespace Pacman
                 remainingFleeDuration -= timerInterval;
             }
 
+            moveCharacter();
             drawCharacter();
             checkSquare();
-            moveCharacter();
         }
 
         public void checkSquare()

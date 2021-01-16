@@ -70,8 +70,8 @@ namespace Pacman
 
         protected virtual void characterTimerTick (object sender, EventArgs e)
         {
-            drawCharacter();
             moveCharacter();
+            drawCharacter();
         }
 
         public void increaseSpeed(int x)
