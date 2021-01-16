@@ -147,11 +147,6 @@ namespace Pacman
 
         protected override void characterTimerTick(object sender, EventArgs e)
         {
-            moveCharacter();
-            drawCharacter();
-            drawGameText();
-            checkSquare();
-
             // Ako je odabrana igra Fruit mode,
             // provjeri preostalo trajanje voća i signaliziraj završetak.
             if (Form1.chosenGameMode == Form1.GameMode.Fruit)
@@ -175,7 +170,12 @@ namespace Pacman
                     isPearActive = false;
                     undoIncreaseSpeedBy33Percent();
                 }
-            }         
+            }
+
+            moveCharacter();
+            drawCharacter();
+            drawGameText();
+            checkSquare();
         }
 
         // Resetiranje Pacmana.

@@ -71,12 +71,13 @@ namespace Pacman
 
         protected override void characterTimerTick(object sender, EventArgs e)
         {
-            moveCharacter();
-            drawCharacter();
-            checkSquare();
             // Voće treba nestati za 25 sekundi.
             if (remainingTimeOnScreen > 0) remainingTimeOnScreen -= timerInterval;
             else if (this.OnScreen) removeFromMap();
+
+            moveCharacter();
+            drawCharacter();
+            checkSquare();
 
             // Voće se samo brine za pojavu na ekranu. Ako već nije na ekranu,
             // automatski se pojavljuje. Ne može se pojaviti na poljima gdje
