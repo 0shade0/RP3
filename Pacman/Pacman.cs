@@ -189,30 +189,27 @@ namespace Pacman
             // Resetiraj efekte svih voća ako je način Fruit.
             if (Form1.chosenGameMode == Form1.GameMode.Fruit)
             {
+                // Resetiraj efekte kruške (ako su bili aktivni).
+                if (isRottenPearActive || rottenPearDuration > 0)
+                    doubleSpeed();
+
+                if (isPearActive || pearDuration > 0)
+                    undoIncreaseSpeedBy33Percent();
+
                 rottenCherryDuration = 0;
                 isRottenCherryActive = false;
                 Form1.rottenCherry.removeFromMap();
                 cherryDuration = 0;
                 isCherryActive = false;
                 Form1.cherry.removeFromMap();
+                rottenPearDuration = 0;
+                isRottenPearActive = false;
+                Form1.rottenPear.removeFromMap();
+                pearDuration = 0;
+                isPearActive = false;
+                Form1.pear.removeFromMap();
 
-                Form1.goldenApple.removeFromMap();
-
-                if (rottenPearDuration > 0 || isRottenPearActive)
-                {
-                    rottenPearDuration = 0;
-                    isRottenPearActive = false;
-                    doubleSpeed();
-                    Form1.rottenPear.removeFromMap();
-                }
-
-                if (pearDuration > 0 || isPearActive)
-                {
-                    pearDuration = 0;
-                    isPearActive = false;
-                    undoIncreaseSpeedBy33Percent();
-                    Form1.pear.removeFromMap();
-                }
+                Form1.goldenApple.removeFromMap();                    
             }
         }
 

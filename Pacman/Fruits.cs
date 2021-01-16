@@ -47,6 +47,7 @@ namespace Pacman
         {
             characterPictureBox.Visible = false;
             i = 0; j = 0;
+            remainingTimeOnScreen = 0;
         }
 
         // Je li voće trenutno na ekranu.
@@ -61,6 +62,11 @@ namespace Pacman
         public bool Rotten
         {
             get { return rotten; }
+        }
+
+        public int RemainingTimeOnScreen
+        {
+            get { return remainingTimeOnScreen; }
         }
 
         protected override void characterTimerTick(object sender, EventArgs e)
@@ -113,7 +119,7 @@ namespace Pacman
         {
             i = _i;
             j = _j;
-            this.drawCharacter();// Inače se prvo pojavi na (0, 0).
+            this.drawCharacter(); // Inače se prvo pojavi na (0, 0).
             characterPictureBox.Visible = true;
             characterPictureBox.BringToFront();
             remainingTimeOnScreen = Form1.FruitOnScreenDuration;
