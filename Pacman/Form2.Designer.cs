@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new CustomButton();
+            this.button2 = new CustomButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menu = new System.Windows.Forms.Panel();
-            this.exitgame = new System.Windows.Forms.Button();
-            this.options = new System.Windows.Forms.Button();
-            this.newgame = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.exitgame = new CustomButton();
+            this.options = new CustomButton();
+            this.newgame = new CustomButton();
+            this.button3 = new CustomButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -212,16 +212,27 @@
 
         #endregion
 
-        private System.Windows.Forms.Button newgame;
-        private System.Windows.Forms.Button options;
-        private System.Windows.Forms.Button exitgame;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private CustomButton newgame;
+        private CustomButton options;
+        private CustomButton exitgame;
+        private CustomButton button1;
+        private CustomButton button2;
+        private CustomButton button3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel menu;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel2;
+
+        public class CustomButton : System.Windows.Forms.Button
+        {
+            protected override bool ShowFocusCues
+            {
+                get
+                {
+                    return false;
+                }
+            }
+        }
     }
 }

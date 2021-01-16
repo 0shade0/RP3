@@ -170,11 +170,27 @@ namespace Pacman
         private void closeHelpButton_Click(object sender, EventArgs e)
         {
             helpPanel.Visible = false;
+            helpButton.Focus();
         }
 
         private void helpButton_Click(object sender, EventArgs e)
         {
             helpPanel.Visible = true;
+            closeHelpButton.Focus();
+        }
+
+        private void buttonHelpEnter(object sender, EventArgs e)
+        {
+            checkActiveButtons();
+            Button button = sender as Button;
+            button.BackgroundImage = Properties.Resources.HelpIconW;
+        }
+
+        private void buttonHelpLeave(object sender, EventArgs e)
+        {
+            checkActiveButtons();
+            Button button = sender as Button;
+            button.BackgroundImage = Properties.Resources.HelpIcon;
         }
     }  
 }

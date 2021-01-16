@@ -444,6 +444,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="pacman.ico" />
+    <None Include="Resources\HelpIcon.png" />
+    <None Include="Resources\HelpIconW.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
