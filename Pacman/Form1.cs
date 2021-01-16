@@ -75,6 +75,7 @@ namespace Pacman
 
             // Konstruktor voća prima bool argument u ovisnosti
             // je li voće trulo.
+            fruits = new List<Fruit>();
             strawberry = new Strawberry(this, false);
             fruits.Add(strawberry);
             rottenStrawberry = new Strawberry(this, true);
