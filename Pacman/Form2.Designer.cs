@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.button1 = new CustomButton();
-            this.button2 = new CustomButton();
+            this.button1 = new Pacman.Form2.CustomButton();
+            this.button2 = new Pacman.Form2.CustomButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menu = new System.Windows.Forms.Panel();
-            this.exitgame = new CustomButton();
-            this.options = new CustomButton();
-            this.newgame = new CustomButton();
-            this.button3 = new CustomButton();
+            this.exitgame = new Pacman.Form2.CustomButton();
+            this.options = new Pacman.Form2.CustomButton();
+            this.newgame = new Pacman.Form2.CustomButton();
+            this.button3 = new Pacman.Form2.CustomButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();

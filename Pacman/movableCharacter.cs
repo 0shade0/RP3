@@ -148,9 +148,9 @@ namespace Pacman
             switch (dir)
             {
                 case Direction.Left:
-                    return j > 0 && Form1.grid.getSquareValue(i, j - 1) != '#';
+                    return (j > 0 && Form1.grid.getSquareValue(i, j - 1) != '#') || (i == 16 && j == 0); // Tunel.
                 case Direction.Right:
-                    return j < 27 && Form1.grid.getSquareValue(i, j + 1) != '#';
+                    return (j < 27 && Form1.grid.getSquareValue(i, j + 1) != '#') || (i == 16 && j == 27); // Tunel.
                 case Direction.Up:
                     return i > 0 && Form1.grid.getSquareValue(i - 1, j) != '#';
                 case Direction.Down:
