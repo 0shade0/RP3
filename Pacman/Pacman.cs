@@ -185,6 +185,7 @@ namespace Pacman
             i = startI;
             j = startJ;
             currentDirection = newDirection = Direction.None;
+            timerInterval = Form1.PacmanDefaultSpeed;
 
             // Resetiraj efekte svih voća ako je način Fruit.
             if (Form1.chosenGameMode == Form1.GameMode.Fruit)

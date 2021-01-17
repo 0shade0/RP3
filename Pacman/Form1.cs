@@ -99,6 +99,8 @@ namespace Pacman
             if (chosenGameMode == GameMode.Fruit)
                 foreach (var fruit in fruits)
                     fruit.startTimer();
+            else if (chosenGameMode == GameMode.Turbo)
+                setTurbo();
 
             ResumeLayout();
 
@@ -149,8 +151,6 @@ namespace Pacman
 
         public static void startGame()
         {
-            if (chosenGameMode == GameMode.Turbo)
-                setTurbo();
             pacman.startTimer();
             redGhost.startTimer();
             pinkGhost.startTimer();
